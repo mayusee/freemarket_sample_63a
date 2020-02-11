@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_124839) do
+ActiveRecord::Schema.define(version: 2020_02_11_092435) do
+
+  create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "blands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_parents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -30,15 +48,15 @@ ActiveRecord::Schema.define(version: 2020_02_10_124839) do
 
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "first_name", default: "", null: false
-    t.string "last_name", default: "", null: false
-    t.string "first_name_kana", default: "", null: false
-    t.string "last_name_kana", default: "", null: false
-    t.string "postal_number", default: "", null: false
-    t.string "address_city", default: "", null: false
-    t.string "address_number", default: "", null: false
-    t.string "address_building", default: "", null: false
-    t.string "telephone_number", default: "", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "postal_number", null: false
+    t.string "address_city", null: false
+    t.string "address_number", null: false
+    t.string "address_building", null: false
+    t.string "telephone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_shippings_on_user_id"
@@ -56,16 +74,16 @@ ActiveRecord::Schema.define(version: 2020_02_10_124839) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "first_name", default: ""
-    t.string "last_name", default: ""
-    t.string "first_name_kana", default: ""
-    t.string "last_name_kana", default: ""
-    t.string "postal_number", default: ""
+    t.string "first_name"
+    t.string "last_name"
+    t.string "first_name_kana"
+    t.string "last_name_kana"
+    t.string "postal_number"
     t.integer "area_id"
-    t.string "address_city", default: ""
-    t.string "address_number", default: ""
-    t.string "address_building", default: ""
-    t.string "telephone_number", default: ""
+    t.string "address_city"
+    t.string "address_number"
+    t.string "address_building"
+    t.string "telephone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
