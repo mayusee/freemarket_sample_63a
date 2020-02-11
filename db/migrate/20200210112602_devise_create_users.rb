@@ -52,6 +52,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string  :address_building
       t.string  :telephone_number
 
+      t.string  :image
+      t.text    :self_introduction
+
       t.timestamps null: false
     end
 

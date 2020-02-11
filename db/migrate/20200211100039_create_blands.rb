@@ -3,7 +3,9 @@ class CreateBlands < ActiveRecord::Migration[5.2]
     create_table :blands do |t|
       # values
       t.string     :name,                  null: false
+
       t.timestamps
     end
+    add_index :blands, :name
   end
 end

@@ -5,7 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # association
-  has_many :shippings
-  has_many :items
 
 end

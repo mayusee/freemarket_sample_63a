@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_092435) do
+ActiveRecord::Schema.define(version: 2020_02_11_102633) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -22,44 +22,37 @@ ActiveRecord::Schema.define(version: 2020_02_11_092435) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_blands_on_name"
+  end
+
+  create_table "category_children", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_parents_id", null: false
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_parents_id"], name: "index_category_children_on_category_parents_id"
+  end
+
+  create_table "category_grandchildren", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_children_id", null: false
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_children_id"], name: "index_category_grandchildren_on_category_children_id"
   end
 
   create_table "category_parents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_category_parents_on_name"
   end
 
-  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.integer "size_id"
-    t.integer "condition_id"
-    t.integer "shippingcharge_id"
-    t.integer "daystoship_id"
-    t.string "title", null: false
-    t.text "description"
-    t.integer "price", null: false
-    t.float "feerate", null: false
-    t.integer "profit_price", null: false
+  create_table "shippingways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status_id"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
-  create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name_kana", null: false
-    t.string "postal_number", null: false
-    t.string "address_city", null: false
-    t.string "address_number", null: false
-    t.string "address_building", null: false
-    t.string "telephone_number", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_shippings_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -84,6 +77,8 @@ ActiveRecord::Schema.define(version: 2020_02_11_092435) do
     t.string "address_number"
     t.string "address_building"
     t.string "telephone_number"
+    t.string "image"
+    t.text "self_introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -91,6 +86,6 @@ ActiveRecord::Schema.define(version: 2020_02_11_092435) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "items", "users"
-  add_foreign_key "shippings", "users"
+  add_foreign_key "category_children", "category_parents", column: "category_parents_id"
+  add_foreign_key "category_grandchildren", "category_children", column: "category_children_id"
 end
