@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_105004) do
+ActiveRecord::Schema.define(version: 2020_02_11_113010) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 2020_02_11_105004) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_category_parents_on_name"
+  end
+
+  create_table "itemimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_itemimages_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -141,6 +149,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_105004) do
 
   add_foreign_key "category_children", "category_parents", column: "category_parents_id"
   add_foreign_key "category_grandchildren", "category_children", column: "category_children_id"
+  add_foreign_key "itemimages", "items"
   add_foreign_key "items", "blands"
   add_foreign_key "items", "category_children"
   add_foreign_key "items", "category_grandchildren"
