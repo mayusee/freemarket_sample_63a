@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_103433) do
+ActiveRecord::Schema.define(version: 2020_02_11_105004) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -46,6 +46,38 @@ ActiveRecord::Schema.define(version: 2020_02_11_103433) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_category_parents_on_name"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "bland_id", null: false
+    t.bigint "shippingway_id", null: false
+    t.bigint "category_parent_id", null: false
+    t.bigint "category_child_id", null: false
+    t.bigint "category_grandchild_id", null: false
+    t.integer "size_number"
+    t.integer "condition_number"
+    t.integer "shippingcharge_number"
+    t.integer "daystoship_number"
+    t.string "title", null: false
+    t.text "description", null: false
+    t.integer "price", null: false
+    t.float "feerate", null: false
+    t.integer "profit_price", null: false
+    t.datetime "sold_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bland_id"], name: "index_items_on_bland_id"
+    t.index ["category_child_id"], name: "index_items_on_category_child_id"
+    t.index ["category_grandchild_id"], name: "index_items_on_category_grandchild_id"
+    t.index ["category_parent_id"], name: "index_items_on_category_parent_id"
+    t.index ["condition_number"], name: "index_items_on_condition_number"
+    t.index ["daystoship_number"], name: "index_items_on_daystoship_number"
+    t.index ["shippingcharge_number"], name: "index_items_on_shippingcharge_number"
+    t.index ["shippingway_id"], name: "index_items_on_shippingway_id"
+    t.index ["size_number"], name: "index_items_on_size_number"
+    t.index ["title"], name: "index_items_on_title"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -109,6 +141,12 @@ ActiveRecord::Schema.define(version: 2020_02_11_103433) do
 
   add_foreign_key "category_children", "category_parents", column: "category_parents_id"
   add_foreign_key "category_grandchildren", "category_children", column: "category_children_id"
+  add_foreign_key "items", "blands"
+  add_foreign_key "items", "category_children"
+  add_foreign_key "items", "category_grandchildren"
+  add_foreign_key "items", "category_parents"
+  add_foreign_key "items", "shippingways"
+  add_foreign_key "items", "users"
   add_foreign_key "shippings", "areas"
   add_foreign_key "shippings", "shippingways"
   add_foreign_key "shippings", "users"

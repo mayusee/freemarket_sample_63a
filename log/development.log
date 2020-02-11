@@ -25966,3 +25966,336 @@ FOREIGN KEY (`shippingway_id`)
   ↳ bin/rails:9
   [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   ↳ /Users/taka0/.rbenv/versions/2.5.1/bin/erd:23
+  [1m[35m (13.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id_id` bigint NOT NULL, `category_child_id_id` bigint NOT NULL, `category_grandchild_id_id` bigint NOT NULL, `size_number` int, `condition_number` int, `shippingcharge_number` int, `daystoship_number` int, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` int NOT NULL, `feerate` float(24) NOT NULL, `profit_price` int NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id_id`  (`category_parent_id_id`),  INDEX `index_items_on_category_child_id_id`  (`category_child_id_id`),  INDEX `index_items_on_category_grandchild_id_id`  (`category_grandchild_id_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_94134c9c2b`
+FOREIGN KEY (`category_parent_id_id`)
+  REFERENCES `category_parent_ids` (`id`)
+, CONSTRAINT `fk_rails_c17900f305`
+FOREIGN KEY (`category_child_id_id`)
+  REFERENCES `category_child_ids` (`id`)
+, CONSTRAINT `fk_rails_53d7074d7e`
+FOREIGN KEY (`category_grandchild_id_id`)
+  REFERENCES `category_grandchild_ids` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id_id` bigint NOT NULL, `category_child_id_id` bigint NOT NULL, `category_grandchild_id_id` bigint NOT NULL, `size_number` int, `condition_number` int, `shippingcharge_number` int, `daystoship_number` int, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` int NOT NULL, `feerate` float(24) NOT NULL, `profit_price` int NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id_id`  (`category_parent_id_id`),  INDEX `index_items_on_category_child_id_id`  (`category_child_id_id`),  INDEX `index_items_on_category_grandchild_id_id`  (`category_grandchild_id_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_94134c9c2b`
+FOREIGN KEY (`category_parent_id_id`)
+  REFERENCES `category_parent_ids` (`id`)
+, CONSTRAINT `fk_rails_c17900f305`
+FOREIGN KEY (`category_child_id_id`)
+  REFERENCES `category_child_ids` (`id`)
+, CONSTRAINT `fk_rails_53d7074d7e`
+FOREIGN KEY (`category_grandchild_id_id`)
+  REFERENCES `category_grandchild_ids` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id` bigint NOT NULL, `category_child_id` bigint NOT NULL, `category_grandchild_id` bigint NOT NULL, `size_number` int, `condition_number` int, `shippingcharge_number` int, `daystoship_number` int, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` int NOT NULL, `feerate` float(24) NOT NULL, `profit_price` int NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id`  (`category_parent_id`),  INDEX `index_items_on_category_child_id`  (`category_child_id`),  INDEX `index_items_on_category_grandchild_id`  (`category_grandchild_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_06b5daee34`
+FOREIGN KEY (`category_parent_id`)
+  REFERENCES `category_parents` (`id`)
+, CONSTRAINT `fk_rails_41c10b37ee`
+FOREIGN KEY (`category_child_id`)
+  REFERENCES `category_children` (`id`)
+, CONSTRAINT `fk_rails_5a1263057f`
+FOREIGN KEY (`category_grandchild_id`)
+  REFERENCES `category_grandchildren` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX `index_items_on_bland`  ON `items` (`bland`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (5.8ms)[0m  [1m[35mDROP TABLE `shippings`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (4.0ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211103433'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (13.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE `shippings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `area_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `status_number` int, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `postal_number` varchar(255) NOT NULL, `address_city` varchar(255) NOT NULL, `address_number` varchar(255) NOT NULL, `address_building` varchar(255) NOT NULL, `telephone_number` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_shippings_on_user_id`  (`user_id`),  INDEX `index_shippings_on_area_id`  (`area_id`),  INDEX `index_shippings_on_shippingway_id`  (`shippingway_id`), CONSTRAINT `fk_rails_f5a856ceb8`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_908534b8cf`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+, CONSTRAINT `fk_rails_dc52c1a65f`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+)[0m
+  ↳ db/migrate/20200211103433_create_shippings.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211103433')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (12.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id` bigint NOT NULL, `category_child_id` bigint NOT NULL, `category_grandchild_id` bigint NOT NULL, `size_number` int, `condition_number` int, `shippingcharge_number` int, `daystoship_number` int, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` int NOT NULL, `feerate` float(24) NOT NULL, `profit_price` int NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id`  (`category_parent_id`),  INDEX `index_items_on_category_child_id`  (`category_child_id`),  INDEX `index_items_on_category_grandchild_id`  (`category_grandchild_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_06b5daee34`
+FOREIGN KEY (`category_parent_id`)
+  REFERENCES `category_parents` (`id`)
+, CONSTRAINT `fk_rails_41c10b37ee`
+FOREIGN KEY (`category_child_id`)
+  REFERENCES `category_children` (`id`)
+, CONSTRAINT `fk_rails_5a1263057f`
+FOREIGN KEY (`category_grandchild_id`)
+  REFERENCES `category_grandchildren` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211105004')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (4.7ms)[0m  [1m[35mDROP TABLE `items`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211105004'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id` bigint NOT NULL, `category_child_id` bigint NOT NULL, `category_grandchild_id` bigint NOT NULL, `size_number` int, `condition_number` int, `shippingcharge_number` int, `daystoship_number` int, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` int NOT NULL, `feerate` float(24) NOT NULL, `profit_price` int NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id`  (`category_parent_id`),  INDEX `index_items_on_category_child_id`  (`category_child_id`),  INDEX `index_items_on_category_grandchild_id`  (`category_grandchild_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_06b5daee34`
+FOREIGN KEY (`category_parent_id`)
+  REFERENCES `category_parents` (`id`)
+, CONSTRAINT `fk_rails_41c10b37ee`
+FOREIGN KEY (`category_child_id`)
+  REFERENCES `category_children` (`id`)
+, CONSTRAINT `fk_rails_5a1263057f`
+FOREIGN KEY (`category_grandchild_id`)
+  REFERENCES `category_grandchildren` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE  INDEX `index_items_on_size_number`  ON `items` (`size_number`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:28
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE  INDEX `index_items_on_condition_number`  ON `items` (`condition_number`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:29
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE  INDEX `index_items_on_shippingcharge_number`  ON `items` (`shippingcharge_number`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:30
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE  INDEX `index_items_on_daystoship_number`  ON `items` (`daystoship_number`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:31
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE  INDEX `index_items_on_title`  ON `items` (`title`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:32
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX `index_items_on_description`  ON `items` (`description`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:33
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id` bigint NOT NULL, `category_child_id` bigint NOT NULL, `category_grandchild_id` bigint NOT NULL, `size_number` int, `condition_number` int, `shippingcharge_number` int, `daystoship_number` int, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` int NOT NULL, `feerate` float(24) NOT NULL, `profit_price` int NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id`  (`category_parent_id`),  INDEX `index_items_on_category_child_id`  (`category_child_id`),  INDEX `index_items_on_category_grandchild_id`  (`category_grandchild_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_06b5daee34`
+FOREIGN KEY (`category_parent_id`)
+  REFERENCES `category_parents` (`id`)
+, CONSTRAINT `fk_rails_41c10b37ee`
+FOREIGN KEY (`category_child_id`)
+  REFERENCES `category_children` (`id`)
+, CONSTRAINT `fk_rails_5a1263057f`
+FOREIGN KEY (`category_grandchild_id`)
+  REFERENCES `category_grandchildren` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE  INDEX `index_items_on_size_number`  ON `items` (`size_number`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:28
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE  INDEX `index_items_on_condition_number`  ON `items` (`condition_number`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:29
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX `index_items_on_shippingcharge_number`  ON `items` (`shippingcharge_number`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:30
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE  INDEX `index_items_on_daystoship_number`  ON `items` (`daystoship_number`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:31
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX `index_items_on_title`  ON `items` (`title`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211105004')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/taka0/.rbenv/versions/2.5.1/bin/erd:23
