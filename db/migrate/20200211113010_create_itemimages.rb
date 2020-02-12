@@ -5,7 +5,7 @@ class CreateItemimages < ActiveRecord::Migration[5.2]
       t.references :item,                   null: false, foreign_key: true
 
       # values
-      t.string     :image
+      t.string     :image,    null: false
 
       t.timestamps
     end

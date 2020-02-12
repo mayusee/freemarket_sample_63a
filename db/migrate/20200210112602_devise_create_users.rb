@@ -5,11 +5,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       ## ShoppingAccount
       t.string :nickname,         null: false, default: ""
-      t.string :firstname,        null: false, default: ""
-      t.string :lastname,         null: false, default: ""
-      t.string :firstnamekana,    null: false, default: ""
-      t.string :lastnamekana,     null: false, default: ""
-      t.date   :birthday,         null: false
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -41,19 +36,20 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       ## AccountAddresses
-      t.string  :first_name
-      t.string  :last_name
-      t.string  :first_name_kana
-      t.string  :last_name_kana
-      t.string  :postal_number
-      t.integer :area_id
-      t.string  :address_city
-      t.string  :address_number
-      t.string  :address_building
-      t.string  :telephone_number
+      t.string     :first_name,         null: false
+      t.string     :last_name,          null: false
+      t.string     :first_name_kana,    null: false
+      t.string     :last_name_kana,     null: false
+      t.date       :birthday,           null: false
+      t.string     :postal_number
+      t.references :area,               null: false, foreign_key: true
+      t.string     :address_city
+      t.string     :address_number
+      t.string     :address_building
+      t.string     :telephone_number
 
-      t.string  :image
-      t.text    :self_introduction
+      t.string     :self_image
+      t.text       :self_introduction
 
       t.timestamps null: false
     end

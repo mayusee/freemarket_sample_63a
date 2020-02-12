@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_113010) do
+ActiveRecord::Schema.define(version: 2020_02_11_120823) do
 
   create_table "areas", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_113010) do
 
   create_table "category_children", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "category_parents_id", null: false
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_parents_id"], name: "index_category_children_on_category_parents_id"
@@ -35,22 +35,31 @@ ActiveRecord::Schema.define(version: 2020_02_11_113010) do
 
   create_table "category_grandchildren", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "category_children_id", null: false
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_children_id"], name: "index_category_grandchildren_on_category_children_id"
   end
 
   create_table "category_parents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_category_parents_on_name"
   end
 
+  create_table "creditcards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "pay_token"
+    t.string "castomer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_creditcards_on_user_id"
+  end
+
   create_table "itemimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
-    t.string "image"
+    t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_itemimages_on_item_id"
@@ -116,32 +125,39 @@ ActiveRecord::Schema.define(version: 2020_02_11_113010) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
+    t.string "status_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_trades_on_item_id"
+    t.index ["user_id"], name: "index_trades_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
-    t.string "firstname", default: "", null: false
-    t.string "lastname", default: "", null: false
-    t.string "firstnamekana", default: "", null: false
-    t.string "lastnamekana", default: "", null: false
-    t.date "birthday", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "first_name_kana"
-    t.string "last_name_kana"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.date "birthday", null: false
     t.string "postal_number"
-    t.integer "area_id"
+    t.bigint "area_id", null: false
     t.string "address_city"
     t.string "address_number"
     t.string "address_building"
     t.string "telephone_number"
-    t.string "image"
+    t.string "self_image"
     t.text "self_introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_users_on_area_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -149,6 +165,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_113010) do
 
   add_foreign_key "category_children", "category_parents", column: "category_parents_id"
   add_foreign_key "category_grandchildren", "category_children", column: "category_children_id"
+  add_foreign_key "creditcards", "users"
   add_foreign_key "itemimages", "items"
   add_foreign_key "items", "blands"
   add_foreign_key "items", "category_children"
@@ -159,4 +176,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_113010) do
   add_foreign_key "shippings", "areas"
   add_foreign_key "shippings", "shippingways"
   add_foreign_key "shippings", "users"
+  add_foreign_key "trades", "items"
+  add_foreign_key "trades", "users"
+  add_foreign_key "users", "areas"
 end

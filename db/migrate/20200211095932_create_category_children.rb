@@ -5,7 +5,7 @@ class CreateCategoryChildren < ActiveRecord::Migration[5.2]
       t.references :category_parents,    null: false, foreign_key: true
 
       # values
-      t.string :name
+      t.string :name,    null: false
 
       t.timestamps
     end

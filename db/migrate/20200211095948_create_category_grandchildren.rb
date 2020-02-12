@@ -5,7 +5,7 @@ class CreateCategoryGrandchildren < ActiveRecord::Migration[5.2]
       t.references :category_children,      null: false, foreign_key: true
 
       # values
-      t.string :name
+      t.string :name,    null: false
 
       t.timestamps
     end
