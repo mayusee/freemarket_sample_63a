@@ -1,5 +1,5 @@
 class Creditcard < ApplicationRecord
-  # association
+  # associations
   belongs_to :user
 
 end

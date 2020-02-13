@@ -10,10 +10,10 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.references :category_grandchild,    null: false, foreign_key: true
 
       # enum
-      t.integer    :size_number
-      t.integer    :condition_number 
-      t.integer    :shippingcharge_number 
-      t.integer    :daystoship_number
+      t.integer    :size_num,               null: false
+      t.integer    :condition_num,          null: false
+      t.integer    :shippingcharge_num,     null: false
+      t.integer    :daystoship_num,         null: false
 
       # values
       t.string     :title,                  null: false
@@ -25,10 +25,10 @@ class CreateItems < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :items, :size_number
-    add_index :items, :condition_number 
-    add_index :items, :shippingcharge_number 
-    add_index :items, :daystoship_number
+    add_index :items, :size_num
+    add_index :items, :condition_num 
+    add_index :items, :shippingcharge_num 
+    add_index :items, :daystoship_num
     add_index :items, :title
 
   end

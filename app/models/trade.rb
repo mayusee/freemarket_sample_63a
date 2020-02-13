@@ -1,6 +1,5 @@
 class Trade < ApplicationRecord
-    # association
+    # associations
     belongs_to :item
     belongs_to :user
-
 end

@@ -1,5 +1,4 @@
 class Itemimage < ApplicationRecord
-  # association
+  # associations
   belongs_to :item
- 
 end

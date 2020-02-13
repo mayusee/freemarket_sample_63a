@@ -1,4 +1,5 @@
 class CategoryParent < ApplicationRecord
-  # association
-  has_many :category_children
+  # associations
+  has_many   :items
+  has_many   :category_children
 end

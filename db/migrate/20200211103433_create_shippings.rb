@@ -5,9 +5,11 @@ class CreateShippings < ActiveRecord::Migration[5.2]
       t.references :user,         null: false, foreign_key: true
       t.references :area,         null: false, foreign_key: true
       t.references :shippingway,  null: false, foreign_key: true
-      
+
+      # enum
+      t.integer    :status_num,           null: false
+
       # values
-      t.integer    :status_number
       t.string     :first_name,           null: false
       t.string     :last_name,            null: false
       t.string     :first_name_kana,      null: false

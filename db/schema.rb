@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
 
   create_table "creditcards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "pay_token"
-    t.string "castomer"
+    t.string "pay_token", null: false
+    t.string "customer", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_creditcards_on_user_id"
@@ -72,10 +72,10 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
     t.bigint "category_parent_id", null: false
     t.bigint "category_child_id", null: false
     t.bigint "category_grandchild_id", null: false
-    t.integer "size_number"
-    t.integer "condition_number"
-    t.integer "shippingcharge_number"
-    t.integer "daystoship_number"
+    t.integer "size_num", null: false
+    t.integer "condition_num", null: false
+    t.integer "shippingcharge_num", null: false
+    t.integer "daystoship_num", null: false
     t.string "title", null: false
     t.text "description", null: false
     t.integer "price", null: false
@@ -88,11 +88,11 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
     t.index ["category_child_id"], name: "index_items_on_category_child_id"
     t.index ["category_grandchild_id"], name: "index_items_on_category_grandchild_id"
     t.index ["category_parent_id"], name: "index_items_on_category_parent_id"
-    t.index ["condition_number"], name: "index_items_on_condition_number"
-    t.index ["daystoship_number"], name: "index_items_on_daystoship_number"
-    t.index ["shippingcharge_number"], name: "index_items_on_shippingcharge_number"
+    t.index ["condition_num"], name: "index_items_on_condition_num"
+    t.index ["daystoship_num"], name: "index_items_on_daystoship_num"
+    t.index ["shippingcharge_num"], name: "index_items_on_shippingcharge_num"
     t.index ["shippingway_id"], name: "index_items_on_shippingway_id"
-    t.index ["size_number"], name: "index_items_on_size_number"
+    t.index ["size_num"], name: "index_items_on_size_num"
     t.index ["title"], name: "index_items_on_title"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
     t.bigint "user_id", null: false
     t.bigint "area_id", null: false
     t.bigint "shippingway_id", null: false
-    t.integer "status_number"
+    t.integer "status_num", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
   end
 
   create_table "shippingways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "status_number"
+    t.integer "status_num", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
   create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.bigint "user_id", null: false
-    t.string "status_number"
+    t.integer "status_num", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_trades_on_item_id"

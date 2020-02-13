@@ -1,5 +1,5 @@
 class Shippingway < ApplicationRecord
-  # association
-
-
+    # associations
+    belongs_to :shipping
+    has_many   :items
 end

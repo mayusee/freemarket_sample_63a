@@ -4,11 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # association
+  # associations
   belongs_to :area
 
-  has_many :items
-  has_many :creditcards
-  has_many :trades
+  has_many   :items
+  has_many   :creditcards
+  has_many   :trades
 
 end

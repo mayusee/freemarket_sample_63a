@@ -1,5 +1,6 @@
 class CategoryChild < ApplicationRecord
-  # association
+  # associations
   belongs_to :category_parent
-  has_many :category_grandchildren 
+  has_many   :items 
+  has_many   :category_grandchildren
 end
