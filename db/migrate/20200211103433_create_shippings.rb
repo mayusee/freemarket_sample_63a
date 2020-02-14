@@ -7,7 +7,7 @@ class CreateShippings < ActiveRecord::Migration[5.2]
       t.references :shippingway,  null: false, foreign_key: true
 
       # enum
-      t.integer    :status_num,           null: false
+      t.integer    :status_num,           null: false, limit: 1, unsigned: true
 
       # values
       t.string     :first_name,           null: false

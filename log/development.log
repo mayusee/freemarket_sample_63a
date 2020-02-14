@@ -29913,3 +29913,1161 @@ FOREIGN KEY (`user_id`)
   ↳ /Users/taka0/.rbenv/versions/2.5.1/bin/erd:23
   [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   ↳ /Users/taka0/.rbenv/versions/2.5.1/bin/erd:23
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/taka0/.rbenv/versions/2.5.1/bin/erd:23
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTrades (20200211120823)
+  [1m[35m (5.5ms)[0m  [1m[35mDROP TABLE `trades`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211120823'[0m
+  ↳ bin/rails:9
+Migrating to CreateCreditcards (20200211115443)
+  [1m[35m (3.6ms)[0m  [1m[35mDROP TABLE `creditcards`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211115443'[0m
+  ↳ bin/rails:9
+Migrating to CreateItemimages (20200211113010)
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE `itemimages`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211113010'[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (9.6ms)[0m  [1m[35mDROP INDEX `index_items_on_title` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.3ms)[0m  [1m[35mDROP INDEX `index_items_on_daystoship_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.3ms)[0m  [1m[35mDROP INDEX `index_items_on_shippingcharge_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.7ms)[0m  [1m[35mDROP INDEX `index_items_on_condition_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.0ms)[0m  [1m[35mDROP INDEX `index_items_on_size_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE `items`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211105004'[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE `shippings`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211103433'[0m
+  ↳ bin/rails:9
+Migrating to CreateShippingways (20200211102633)
+  [1m[35m (5.8ms)[0m  [1m[35mDROP TABLE `shippingways`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211102633'[0m
+  ↳ bin/rails:9
+Migrating to CreateBlands (20200211100039)
+  [1m[35m (8.1ms)[0m  [1m[35mDROP INDEX `index_blands_on_name` ON `blands`[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE `blands`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211100039'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryGrandchildren (20200211095948)
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE `category_grandchildren`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095948'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryChildren (20200211095932)
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE `category_children`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095932'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryParents (20200211095911)
+  [1m[35m (8.2ms)[0m  [1m[35mDROP INDEX `index_category_parents_on_name` ON `category_parents`[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE `category_parents`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095911'[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200210112602)
+  [1m[35m (8.1ms)[0m  [1m[35mDROP INDEX `index_users_on_reset_password_token` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.0ms)[0m  [1m[35mDROP INDEX `index_users_on_email` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.3ms)[0m  [1m[35mDROP INDEX `index_users_on_nickname` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE `users`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200210112602'[0m
+  ↳ bin/rails:9
+Migrating to CreateAreas (20200210112600)
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE `areas`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200210112600'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAreas (20200210112600)
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE `areas` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200210112600_create_areas.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200210112600')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200210112602)
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `nickname` varchar(255) DEFAULT '' NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `birthday` date NOT NULL, `postal_number` varchar(255), `area_id` bigint NOT NULL, `address_city` varchar(255), `address_number` varchar(255), `address_building` varchar(255), `telephone_number` varchar(255), `self_image` varchar(255), `self_introduction` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_users_on_area_id`  (`area_id`), CONSTRAINT `fk_rails_8f8a4b3fcb`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+)[0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:5
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_nickname`  ON `users` (`nickname`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:57
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:58
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:59
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200210112602')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryParents (20200211095911)
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE `category_parents` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211095911_create_category_parents.rb:3
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE  INDEX `index_category_parents_on_name`  ON `category_parents` (`name`) [0m
+  ↳ db/migrate/20200211095911_create_category_parents.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095911')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryChildren (20200211095932)
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE `category_children` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `category_parents_id` bigint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_category_children_on_category_parents_id`  (`category_parents_id`), CONSTRAINT `fk_rails_8ac51318be`
+FOREIGN KEY (`category_parents_id`)
+  REFERENCES `category_parents` (`id`)
+)[0m
+  ↳ db/migrate/20200211095932_create_category_children.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095932')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryGrandchildren (20200211095948)
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `category_grandchildren` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `category_children_id` bigint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_category_grandchildren_on_category_children_id`  (`category_children_id`), CONSTRAINT `fk_rails_afebf9ad3b`
+FOREIGN KEY (`category_children_id`)
+  REFERENCES `category_children` (`id`)
+)[0m
+  ↳ db/migrate/20200211095948_create_category_grandchildren.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095948')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBlands (20200211100039)
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE `blands` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211100039_create_blands.rb:3
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE  INDEX `index_blands_on_name`  ON `blands` (`name`) [0m
+  ↳ db/migrate/20200211100039_create_blands.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211100039')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateShippingways (20200211102633)
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE `shippingways` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `status_num` tinyint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211102633_create_shippingways.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211102633')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE `shippings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `area_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `status_num` tinyint NOT NULL, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `postal_number` varchar(255) NOT NULL, `address_city` varchar(255) NOT NULL, `address_number` varchar(255) NOT NULL, `address_building` varchar(255) NOT NULL, `telephone_number` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_shippings_on_user_id`  (`user_id`),  INDEX `index_shippings_on_area_id`  (`area_id`),  INDEX `index_shippings_on_shippingway_id`  (`shippingway_id`), CONSTRAINT `fk_rails_f5a856ceb8`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_908534b8cf`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+, CONSTRAINT `fk_rails_dc52c1a65f`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+)[0m
+  ↳ db/migrate/20200211103433_create_shippings.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211103433')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id` bigint NOT NULL, `category_child_id` bigint NOT NULL, `category_grandchild_id` bigint NOT NULL, `size_num` tinyint NOT NULL, `condition_num` tinyint NOT NULL, `shippingcharge_num` tinyint NOT NULL, `daystoship_num` tinyint NOT NULL, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` int NOT NULL, `feerate` float(24) NOT NULL, `profit_price` int NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id`  (`category_parent_id`),  INDEX `index_items_on_category_child_id`  (`category_child_id`),  INDEX `index_items_on_category_grandchild_id`  (`category_grandchild_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_06b5daee34`
+FOREIGN KEY (`category_parent_id`)
+  REFERENCES `category_parents` (`id`)
+, CONSTRAINT `fk_rails_41c10b37ee`
+FOREIGN KEY (`category_child_id`)
+  REFERENCES `category_children` (`id`)
+, CONSTRAINT `fk_rails_5a1263057f`
+FOREIGN KEY (`category_grandchild_id`)
+  REFERENCES `category_grandchildren` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX `index_items_on_size_num`  ON `items` (`size_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:28
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE  INDEX `index_items_on_condition_num`  ON `items` (`condition_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:29
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE  INDEX `index_items_on_shippingcharge_num`  ON `items` (`shippingcharge_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:30
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE  INDEX `index_items_on_daystoship_num`  ON `items` (`daystoship_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:31
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE  INDEX `index_items_on_title`  ON `items` (`title`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211105004')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItemimages (20200211113010)
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `itemimages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `item_id` bigint NOT NULL, `image` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_itemimages_on_item_id`  (`item_id`), CONSTRAINT `fk_rails_f14cc6cecf`
+FOREIGN KEY (`item_id`)
+  REFERENCES `items` (`id`)
+)[0m
+  ↳ db/migrate/20200211113010_create_itemimages.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211113010')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCreditcards (20200211115443)
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE `creditcards` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `pay_token` varchar(255) NOT NULL, `customer` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_creditcards_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_1d77865bba`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  ↳ db/migrate/20200211115443_create_creditcards.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211115443')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTrades (20200211120823)
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `trades` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `item_id` bigint NOT NULL, `user_id` bigint NOT NULL, `status_num` tinyint NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_trades_on_item_id`  (`item_id`),  INDEX `index_trades_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_ed68c456e1`
+FOREIGN KEY (`item_id`)
+  REFERENCES `items` (`id`)
+, CONSTRAINT `fk_rails_12b0ea7696`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  ↳ db/migrate/20200211120823_create_trades.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211120823')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTrades (20200211120823)
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE `trades`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211120823'[0m
+  ↳ bin/rails:9
+Migrating to CreateCreditcards (20200211115443)
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE `creditcards`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211115443'[0m
+  ↳ bin/rails:9
+Migrating to CreateItemimages (20200211113010)
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE `itemimages`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211113010'[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (8.2ms)[0m  [1m[35mDROP INDEX `index_items_on_title` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[35mDROP INDEX `index_items_on_daystoship_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[35mDROP INDEX `index_items_on_shippingcharge_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.3ms)[0m  [1m[35mDROP INDEX `index_items_on_condition_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.5ms)[0m  [1m[35mDROP INDEX `index_items_on_size_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE `items`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211105004'[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE `shippings`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211103433'[0m
+  ↳ bin/rails:9
+Migrating to CreateShippingways (20200211102633)
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE `shippingways`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211102633'[0m
+  ↳ bin/rails:9
+Migrating to CreateBlands (20200211100039)
+  [1m[35m (7.5ms)[0m  [1m[35mDROP INDEX `index_blands_on_name` ON `blands`[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE `blands`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211100039'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryGrandchildren (20200211095948)
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE `category_grandchildren`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095948'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryChildren (20200211095932)
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE `category_children`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095932'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryParents (20200211095911)
+  [1m[35m (7.4ms)[0m  [1m[35mDROP INDEX `index_category_parents_on_name` ON `category_parents`[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE `category_parents`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095911'[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200210112602)
+  [1m[35m (7.8ms)[0m  [1m[35mDROP INDEX `index_users_on_reset_password_token` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[35mDROP INDEX `index_users_on_email` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (13.2ms)[0m  [1m[35mDROP INDEX `index_users_on_nickname` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE `users`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200210112602'[0m
+  ↳ bin/rails:9
+Migrating to CreateAreas (20200210112600)
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE `areas`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200210112600'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAreas (20200210112600)
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE `areas` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200210112600_create_areas.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200210112600')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200210112602)
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `nickname` varchar(255) DEFAULT '' NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `birthday` date NOT NULL, `postal_number` varchar(255), `area_id` bigint NOT NULL, `address_city` varchar(255), `address_number` varchar(255), `address_building` varchar(255), `telephone_number` varchar(255), `self_image` varchar(255), `self_introduction` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_users_on_area_id`  (`area_id`), CONSTRAINT `fk_rails_8f8a4b3fcb`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+)[0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:5
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_nickname`  ON `users` (`nickname`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:57
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:58
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:59
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200210112602')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryParents (20200211095911)
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE `category_parents` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211095911_create_category_parents.rb:3
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX `index_category_parents_on_name`  ON `category_parents` (`name`) [0m
+  ↳ db/migrate/20200211095911_create_category_parents.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095911')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryChildren (20200211095932)
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `category_children` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `category_parents_id` bigint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_category_children_on_category_parents_id`  (`category_parents_id`), CONSTRAINT `fk_rails_8ac51318be`
+FOREIGN KEY (`category_parents_id`)
+  REFERENCES `category_parents` (`id`)
+)[0m
+  ↳ db/migrate/20200211095932_create_category_children.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095932')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryGrandchildren (20200211095948)
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE `category_grandchildren` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `category_children_id` bigint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_category_grandchildren_on_category_children_id`  (`category_children_id`), CONSTRAINT `fk_rails_afebf9ad3b`
+FOREIGN KEY (`category_children_id`)
+  REFERENCES `category_children` (`id`)
+)[0m
+  ↳ db/migrate/20200211095948_create_category_grandchildren.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095948')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBlands (20200211100039)
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE `blands` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211100039_create_blands.rb:3
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE  INDEX `index_blands_on_name`  ON `blands` (`name`) [0m
+  ↳ db/migrate/20200211100039_create_blands.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211100039')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateShippingways (20200211102633)
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE `shippingways` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `status_num` tinyint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211102633_create_shippingways.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211102633')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE `shippings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `area_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `status_num` tinyint NOT NULL, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `postal_number` varchar(255) NOT NULL, `address_city` varchar(255) NOT NULL, `address_number` varchar(255) NOT NULL, `address_building` varchar(255) NOT NULL, `telephone_number` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_shippings_on_user_id`  (`user_id`),  INDEX `index_shippings_on_area_id`  (`area_id`),  INDEX `index_shippings_on_shippingway_id`  (`shippingway_id`), CONSTRAINT `fk_rails_f5a856ceb8`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_908534b8cf`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+, CONSTRAINT `fk_rails_dc52c1a65f`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+)[0m
+  ↳ db/migrate/20200211103433_create_shippings.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211103433')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id` bigint NOT NULL, `category_child_id` bigint NOT NULL, `category_grandchild_id` bigint NOT NULL, `size_num` tinyint NOT NULL, `condition_num` tinyint NOT NULL, `shippingcharge_num` tinyint NOT NULL, `daystoship_num` tinyint NOT NULL, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` decimal(10,3) NOT NULL, `feerate` decimal(4,3) NOT NULL, `profit_price` decimal(10,3) NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id`  (`category_parent_id`),  INDEX `index_items_on_category_child_id`  (`category_child_id`),  INDEX `index_items_on_category_grandchild_id`  (`category_grandchild_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_06b5daee34`
+FOREIGN KEY (`category_parent_id`)
+  REFERENCES `category_parents` (`id`)
+, CONSTRAINT `fk_rails_41c10b37ee`
+FOREIGN KEY (`category_child_id`)
+  REFERENCES `category_children` (`id`)
+, CONSTRAINT `fk_rails_5a1263057f`
+FOREIGN KEY (`category_grandchild_id`)
+  REFERENCES `category_grandchildren` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE  INDEX `index_items_on_size_num`  ON `items` (`size_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:28
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE  INDEX `index_items_on_condition_num`  ON `items` (`condition_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:29
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX `index_items_on_shippingcharge_num`  ON `items` (`shippingcharge_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:30
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX `index_items_on_daystoship_num`  ON `items` (`daystoship_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:31
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE  INDEX `index_items_on_title`  ON `items` (`title`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211105004')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItemimages (20200211113010)
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE `itemimages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `item_id` bigint NOT NULL, `image` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_itemimages_on_item_id`  (`item_id`), CONSTRAINT `fk_rails_f14cc6cecf`
+FOREIGN KEY (`item_id`)
+  REFERENCES `items` (`id`)
+)[0m
+  ↳ db/migrate/20200211113010_create_itemimages.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211113010')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCreditcards (20200211115443)
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE `creditcards` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `pay_token` varchar(255) NOT NULL, `customer` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_creditcards_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_1d77865bba`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  ↳ db/migrate/20200211115443_create_creditcards.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211115443')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTrades (20200211120823)
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE `trades` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `item_id` bigint NOT NULL, `user_id` bigint NOT NULL, `status_num` tinyint NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_trades_on_item_id`  (`item_id`),  INDEX `index_trades_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_ed68c456e1`
+FOREIGN KEY (`item_id`)
+  REFERENCES `items` (`id`)
+, CONSTRAINT `fk_rails_12b0ea7696`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  ↳ db/migrate/20200211120823_create_trades.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211120823')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTrades (20200211120823)
+  [1m[35m (4.7ms)[0m  [1m[35mDROP TABLE `trades`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (3.8ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211120823'[0m
+  ↳ bin/rails:9
+Migrating to CreateCreditcards (20200211115443)
+  [1m[35m (6.8ms)[0m  [1m[35mDROP TABLE `creditcards`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211115443'[0m
+  ↳ bin/rails:9
+Migrating to CreateItemimages (20200211113010)
+  [1m[35m (5.5ms)[0m  [1m[35mDROP TABLE `itemimages`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211113010'[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (12.2ms)[0m  [1m[35mDROP INDEX `index_items_on_title` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.9ms)[0m  [1m[35mDROP INDEX `index_items_on_daystoship_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (9.1ms)[0m  [1m[35mDROP INDEX `index_items_on_shippingcharge_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.5ms)[0m  [1m[35mDROP INDEX `index_items_on_condition_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.1ms)[0m  [1m[35mDROP INDEX `index_items_on_size_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE `items`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211105004'[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (6.2ms)[0m  [1m[35mDROP TABLE `shippings`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211103433'[0m
+  ↳ bin/rails:9
+Migrating to CreateShippingways (20200211102633)
+  [1m[35m (5.7ms)[0m  [1m[35mDROP TABLE `shippingways`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211102633'[0m
+  ↳ bin/rails:9
+Migrating to CreateBlands (20200211100039)
+  [1m[35m (11.3ms)[0m  [1m[35mDROP INDEX `index_blands_on_name` ON `blands`[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE `blands`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211100039'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryGrandchildren (20200211095948)
+  [1m[35m (5.2ms)[0m  [1m[35mDROP TABLE `category_grandchildren`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095948'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryChildren (20200211095932)
+  [1m[35m (5.7ms)[0m  [1m[35mDROP TABLE `category_children`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095932'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryParents (20200211095911)
+  [1m[35m (13.8ms)[0m  [1m[35mDROP INDEX `index_category_parents_on_name` ON `category_parents`[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE `category_parents`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095911'[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200210112602)
+  [1m[35m (11.4ms)[0m  [1m[35mDROP INDEX `index_users_on_reset_password_token` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.9ms)[0m  [1m[35mDROP INDEX `index_users_on_email` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.8ms)[0m  [1m[35mDROP INDEX `index_users_on_nickname` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE `users`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200210112602'[0m
+  ↳ bin/rails:9
+Migrating to CreateAreas (20200210112600)
+  [1m[35m (5.5ms)[0m  [1m[35mDROP TABLE `areas`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.8ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200210112600'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAreas (20200210112600)
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `areas` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200210112600_create_areas.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200210112600')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200210112602)
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `nickname` varchar(255) DEFAULT '' NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `birthday` date NOT NULL, `postal_number` varchar(255), `area_id` bigint NOT NULL, `address_city` varchar(255), `address_number` varchar(255), `address_building` varchar(255), `telephone_number` varchar(255), `self_image` varchar(255), `self_introduction` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_users_on_area_id`  (`area_id`), CONSTRAINT `fk_rails_8f8a4b3fcb`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+)[0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:5
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_nickname`  ON `users` (`nickname`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:57
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:58
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:59
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200210112602')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryParents (20200211095911)
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE `category_parents` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211095911_create_category_parents.rb:3
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE  INDEX `index_category_parents_on_name`  ON `category_parents` (`name`) [0m
+  ↳ db/migrate/20200211095911_create_category_parents.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095911')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryChildren (20200211095932)
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE `category_children` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `category_parents_id` bigint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_category_children_on_category_parents_id`  (`category_parents_id`), CONSTRAINT `fk_rails_8ac51318be`
+FOREIGN KEY (`category_parents_id`)
+  REFERENCES `category_parents` (`id`)
+)[0m
+  ↳ db/migrate/20200211095932_create_category_children.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095932')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryGrandchildren (20200211095948)
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE `category_grandchildren` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `category_children_id` bigint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_category_grandchildren_on_category_children_id`  (`category_children_id`), CONSTRAINT `fk_rails_afebf9ad3b`
+FOREIGN KEY (`category_children_id`)
+  REFERENCES `category_children` (`id`)
+)[0m
+  ↳ db/migrate/20200211095948_create_category_grandchildren.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095948')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBlands (20200211100039)
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE `blands` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211100039_create_blands.rb:3
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE  INDEX `index_blands_on_name`  ON `blands` (`name`) [0m
+  ↳ db/migrate/20200211100039_create_blands.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211100039')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateShippingways (20200211102633)
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE `shippingways` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `status_num` tinyint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211102633_create_shippingways.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211102633')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `shippings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `area_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `status_num` tinyint NOT NULL, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `postal_number` varchar(255) NOT NULL, `address_city` varchar(255) NOT NULL, `address_number` varchar(255) NOT NULL, `address_building` varchar(255) NOT NULL, `telephone_number` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_shippings_on_user_id`  (`user_id`),  INDEX `index_shippings_on_area_id`  (`area_id`),  INDEX `index_shippings_on_shippingway_id`  (`shippingway_id`), CONSTRAINT `fk_rails_f5a856ceb8`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_908534b8cf`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+, CONSTRAINT `fk_rails_dc52c1a65f`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+)[0m
+  ↳ db/migrate/20200211103433_create_shippings.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211103433')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id` bigint NOT NULL, `category_child_id` bigint NOT NULL, `category_grandchild_id` bigint NOT NULL, `size_num` tinyint unsigned NOT NULL, `condition_num` tinyint unsigned NOT NULL, `shippingcharge_num` tinyint unsigned NOT NULL, `daystoship_num` tinyint unsigned NOT NULL, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` decimal(10,3) NOT NULL, `feerate` decimal(4,3) NOT NULL, `profit_price` decimal(10,3) NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id`  (`category_parent_id`),  INDEX `index_items_on_category_child_id`  (`category_child_id`),  INDEX `index_items_on_category_grandchild_id`  (`category_grandchild_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_06b5daee34`
+FOREIGN KEY (`category_parent_id`)
+  REFERENCES `category_parents` (`id`)
+, CONSTRAINT `fk_rails_41c10b37ee`
+FOREIGN KEY (`category_child_id`)
+  REFERENCES `category_children` (`id`)
+, CONSTRAINT `fk_rails_5a1263057f`
+FOREIGN KEY (`category_grandchild_id`)
+  REFERENCES `category_grandchildren` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE  INDEX `index_items_on_size_num`  ON `items` (`size_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:28
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE  INDEX `index_items_on_condition_num`  ON `items` (`condition_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:29
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE  INDEX `index_items_on_shippingcharge_num`  ON `items` (`shippingcharge_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:30
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE  INDEX `index_items_on_daystoship_num`  ON `items` (`daystoship_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:31
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE  INDEX `index_items_on_title`  ON `items` (`title`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211105004')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItemimages (20200211113010)
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE `itemimages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `item_id` bigint NOT NULL, `image` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_itemimages_on_item_id`  (`item_id`), CONSTRAINT `fk_rails_f14cc6cecf`
+FOREIGN KEY (`item_id`)
+  REFERENCES `items` (`id`)
+)[0m
+  ↳ db/migrate/20200211113010_create_itemimages.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211113010')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCreditcards (20200211115443)
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `creditcards` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `pay_token` varchar(255) NOT NULL, `customer` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_creditcards_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_1d77865bba`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  ↳ db/migrate/20200211115443_create_creditcards.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211115443')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTrades (20200211120823)
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE `trades` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `item_id` bigint NOT NULL, `user_id` bigint NOT NULL, `status_num` tinyint NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_trades_on_item_id`  (`item_id`),  INDEX `index_trades_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_ed68c456e1`
+FOREIGN KEY (`item_id`)
+  REFERENCES `items` (`id`)
+, CONSTRAINT `fk_rails_12b0ea7696`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  ↳ db/migrate/20200211120823_create_trades.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211120823')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateTrades (20200211120823)
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE `trades`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211120823'[0m
+  ↳ bin/rails:9
+Migrating to CreateCreditcards (20200211115443)
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE `creditcards`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211115443'[0m
+  ↳ bin/rails:9
+Migrating to CreateItemimages (20200211113010)
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE `itemimages`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211113010'[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (8.3ms)[0m  [1m[35mDROP INDEX `index_items_on_title` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.8ms)[0m  [1m[35mDROP INDEX `index_items_on_daystoship_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.2ms)[0m  [1m[35mDROP INDEX `index_items_on_shippingcharge_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.7ms)[0m  [1m[35mDROP INDEX `index_items_on_condition_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[35mDROP INDEX `index_items_on_size_num` ON `items`[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE `items`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211105004'[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE `shippings`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211103433'[0m
+  ↳ bin/rails:9
+Migrating to CreateShippingways (20200211102633)
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE `shippingways`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211102633'[0m
+  ↳ bin/rails:9
+Migrating to CreateBlands (20200211100039)
+  [1m[35m (7.2ms)[0m  [1m[35mDROP INDEX `index_blands_on_name` ON `blands`[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE `blands`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211100039'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryGrandchildren (20200211095948)
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE `category_grandchildren`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095948'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryChildren (20200211095932)
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE `category_children`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095932'[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryParents (20200211095911)
+  [1m[35m (6.9ms)[0m  [1m[35mDROP INDEX `index_category_parents_on_name` ON `category_parents`[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE `category_parents`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200211095911'[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200210112602)
+  [1m[35m (8.4ms)[0m  [1m[35mDROP INDEX `index_users_on_reset_password_token` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (8.7ms)[0m  [1m[35mDROP INDEX `index_users_on_email` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[35mDROP INDEX `index_users_on_nickname` ON `users`[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE `users`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200210112602'[0m
+  ↳ bin/rails:9
+Migrating to CreateAreas (20200210112600)
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE `areas`[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20200210112600'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT GET_LOCK('715708251904219350', 0)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAreas (20200210112600)
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE `areas` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200210112600_create_areas.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200210112600')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20200210112602)
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `nickname` varchar(255) DEFAULT '' NOT NULL, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `birthday` date NOT NULL, `postal_number` varchar(255), `area_id` bigint NOT NULL, `address_city` varchar(255), `address_number` varchar(255), `address_building` varchar(255), `telephone_number` varchar(255), `self_image` varchar(255), `self_introduction` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_users_on_area_id`  (`area_id`), CONSTRAINT `fk_rails_8f8a4b3fcb`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+)[0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:5
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_nickname`  ON `users` (`nickname`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:57
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:58
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  ↳ db/migrate/20200210112602_devise_create_users.rb:59
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200210112602')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryParents (20200211095911)
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `category_parents` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211095911_create_category_parents.rb:3
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE  INDEX `index_category_parents_on_name`  ON `category_parents` (`name`) [0m
+  ↳ db/migrate/20200211095911_create_category_parents.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095911')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryChildren (20200211095932)
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `category_children` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `category_parents_id` bigint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_category_children_on_category_parents_id`  (`category_parents_id`), CONSTRAINT `fk_rails_8ac51318be`
+FOREIGN KEY (`category_parents_id`)
+  REFERENCES `category_parents` (`id`)
+)[0m
+  ↳ db/migrate/20200211095932_create_category_children.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095932')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCategoryGrandchildren (20200211095948)
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE `category_grandchildren` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `category_children_id` bigint NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_category_grandchildren_on_category_children_id`  (`category_children_id`), CONSTRAINT `fk_rails_afebf9ad3b`
+FOREIGN KEY (`category_children_id`)
+  REFERENCES `category_children` (`id`)
+)[0m
+  ↳ db/migrate/20200211095948_create_category_grandchildren.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211095948')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateBlands (20200211100039)
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE `blands` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211100039_create_blands.rb:3
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE  INDEX `index_blands_on_name`  ON `blands` (`name`) [0m
+  ↳ db/migrate/20200211100039_create_blands.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211100039')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateShippingways (20200211102633)
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE `shippingways` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `status_num` tinyint unsigned NOT NULL, `name` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/migrate/20200211102633_create_shippingways.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211102633')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateShippings (20200211103433)
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE `shippings` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `area_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `status_num` tinyint unsigned NOT NULL, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `first_name_kana` varchar(255) NOT NULL, `last_name_kana` varchar(255) NOT NULL, `postal_number` varchar(255) NOT NULL, `address_city` varchar(255) NOT NULL, `address_number` varchar(255) NOT NULL, `address_building` varchar(255) NOT NULL, `telephone_number` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_shippings_on_user_id`  (`user_id`),  INDEX `index_shippings_on_area_id`  (`area_id`),  INDEX `index_shippings_on_shippingway_id`  (`shippingway_id`), CONSTRAINT `fk_rails_f5a856ceb8`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_908534b8cf`
+FOREIGN KEY (`area_id`)
+  REFERENCES `areas` (`id`)
+, CONSTRAINT `fk_rails_dc52c1a65f`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+)[0m
+  ↳ db/migrate/20200211103433_create_shippings.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211103433')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200211105004)
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE `items` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `bland_id` bigint NOT NULL, `shippingway_id` bigint NOT NULL, `category_parent_id` bigint NOT NULL, `category_child_id` bigint NOT NULL, `category_grandchild_id` bigint NOT NULL, `size_num` tinyint unsigned NOT NULL, `condition_num` tinyint unsigned NOT NULL, `shippingcharge_num` tinyint unsigned NOT NULL, `daystoship_num` tinyint unsigned NOT NULL, `title` varchar(255) NOT NULL, `description` text NOT NULL, `price` decimal(10,3) NOT NULL, `feerate` decimal(4,3) NOT NULL, `profit_price` decimal(10,3) NOT NULL, `sold_at` datetime, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_items_on_user_id`  (`user_id`),  INDEX `index_items_on_bland_id`  (`bland_id`),  INDEX `index_items_on_shippingway_id`  (`shippingway_id`),  INDEX `index_items_on_category_parent_id`  (`category_parent_id`),  INDEX `index_items_on_category_child_id`  (`category_child_id`),  INDEX `index_items_on_category_grandchild_id`  (`category_grandchild_id`), CONSTRAINT `fk_rails_d4b6334db2`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+, CONSTRAINT `fk_rails_f26b0c11ca`
+FOREIGN KEY (`bland_id`)
+  REFERENCES `blands` (`id`)
+, CONSTRAINT `fk_rails_6298702344`
+FOREIGN KEY (`shippingway_id`)
+  REFERENCES `shippingways` (`id`)
+, CONSTRAINT `fk_rails_06b5daee34`
+FOREIGN KEY (`category_parent_id`)
+  REFERENCES `category_parents` (`id`)
+, CONSTRAINT `fk_rails_41c10b37ee`
+FOREIGN KEY (`category_child_id`)
+  REFERENCES `category_children` (`id`)
+, CONSTRAINT `fk_rails_5a1263057f`
+FOREIGN KEY (`category_grandchild_id`)
+  REFERENCES `category_grandchildren` (`id`)
+)[0m
+  ↳ db/migrate/20200211105004_create_items.rb:3
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE  INDEX `index_items_on_size_num`  ON `items` (`size_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:28
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE  INDEX `index_items_on_condition_num`  ON `items` (`condition_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:29
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE  INDEX `index_items_on_shippingcharge_num`  ON `items` (`shippingcharge_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:30
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE  INDEX `index_items_on_daystoship_num`  ON `items` (`daystoship_num`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:31
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE  INDEX `index_items_on_title`  ON `items` (`title`) [0m
+  ↳ db/migrate/20200211105004_create_items.rb:32
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211105004')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateItemimages (20200211113010)
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE `itemimages` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `item_id` bigint NOT NULL, `image` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_itemimages_on_item_id`  (`item_id`), CONSTRAINT `fk_rails_f14cc6cecf`
+FOREIGN KEY (`item_id`)
+  REFERENCES `items` (`id`)
+)[0m
+  ↳ db/migrate/20200211113010_create_itemimages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211113010')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCreditcards (20200211115443)
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE `creditcards` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `user_id` bigint NOT NULL, `pay_token` varchar(255) NOT NULL, `customer` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_creditcards_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_1d77865bba`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  ↳ db/migrate/20200211115443_create_creditcards.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211115443')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateTrades (20200211120823)
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE `trades` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `item_id` bigint NOT NULL, `user_id` bigint NOT NULL, `status_num` tinyint unsigned NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL,  INDEX `index_trades_on_item_id`  (`item_id`),  INDEX `index_trades_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_ed68c456e1`
+FOREIGN KEY (`item_id`)
+  REFERENCES `items` (`id`)
+, CONSTRAINT `fk_rails_12b0ea7696`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  ↳ db/migrate/20200211120823_create_trades.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20200211120823')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('715708251904219350')[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/taka0/.rbenv/versions/2.5.1/bin/erd:23
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/taka0/.rbenv/versions/2.5.1/bin/erd:23

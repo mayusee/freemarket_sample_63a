@@ -72,15 +72,15 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
     t.bigint "category_parent_id", null: false
     t.bigint "category_child_id", null: false
     t.bigint "category_grandchild_id", null: false
-    t.integer "size_num", null: false
-    t.integer "condition_num", null: false
-    t.integer "shippingcharge_num", null: false
-    t.integer "daystoship_num", null: false
+    t.integer "size_num", limit: 1, null: false, unsigned: true
+    t.integer "condition_num", limit: 1, null: false, unsigned: true
+    t.integer "shippingcharge_num", limit: 1, null: false, unsigned: true
+    t.integer "daystoship_num", limit: 1, null: false, unsigned: true
     t.string "title", null: false
     t.text "description", null: false
-    t.integer "price", null: false
-    t.float "feerate", null: false
-    t.integer "profit_price", null: false
+    t.decimal "price", precision: 10, scale: 3, null: false
+    t.decimal "feerate", precision: 4, scale: 3, null: false
+    t.decimal "profit_price", precision: 10, scale: 3, null: false
     t.datetime "sold_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
     t.bigint "user_id", null: false
     t.bigint "area_id", null: false
     t.bigint "shippingway_id", null: false
-    t.integer "status_num", null: false
+    t.integer "status_num", limit: 1, null: false, unsigned: true
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
   end
 
   create_table "shippingways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "status_num", null: false
+    t.integer "status_num", limit: 1, null: false, unsigned: true
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -128,7 +128,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
   create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.bigint "user_id", null: false
-    t.integer "status_num", null: false
+    t.integer "status_num", limit: 1, null: false, unsigned: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_trades_on_item_id"
