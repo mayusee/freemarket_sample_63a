@@ -57,7 +57,7 @@ Things you may want to cover:
 ## Itemテーブル
 |Column|Type|Options|
 |------|----|-------|
-|bland_id|reference|null: false, foreign_key: true|
+|brand_id|reference|null: false, foreign_key: true|
 |category_child_id|reference|null: false, foreign_key: true|
 |category_grandchild_id|reference|null: false, foreign_key: true|
 |category_parent_id|reference|null: false, foreign_key: true|
@@ -77,7 +77,7 @@ Things you may want to cover:
 ### Association
 - belongs_to    :user
 - belongs_to    :shippingway
-- belongs_to    :bland
+- belongs_to    :brand
 - belongs_to    :category_parent
 - belongs_to    :category_child
 - belongs_to    :category_grandchild
@@ -125,7 +125,7 @@ Things you may want to cover:
 - has_many :items
 - has_many :shippings
 
-## Blandテーブル
+## Brandテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index: true|
@@ -138,7 +138,6 @@ Things you may want to cover:
 |------|----|-------|
 |item_id|reference|null: false, foreign_key: true|
 |status_num|integer|null: false, limit: 1, unsigned: true|
-|item_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
