@@ -41,11 +41,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string     :first_name_kana,    null: false
       t.string     :last_name_kana,     null: false
       t.date       :birthday,           null: false
-      t.string     :postal_number
-      t.references :area,               null: false, foreign_key: true
-      t.string     :address_city
-      t.string     :address_number
-      t.string     :address_building
       t.string     :telephone_number
 
       t.string     :self_image

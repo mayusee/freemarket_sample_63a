@@ -1,6 +1,6 @@
 class Area < ApplicationRecord
   # associations
   has_many :users
-  has_many :shippings
+  has_many :addresses
 
 end

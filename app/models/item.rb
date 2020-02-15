@@ -3,9 +3,7 @@ class Item < ApplicationRecord
   belongs_to    :user
   belongs_to    :shippingway
   belongs_to    :brand
-  belongs_to    :category_parent
-  belongs_to    :category_child
-  belongs_to    :category_grandchild
+  belongs_to    :category
 
   has_many      :itemimages
 
