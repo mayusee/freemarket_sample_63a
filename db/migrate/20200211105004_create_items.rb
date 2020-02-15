@@ -3,7 +3,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
     create_table :items do |t|
       # references
       t.references :user,                   null: false, foreign_key: true
-      t.references :bland,                  null: false, foreign_key: true
+      t.references :brand,                  null: false, foreign_key: true
       t.references :shippingway,            null: false, foreign_key: true
       t.references :category_parent,        null: false, foreign_key: true
       t.references :category_child,         null: false, foreign_key: true

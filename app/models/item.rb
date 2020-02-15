@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   # associations
   belongs_to    :user
   belongs_to    :shippingway
-  belongs_to    :bland
+  belongs_to    :brand
   belongs_to    :category_parent
   belongs_to    :category_child
   belongs_to    :category_grandchild

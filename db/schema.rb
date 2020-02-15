@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "blands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_blands_on_name"
+    t.index ["name"], name: "index_brands_on_name"
   end
 
   create_table "category_children", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "bland_id", null: false
+    t.bigint "brand_id", null: false
     t.bigint "shippingway_id", null: false
     t.bigint "category_parent_id", null: false
     t.bigint "category_child_id", null: false
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
     t.datetime "sold_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bland_id"], name: "index_items_on_bland_id"
+    t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_child_id"], name: "index_items_on_category_child_id"
     t.index ["category_grandchild_id"], name: "index_items_on_category_grandchild_id"
     t.index ["category_parent_id"], name: "index_items_on_category_parent_id"
@@ -169,7 +169,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
   add_foreign_key "category_grandchildren", "category_children"
   add_foreign_key "creditcards", "users"
   add_foreign_key "itemimages", "items"
-  add_foreign_key "items", "blands"
+  add_foreign_key "items", "brands"
   add_foreign_key "items", "category_children"
   add_foreign_key "items", "category_grandchildren"
   add_foreign_key "items", "category_parents"
