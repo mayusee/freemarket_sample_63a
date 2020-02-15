@@ -26,19 +26,21 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
   end
 
   create_table "category_children", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "category_parents_id", null: false
+    t.bigint "category_parent_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_parents_id"], name: "index_category_children_on_category_parents_id"
+    t.index ["category_parent_id"], name: "index_category_children_on_category_parent_id"
+    t.index ["name"], name: "index_category_children_on_name"
   end
 
   create_table "category_grandchildren", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "category_children_id", null: false
+    t.bigint "category_child_id", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["category_children_id"], name: "index_category_grandchildren_on_category_children_id"
+    t.index ["category_child_id"], name: "index_category_grandchildren_on_category_child_id"
+    t.index ["name"], name: "index_category_grandchildren_on_name"
   end
 
   create_table "category_parents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -163,8 +165,8 @@ ActiveRecord::Schema.define(version: 2020_02_11_120823) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "category_children", "category_parents", column: "category_parents_id"
-  add_foreign_key "category_grandchildren", "category_children", column: "category_children_id"
+  add_foreign_key "category_children", "category_parents"
+  add_foreign_key "category_grandchildren", "category_children"
   add_foreign_key "creditcards", "users"
   add_foreign_key "itemimages", "items"
   add_foreign_key "items", "blands"
