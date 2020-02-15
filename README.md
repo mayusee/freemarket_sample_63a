@@ -30,7 +30,7 @@ Things you may want to cover:
 |address_building|string||
 |address_city|string||
 |address_number|string||
-|area_id|reference|null: false, foreign_key;true|
+|area_id|reference|null: false, foreign_key:true|
 |birthday|date|null: false|
 |email|string|null: false, unique: true|
 |encrypted_password|string|null: false|
@@ -57,10 +57,10 @@ Things you may want to cover:
 ## Itemテーブル
 |Column|Type|Options|
 |------|----|-------|
-|bland_id|reference|null: false, foreign_key;true|
-|category_child_id|reference|null: false, foreign_key;true|
-|category_grandchild_id|reference|null: false, foreign_key;true|
-|category_parent_id|reference|null: false, foreign_key;true|
+|bland_id|reference|null: false, foreign_key: true|
+|category_child_id|reference|null: false, foreign_key: true|
+|category_grandchild_id|reference|null: false, foreign_key: true|
+|category_parent_id|reference|null: false, foreign_key: true|
 |condition_num|integer|null: false, limit: 1, unsigned: true|
 |daystoship_num|integer|null: false, limit: 1, unsigned: true|
 |description|text|null: false|
@@ -68,11 +68,11 @@ Things you may want to cover:
 |price|decimal|null: false, precision: 10, scale: 3|
 |profit_price|desimal|null: false, precision: 10, scale: 3|
 |shippingcharge_num|integer|null: false, limit: 1, unsigned: true|
-|shippingway_id|references|null: false, foreign_key;true|
+|shippingway_id|references|null: false, foreign_key: true|
 |size_num|integer|null: false, limit: 1, unsigned: true|
 |sold_at|datetime||
 |title|string|null: false|
-|user_id|references|null: false, foreign_key;true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to    :user
@@ -81,6 +81,7 @@ Things you may want to cover:
 - belongs_to    :category_parent
 - belongs_to    :category_child
 - belongs_to    :category_grandchild
+- belongs_to    :shipping
 
 - has_many      :itemimages
 - has_one       :trade
