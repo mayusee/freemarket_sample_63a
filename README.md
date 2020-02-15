@@ -32,17 +32,17 @@ Things you may want to cover:
 |address_number|string||
 |area_id|reference|null: false, foreign_key:true|
 |birthday|date|null: false|
-|email|string|null: false, unique: true|
+|email|string|null: false, index: true, unique: true|
 |encrypted_password|string|null: false|
 |first_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name|string|null: false|
 |last_name_kana|string|null: false|
-|nickname|string|null: false, unique: true|
+|nickname|string|null: false, index: true, unique: true|
 |postal_number|string||
 |remember_created_at|datetime||
 |reset_password_sent_at|datetime||
-|reset_password_token|string|unique: true|
+|reset_password_token|string|index: true, unique: true|
 |self_image|string||
 |self_introduction|text||
 |telephone_number|string||
@@ -61,17 +61,17 @@ Things you may want to cover:
 |category_child_id|reference|null: false, foreign_key: true|
 |category_grandchild_id|reference|null: false, foreign_key: true|
 |category_parent_id|reference|null: false, foreign_key: true|
-|condition_num|integer|null: false, limit: 1, unsigned: true|
-|daystoship_num|integer|null: false, limit: 1, unsigned: true|
+|condition_num|integer|null: false, limit: 1, unsigned: true, index: true|
+|daystoship_num|integer|null: false, limit: 1, unsigned: true, index: true|
 |description|text|null: false|
 |feerate|decimal|null: false, precision: 4, scale: 3|
 |price|decimal|null: false, precision: 10, scale: 3|
 |profit_price|desimal|null: false, precision: 10, scale: 3|
-|shippingcharge_num|integer|null: false, limit: 1, unsigned: true|
+|shippingcharge_num|integer|null: false, limit: 1, unsigned: true, index: true|
 |shippingway_id|references|null: false, foreign_key: true|
-|size_num|integer|null: false, limit: 1, unsigned: true|
+|size_num|integer|null: false, limit: 1, unsigned: true, index: true|
 |sold_at|datetime||
-|title|string|null: false|
+|title|string|null: false, index: true|
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -81,10 +81,10 @@ Things you may want to cover:
 - belongs_to    :category_parent
 - belongs_to    :category_child
 - belongs_to    :category_grandchild
-- belongs_to    :shipping
 
 - has_many      :itemimages
 - has_one       :trade
+- has_one       :shipping
 
 ## Areaテーブル
 |Column|Type|Options|
@@ -128,7 +128,7 @@ Things you may want to cover:
 ## Blandテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 
 ### Association
 - has_many :items
@@ -170,7 +170,7 @@ Things you may want to cover:
 ## CatetgoryParentテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null:false|
+|name|string|null:false, index: true|
 
 ### Association
 - has_many :items
@@ -180,7 +180,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |category_parents_id|reference|null: false, foreign_key: true|
-|name|string|null:false|
+|name|string|null:false, index: true|
 
 ### Association
 - has_many :items
@@ -191,8 +191,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |category_children_id|reference|null: false, foreign_key: true|
-|name|string|null:false|
-
+|name|string|null:false, index: true|
 ### Association
 - has_many :items
 - belongs_to :Catetgory_Child
