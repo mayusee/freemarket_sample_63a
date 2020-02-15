@@ -32,17 +32,17 @@ Things you may want to cover:
 |address_number|string||
 |area_id|reference|null: false, foreign_key;true|
 |birthday|date|null: false|
-|email|string|null: false|
+|email|string|null: false, unique: true|
 |encrypted_password|string|null: false|
 |first_name|string|null: false|
 |first_name_kana|string|null: false|
 |last_name|string|null: false|
 |last_name_kana|string|null: false|
-|nickname|string|null: false|
+|nickname|string|null: false, unique: true|
 |postal_number|string||
 |remember_created_at|datetime||
 |reset_password_sent_at|datetime||
-|reset_password_token|string||
+|reset_password_token|string|unique: true|
 |self_image|string||
 |self_introduction|text||
 |telephone_number|string||
@@ -52,6 +52,7 @@ Things you may want to cover:
 - has_many   :items
 - has_many   :creditcards
 - has_many   :trades
+- has_many   :shippings
 
 ## Itemテーブル
 |Column|Type|Options|
@@ -60,27 +61,29 @@ Things you may want to cover:
 |category_child_id|reference|null: false, foreign_key;true|
 |category_grandchild_id|reference|null: false, foreign_key;true|
 |category_parent_id|reference|null: false, foreign_key;true|
-|condition_num|integer||
-|daystoship_num|integer||
+|condition_num|integer|null: false, limit: 1, unsigned: true|
+|daystoship_num|integer|null: false, limit: 1, unsigned: true|
 |description|text|null: false|
-|feerate|float|null: false|
-|price|integer|null: false|
-|profit_price|integer|null: false|
-|shippingcharge_num|integer||
+|feerate|decimal|null: false, precision: 4, scale: 3|
+|price|decimal|null: false, precision: 10, scale: 3|
+|profit_price|desimal|null: false, precision: 10, scale: 3|
+|shippingcharge_num|integer|null: false, limit: 1, unsigned: true|
 |shippingway_id|references|null: false, foreign_key;true|
-|size_num|integer|||
-|sold_at|datetime|||
+|size_num|integer|null: false, limit: 1, unsigned: true|
+|sold_at|datetime||
 |title|string|null: false|
 |user_id|references|null: false, foreign_key;true|
 
 ### Association
-- belongs_to :user
-- has_many   :blands 
-- has_many   :shippingways 
-- has_many   :category_parents 
-- has_many   :category_children 
-- has_many   :category_grandchildren 
-- has_one    :trade 
+- belongs_to    :user
+- belongs_to    :shippingway
+- belongs_to    :bland
+- belongs_to    :category_parent
+- belongs_to    :category_child
+- belongs_to    :category_grandchild
+
+- has_many      :itemimages
+- has_one       :trade
 
 ## Areaテーブル
 |Column|Type|Options|
@@ -89,7 +92,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :users
-- has_many :items
+- has_many :shippings
 
 
 ## Creditcardテーブル
@@ -115,10 +118,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|status_num|integer||
+|status_num|integer|null: false, limit: 1, unsigned: true|
 
 ### Association
-- belongs_to :item
+- has_many :items
+- has_many :shippings
 
 ## Blandテーブル
 |Column|Type|Options|
@@ -126,18 +130,18 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- belongs_to :item
+- has_many :items
 
 ## Tradeテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|reference|null: false, foreign_key: true|
-|status_num|integer||
+|status_num|integer|null: false, limit: 1, unsigned: true|
 |item_id|reference|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :item
 - belongs_to :user
+- has_one    :item
 
 ## Shippingテーブル
 |Column|Type|Options|
@@ -152,14 +156,15 @@ Things you may want to cover:
 |last_name_kana|string|null: false|
 |postal_number|string|null: false|
 |shippingway_id|reference|null: false, foreign_key: true|
-|status_num|integer||
+|status_num|integer|null: false, limit: 1, unsigned: true|
 |telephone_number|string|null: false|
 |user_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :area
-- belongs_to :shipping
+- belongs_to :shippingway
 - belongs_to :user
+- belongs_to :item
 
 ## CatetgoryParentテーブル
 |Column|Type|Options|
@@ -167,7 +172,7 @@ Things you may want to cover:
 |name|string|null:false|
 
 ### Association
-- belongs_to :item
+- has_many :items
 - has_many :CatetgoryChildren
 
 ## CatetgoryChildテーブル
@@ -177,7 +182,7 @@ Things you may want to cover:
 |name|string|null:false|
 
 ### Association
-- belongs_to :item
+- has_many :items
 - belongs_to :CatetgoryParent
 - has_many :CatetgoryGrandchildren
 
@@ -188,5 +193,5 @@ Things you may want to cover:
 |name|string|null:false|
 
 ### Association
-- belongs_to :item
+- has_many :items
 - belongs_to :Catetgory_Child
