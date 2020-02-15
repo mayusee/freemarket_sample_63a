@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_223412) do
+ActiveRecord::Schema.define(version: 2020_02_15_103657) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -58,12 +58,12 @@ ActiveRecord::Schema.define(version: 2020_02_15_223412) do
     t.index ["user_id"], name: "index_creditcards_on_user_id"
   end
 
-  create_table "itemimages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_itemimages_on_item_id"
+    t.index ["item_id"], name: "index_item_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -139,8 +139,6 @@ ActiveRecord::Schema.define(version: 2020_02_15_223412) do
     t.text "self_introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "address_id"
-    t.index ["address_id"], name: "index_users_on_address_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["nickname"], name: "index_users_on_nickname", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -149,7 +147,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_223412) do
   add_foreign_key "addresses", "areas"
   add_foreign_key "addresses", "users"
   add_foreign_key "creditcards", "users"
-  add_foreign_key "itemimages", "items"
+  add_foreign_key "item_images", "items"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "shippingways"
@@ -159,5 +157,4 @@ ActiveRecord::Schema.define(version: 2020_02_15_223412) do
   add_foreign_key "shippings", "users"
   add_foreign_key "trades", "items"
   add_foreign_key "trades", "users"
-  add_foreign_key "users", "addresses"
 end
