@@ -27,10 +27,7 @@ Things you may want to cover:
 ## Userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|address_building|string||
-|address_city|string||
-|address_number|string||
-|area_id|reference|null: false, foreign_key:true|
+|address_id|reference|null: false, foreign_key:true|
 |birthday|date|null: false|
 |email|string|null: false, index: true, unique: true|
 |encrypted_password|string|null: false|
@@ -39,7 +36,6 @@ Things you may want to cover:
 |last_name|string|null: false|
 |last_name_kana|string|null: false|
 |nickname|string|null: false, index: true, unique: true|
-|postal_number|string||
 |remember_created_at|datetime||
 |reset_password_sent_at|datetime||
 |reset_password_token|string|index: true, unique: true|
@@ -53,14 +49,13 @@ Things you may want to cover:
 - has_many   :creditcards
 - has_many   :trades
 - has_many   :shippings
+- has_many   :addresses
 
 ## Itemテーブル
 |Column|Type|Options|
 |------|----|-------|
 |brand_id|reference|null: false, foreign_key: true|
-|category_child_id|reference|null: false, foreign_key: true|
-|category_grandchild_id|reference|null: false, foreign_key: true|
-|category_parent_id|reference|null: false, foreign_key: true|
+|category_id|reference|null: false, foreign_key: true|
 |condition_num|integer|null: false, limit: 1, unsigned: true, index: true|
 |daystoship_num|integer|null: false, limit: 1, unsigned: true, index: true|
 |description|text|null: false|
@@ -78,11 +73,10 @@ Things you may want to cover:
 - belongs_to    :user
 - belongs_to    :shippingway
 - belongs_to    :brand
-- belongs_to    :category_parent
-- belongs_to    :category_child
-- belongs_to    :category_grandchild
+- belongs_to    :category
 
 - has_many      :itemimages
+
 - has_one       :trade
 - has_one       :shipping
 
@@ -93,7 +87,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :users
-- has_many :shippings
+- has_many :addresses
 
 
 ## Creditcardテーブル
@@ -138,6 +132,7 @@ Things you may want to cover:
 |------|----|-------|
 |item_id|reference|null: false, foreign_key: true|
 |status_num|integer|null: false, limit: 1, unsigned: true|
+|user_id|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -146,51 +141,36 @@ Things you may want to cover:
 ## Shippingテーブル
 |Column|Type|Options|
 |------|----|-------|
+|address_id|reference|null: false, foreign_key: true|
+|item_id|reference|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
+
+### Association
+- belongs_to :address
+- belongs_to :user
+- belongs_to :item
+
+## Catetgoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|ancestry|string||
+|name|string|null:false, index: true|
+
+### Association
+- has_many :items
+
+## Addressテーブル
+|Column|Type|Options|
+|------|----|-------|
 |address_building|string|null: false|
 |address_city|string|null: false|
 |address_number|string|null: false|
 |area_id|reference|null: false, foreign_key: true|
-|first_name|string|null: false|
-|first_name_kana|string|null: false|
-|last_name|string|null: false|
-|last_name_kana|string|null: false|
 |postal_number|string|null: false|
-|shippingway_id|reference|null: false, foreign_key: true|
 |status_num|integer|null: false, limit: 1, unsigned: true|
 |telephone_number|string|null: false|
 |user_id|reference|null: false, foreign_key: true|
-
 ### Association
-- belongs_to :area
-- belongs_to :shippingway
-- belongs_to :user
-- belongs_to :item
-
-## CatetgoryParentテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null:false, index: true|
-
-### Association
-- has_many :items
-- has_many :CatetgoryChildren
-
-## CatetgoryChildテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_parents_id|reference|null: false, foreign_key: true|
-|name|string|null:false, index: true|
-
-### Association
-- has_many :items
-- belongs_to :CatetgoryParent
-- has_many :CatetgoryGrandchildren
-
-## CatetgoryGrandchildテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_children_id|reference|null: false, foreign_key: true|
-|name|string|null:false, index: true|
-### Association
-- has_many :items
-- belongs_to :Catetgory_Child
+- belongs_to  :user
+- belongs_to  :area
+- has_many    :shippings
