@@ -9,7 +9,7 @@ class CreateTrades < ActiveRecord::Migration[5.2]
 
       # enum
       t.integer    :status_num,   null: false, limit: 1, unsigned: true
-      
+
       t.timestamps
     end
   end

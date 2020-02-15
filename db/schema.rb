@@ -69,8 +69,8 @@ ActiveRecord::Schema.define(version: 2020_02_15_223412) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "brand_id", null: false
-    t.bigint "shippingway_id", null: false
     t.bigint "category_id", null: false
+    t.bigint "shippingway_id", null: false
     t.integer "size_num", limit: 1, null: false, unsigned: true
     t.integer "condition_num", limit: 1, null: false, unsigned: true
     t.integer "shippingcharge_num", limit: 1, null: false, unsigned: true
@@ -95,14 +95,13 @@ ActiveRecord::Schema.define(version: 2020_02_15_223412) do
   end
 
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "address_id", null: false
-    t.bigint "shippingway_id", null: false
-    t.integer "status_num", limit: 1, null: false, unsigned: true
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_shippings_on_address_id"
-    t.index ["shippingway_id"], name: "index_shippings_on_shippingway_id"
+    t.index ["item_id"], name: "index_shippings_on_item_id"
     t.index ["user_id"], name: "index_shippings_on_user_id"
   end
 
@@ -156,7 +155,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_223412) do
   add_foreign_key "items", "shippingways"
   add_foreign_key "items", "users"
   add_foreign_key "shippings", "addresses"
-  add_foreign_key "shippings", "shippingways"
+  add_foreign_key "shippings", "items"
   add_foreign_key "shippings", "users"
   add_foreign_key "trades", "items"
   add_foreign_key "trades", "users"

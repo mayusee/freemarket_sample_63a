@@ -4,8 +4,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       # references
       t.references :user,                   null: false, foreign_key: true
       t.references :brand,                  null: false, foreign_key: true
-      t.references :shippingway,            null: false, foreign_key: true
       t.references :category,               null: false, foreign_key: true
+      t.references :shippingway,            null: false, foreign_key: true
 
       # enum
       t.integer    :size_num,               null: false, limit: 1, unsigned: true

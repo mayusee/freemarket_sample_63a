@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
   # associations
-  belongs_to    :user
-  belongs_to    :shippingway
   belongs_to    :brand
   belongs_to    :category
+  belongs_to    :shippingway
+  belongs_to    :user
 
   has_many      :itemimages
 
