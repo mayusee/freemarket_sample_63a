@@ -8,6 +8,8 @@ class Item < ApplicationRecord
   belongs_to    :category_grandchild
 
   has_many      :itemimages
+
+  has_one       :shipping
   has_one       :trade
 
 end

@@ -19,7 +19,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string     :title,                  null: false
       t.text       :description,            null: false
       t.decimal    :price,                  null: false, precision: 10, scale: 3
-      t.decimal    :feerate,                null: false, precision: 4, scale: 3
+      t.decimal    :feerate,                null: false, precision:  4, scale: 3
       t.decimal    :profit_price,           null: false, precision: 10, scale: 3
       t.datetime   :sold_at
 
