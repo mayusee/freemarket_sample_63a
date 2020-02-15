@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(version: 2020_02_15_103657) do
     t.bigint "area_id", null: false
     t.integer "status_num", limit: 1, null: false, unsigned: true
     t.string "postal_number", null: false
-    t.string "address_city", null: false
-    t.string "address_number", null: false
-    t.string "address_building", null: false
+    t.string "city", null: false
+    t.string "number", null: false
+    t.string "building", null: false
     t.string "telephone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
