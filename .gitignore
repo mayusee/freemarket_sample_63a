@@ -28,8 +28,8 @@
 
 public/uploads/*
 
-.DS_Store
-
 config/secrets.yml
 
 *.pdf
+
+.DS_Store
