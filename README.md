@@ -27,7 +27,6 @@ Things you may want to cover:
 ## Userテーブル
 |Column|Type|Options|
 |------|----|-------|
-|address_id|reference|null: false, foreign_key:true|
 |birthday|date|null: false|
 |email|string|null: false, index: true, unique: true|
 |encrypted_password|string|null: false|
@@ -75,7 +74,7 @@ Things you may want to cover:
 - belongs_to    :brand
 - belongs_to    :category
 
-- has_many      :itemimages
+- has_many      :item_images
 
 - has_one       :trade
 - has_one       :shipping
@@ -100,7 +99,7 @@ Things you may want to cover:
 - belongs_to :user
 
 
-## Itemimageテーブル
+## Item_imageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
@@ -136,7 +135,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_one    :item
+- belongs_to :item
 
 ## Shippingテーブル
 |Column|Type|Options|
@@ -162,9 +161,9 @@ Things you may want to cover:
 ## Addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|address_building|string|null: false|
-|address_city|string|null: false|
-|address_number|string|null: false|
+|building|string|null: false|
+|city|string|null: false|
+|number|string|null: false|
 |area_id|reference|null: false, foreign_key: true|
 |postal_number|string|null: false|
 |status_num|integer|null: false, limit: 1, unsigned: true|
