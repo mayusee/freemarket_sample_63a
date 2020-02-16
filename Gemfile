@@ -46,6 +46,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'faker'
+  gem 'faker-japanese'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
