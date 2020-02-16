@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # associations
-  belongs_to :area
 
   has_many   :items
   has_many   :creditcards
