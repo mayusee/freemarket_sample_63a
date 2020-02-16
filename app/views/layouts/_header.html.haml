@@ -5,7 +5,7 @@
         = link_to "#" do
           = image_tag 'logo.png'
       .top__head--searchBox
-        = form_tag( "#" ,method: 'get', class: "head__form--tag") do
+        = form_tag( searches_path ,method: 'get', class: "head__form--tag") do
           = text_field_tag :search , '', class: "head__search--input", placeholder: "キーワードから探す"
           = button_tag type: "submit", class: "head__search--input--btn" do
             = image_tag 'icon-search 1.png'
