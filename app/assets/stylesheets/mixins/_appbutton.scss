@@ -1,0 +1,18 @@
+// @mixin transmission {
+//   opacity: 0.5;
+// }
+
+.appBtn {
+  width: 180px;
+}
+.appBtn:hover {
+  // @include transmission;
+  opacity: 0.5;
+}
+.googleBtn {
+  width: 180px;
+}
+.googleBtn:hover {
+  // @include transmission;
+  opacity: 0.5;
+}
