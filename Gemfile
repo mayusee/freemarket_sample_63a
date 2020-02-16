@@ -67,3 +67,8 @@ gem 'ancestry'
 
 gem 'haml-rails'
 gem 'erb2haml'
+
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'pry-rails'
+gem 'font-awesome-sass'
