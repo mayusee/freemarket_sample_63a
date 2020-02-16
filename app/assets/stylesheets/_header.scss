@@ -4,7 +4,7 @@
   .top__head{
     padding-top: 15px;
     margin: 0 auto;
-    width: 60%;
+    width: 70%;
     &--top{
       display: flex;
       .top__head--icon{ 
@@ -32,14 +32,17 @@
             height:36px;
             padding: 0 0 0 5px;
           }
+          ::placeholder{
+            font-size: 14px;
+          }
           .head__search--input--btn{
             width: 36px;
             cursor: pointer;
             background-color: #3CCACE;
             padding: 8px;
-            i{
-              color: white;
-              font-size: 20px;
+            img{
+              width: 100%;
+              vertical-align: bottom;
             }
           }
         }
@@ -65,7 +68,7 @@
           
         }
         &--second{
-          margin-left: 60px;
+          margin-left: 43px;
         }
       }
       .top__head__listsRight{
