@@ -1,0 +1,103 @@
+.user-index-container{
+  background-color: rgb(245, 245, 245);
+  &-main{
+    padding-top: 40px;
+    margin: 0 auto;
+    width: 1020px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  &__left{
+    margin-bottom: 30px;
+    margin-right: 40px;
+    width: 25%;
+    background-color: rgb(255, 255, 255);
+    .mypage-nav{
+
+      li:hover{
+        background-color: rgb(238, 238, 238);
+
+        .fa-chevron-right{
+          transition: all 0.2s;
+          color: #333;
+          transform: translate(5px);
+        }
+      }
+      .mypage-nav-list--now{
+        background-color: rgb(238, 238, 238);
+
+        .fa-chevron-right{
+          color: #333;
+        }
+      }
+      &-list{
+        overflow:hidden; 
+        
+        li{
+          height: 43px;
+          border-top:1px solid rgb(245, 245, 245);
+
+          a{
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 16px;
+            display: block;
+            
+          }
+          .fa-chevron-right{
+            float: right;
+            color: rgb(204, 204, 204);
+          }
+        }
+      }
+
+      .mypage-nav-head{
+        padding: 40px 0 10px 0;
+        background-color: rgb(245, 245, 245);
+        font-size: 15px;
+      }
+      &-list-pay{
+
+        li{
+          height: 43px;
+          border-top:1px solid rgb(245, 245, 245);
+          a{
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 16px;
+            display: block;
+          }
+          .fa-chevron-right{
+            float: right;
+            color: rgb(204, 204, 204);
+          }
+        }
+      }
+      &-list-setting{
+        li{
+          height: 43px;
+          border-top:1px solid rgb(245, 245, 245);
+          a{
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            padding: 16px;
+            display: block;
+          }
+          .fa-chevron-right{
+            float: right;
+            color: rgb(204, 204, 204);
+          }
+        }
+      }
+    }
+  }
+  &__right{
+    height: 800px;
+    width: 60%;
+    background-color: green;
+  }
+}
