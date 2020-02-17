@@ -1,1 +1,11 @@
-banner
+.banner
+  .banner-inner
+    .banner-inner__title
+      %h2 だれでもかんたん、人生を変えるフリマアプリ
+    .banner-inner__content
+      %p 今すぐ無料ダウンロード！
+    .banner-inner__icon
+      = link_to '#' do
+        = image_tag "/assets/app-store.svg", class: "appBtn"
+      = link_to '#' do
+        = image_tag "/assets/google-play.svg", class: "googleBtn"

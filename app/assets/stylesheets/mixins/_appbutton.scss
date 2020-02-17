@@ -1,0 +1,25 @@
+@mixin transmission {
+  opacity: 0.5;
+}
+@mixin btnlayout {
+  width: 180px;
+  margin: 0 5px;
+}
+
+.appBtn {
+  @include btnlayout; 
+}
+.appBtn:hover {
+  @include transmission;
+}
+.googleBtn {
+  @include btnlayout; 
+}
+.googleBtn:hover {
+  @include transmission;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
