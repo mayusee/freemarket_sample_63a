@@ -102,3 +102,49 @@
               ログアウト
               %i.fas.fa-chevron-right
     .user-index-container__right
+      %section.userpage-user-icon
+        = link_to "#" , class:".userpage-user-icon--minute" do
+          %figure
+            = image_tag('member_photo_noimage_thumb.png')
+          %h2
+            name
+          .userpage-user-icon--minute--number
+            %div
+              評価
+            %div.number-of-exibition
+              出品数
+      %section.userpage-container-notification
+        %ul.userpage-tabs
+          %li
+            %h3
+              = link_to "お知らせ" ,"#"
+          %li
+            %h3
+              = link_to "やることリスト" ,"#"
+        .userpage-tabs-content
+          %ul.userpage-tabs-content__notification
+            %li.userpage-tabs-content__notification--list
+              = link_to  "#", class:"userpage-tabs-content__notification--list--link" do
+                %figure
+                  = image_tag('mercari_profile.png')
+                .userpage-tabs-content__notification--list--link--body
+                  .userpage-tabs-content__notification--list--link--body--text
+                    [test]お知らせ内容
+                  %time
+                    = icon('far', 'clock')
+                    %span
+                      1日前
+                %i.fas.fa-chevron-right
+            %li.userpage-tabs-content__notification--index
+              = link_to "一覧を見る" , "#" 
+      %section.userpage-container-transaction
+        %h2.userpage-container-transaction--head
+          購入した商品
+        %ul.userpage-container-transaction--tabs
+          %li
+            %h3
+              = link_to "取引中" ,"#"
+          %li
+            %h3
+              = link_to "過去の取引" ,"#"
+        .userpage-container-transaction--contents
