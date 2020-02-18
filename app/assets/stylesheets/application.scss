@@ -16,3 +16,12 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "reset";
+@import "modules/sign-up-container";
+@import "modules/sign-up-content";
+@import "modules/sign-up-image";
+@import "modules/sign-up-navigation";
+@import "modules/sign-up";
+
+*{
+  box-sizing: border-box;
+}
