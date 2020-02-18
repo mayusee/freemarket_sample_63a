@@ -1,26 +1,42 @@
-.sign_up
-  %header.sign_up__header
+.sign-up
+  %header.sign-up__header
+    .image
+      .image__inner--top
+        = image_tag "logo.png" ,size:"171x50",class:"image__inner--top"
 
-  %main.sign_up__main
-    %section.sign_up__main__container
-      %h2.sign_up__main__container__head.registration 新規会員登録
-      .sign_up__main__container__inner.registration-form
-        .sign_up__main__container__inner__content
-          %a.sign_up__main__container__inner__content__btn.sign_up__main__container__inner__content__btn--email{href:"#{new_user_registration_path}"}
-            %i.sign_up__main__container__inner__content__btn__icon
+  %main.sign-up__main
+    %section.container
+      %h2.container__head 新規会員登録
+      .container__contents
+        %content.content
+          %a.content__btn--email{href:"#{new_user_registration_path}"}
+            %i.content__icon
               = icon('far', 'envelope')
-            %span.sign_up__main__container__inner__content__btn__text
+            %span.content__text
               メールアドレスで登録する
-
-          %a.sign_up__main__container__inner__content__btn.sign_up__main__container__inner__content__btn--facebook{href:"#"}
-            %i.sign_up__main__container__inner__content__btn__icon
+          %a.content__btn--facebook{href:"#"}
+            %i.content__icon
               = icon('fab', 'facebook-square')
-            %span.sign_up__main__container__inner__content__btn__text
+            %span.content__text
               Facebookで登録する
-
-          %a.sign_up__main__container__inner__content__btn.sign_up__main__container__inner__content__btn--google{href:"#"}
-            %i.sign_up__main__container__inner__content__btn__icon.sign_up__main__container__inner__content__btn__icon--google
+          %a.content__btn--google{href:"#"}
+            %i.content__icon--google
               = icon('fab', 'google')
-            %span.sign_up__main__container__inner__content__btn__text.sign_up__main__container__inner__content__btn__text--google
+            %span.content__text--google
               googleで登録する
+  %footer.sign-up__footer
+    %nav.navigation
+      .navigation__inner
+        %ul.navigation__ul
+          %li.navigation__li
+            = link_to "プライバシーポリシー","#",class:"navigation__li--link"
+          %li.navigation__li
+            = link_to "フリマ利用規約","#",class:"navigation__li--link"
+          %li.navigation__li
+            = link_to "特定商取引に関する表記","#",class:"navigation__li--link"
+    .image
+      .image__inner--bottom
+        .logo
+          = image_tag "logo2.png",size:"66x75",class:"logo__inner--bottom"
+
 
