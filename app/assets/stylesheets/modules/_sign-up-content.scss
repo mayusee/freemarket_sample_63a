@@ -1,0 +1,69 @@
+.sign-up-content{
+  %__btn{
+    height:48px;
+    max-width: 343px;
+    line-height: 50px;
+    display:block;
+    border-radius:5px;
+    font-size: 14px;
+    padding:0 20px;
+    margin:15px auto;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all ease-out .3s;
+    position:relative;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+  }
+  %__icon{
+    font-size: 20px;
+    position: absolute;
+    left:20px;
+  }
+  %__text{
+    display:inline-block;
+    padding-left:20px;
+    font-family:'Source Sans Pro'
+                , Helvetica 
+                , Arial
+                , '游ゴシック体'
+                , 'YuGothic'
+                , 'メイリオ'
+                , 'Meiryo'
+                , sans-serif;
+  }
+  &__btn{
+    &--email{
+      @extend %__btn;
+      border: 1px solid transparent;
+      background-color:#ea352d;
+    }
+    &--facebook{
+      @extend %__btn;
+      border: 1px solid transparent;
+      background-color:#385185;
+    }
+    &--google{
+      @extend %__btn;
+      border:solid 1px #979797;
+    }
+  }
+  &__icon{
+    @extend %__icon;
+    color:#fff;
+    &--google{
+      @extend %__icon;
+      color:#333;
+    }
+  }
+  &__text{
+    @extend %__text;
+    color:#fff;
+    &--google{
+      @extend %__text;
+      color:#333;
+    }
+  }
+}
