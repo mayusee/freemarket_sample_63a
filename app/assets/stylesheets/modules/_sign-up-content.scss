@@ -35,14 +35,14 @@
                 , sans-serif;
   }
   &__btn{
-    @extend %__btn;
-    border: 1px solid transparent;
     &--email{
       @extend %__btn;
+      border: 1px solid transparent;
       background-color:#ea352d;
     }
     &--facebook{
       @extend %__btn;
+      border: 1px solid transparent;
       background-color:#385185;
     }
     &--google{
