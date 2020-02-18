@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "tops#index"
   resources :tops,only: :index 
   resources :sign_ups,only: :index
+  resources :users , only: :show
 end
