@@ -1,7 +1,62 @@
+/* 背景画像のトリミングしたい枠の高さ */
+%__appBannerHeight{
+  height: 350px;
+}
+
+/* innerの親要素の位置(中央) */
+%__innerPearentCenter{
+  top: 50%;
+  left: 50%;
+}
+
+/* innerの子要素の位置(中央) */
+%__innerChildCenter{
+  transform: translate(-50%,-50%);
+}
+
+/* 文字に影をつける */
+%__txtshadow{
+  text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
 .banner {
   position: relative;
-  background-image: image-url("/assets/bg-appBanner-pict.jpg");
-  padding: 100px 40px;
-  background-size: cover;
-  background-position: center;
+
+  &__image{
+    width: 100%;
+    @extend %__appBannerHeight;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  &__inner {
+    position: absolute;
+    @extend %__innerPearentCenter;
+  }
+
+  &__content {
+    @extend %__innerChildCenter;
+    color: #fff;
+    text-align: center;
+  
+    &--title {
+      @extend %__txtshadow;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 2.0;
+    }
+    
+    &--content {
+      @extend %__txtshadow;
+      font-size: 35px;
+      line-height: 1.2;
+    }
+  
+    &--icon{
+      width: 100%;
+      margin: 20px auto 0;
+    }
+  
+  }
+  
 }
