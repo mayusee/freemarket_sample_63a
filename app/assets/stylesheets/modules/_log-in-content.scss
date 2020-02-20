@@ -3,8 +3,6 @@
     height:48px;
     max-width: 343px;
     width: 100%;
-    line-height: 50px;
-    display:block;
     border-radius:5px;
     font-size: 14px;
     padding:0 20px;
@@ -15,6 +13,19 @@
     display: block;
     line-height: 48px;
     margin:15px auto;
+  }
+  %__field{
+    height:48px;
+    max-width: 343px;
+    width: 100%;
+    border-radius:5px;
+    font-size: 14px;
+    padding:0 20px;
+    transition: all ease-out .3s;
+    display: block;
+    line-height: 48px;
+    margin:15px auto;
+    border:solid 1px #979797;
   }
   %__icon{
     font-size: 20px;
@@ -70,8 +81,28 @@
     }
   }
   &__field{
-    @extend %__btn;
-    border:solid 1px #979797;
+    margin:40px 0;
+    &--email{
+      @extend %__field;
+    }
+    &--password{
+      @extend %__field;
+    }
     
+  }
+  &__password-forgotten{
+    max-width: 343px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin:15px auto;
+    &--links{
+      color:#0099e8;
+      text-decoration: none;
+      &:hover{
+        text-decoration:underline;
+      }
+    }
   }
 }
