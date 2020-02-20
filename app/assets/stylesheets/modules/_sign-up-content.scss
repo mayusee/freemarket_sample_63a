@@ -49,6 +49,17 @@
       @extend %__btn;
       border:solid 1px #979797;
     }
+    &--no-account{
+      @extend %__btn;
+      border: 1px solid transparent;
+      background-color:#0099e8;
+    }
+    &--log-in{
+      @extend %__btn;
+      border: 1px solid transparent;
+      background-color:#ea352d;
+      color:#fff;
+    }
   }
   &__icon{
     @extend %__icon;
@@ -65,5 +76,9 @@
       @extend %__text;
       color:#333;
     }
+  }
+  &__field{
+    @extend %__btn;
+    border:solid 1px #979797;
   }
 }
