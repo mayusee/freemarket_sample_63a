@@ -1,15 +1,6 @@
-// .test{
-//   width: 100vh;
-//   background-color: red;
-
-// }
-
+/*---リストの標準装飾を消去---*/
 ul{
   list-style: none;
-}
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box
 }
 
 /*---ニックネーム--メールアドレス--パスワード---*/
@@ -68,7 +59,6 @@ ul{
             white-space: nowrap;
             text-align: center;
             color: #ccc;
-
             &--progress-status2{
               width: 10px;
               height: 10px;
@@ -136,8 +126,7 @@ ul{
     .input-class{
       max-width: 343px;
       margin: 0 auto;  
-          &__field{ 
-            
+          &__field{        
             margin-top: 20px;          
               &--subtitle{
                 background: #ea352d;
@@ -182,8 +171,7 @@ ul{
             }                        
             &__box{
               margin-top: 20px;
-              display: flex;
-              justify-content: space-between;            
+              display: flex;           
                 &--text-box{
                   width: 90%;
                   height: 48px;
@@ -192,7 +180,7 @@ ul{
                   background: #fff;
                   line-height: 1.5;
                   font-size: 16px;
-              }
+                }
             }
             &__birthday{
               width: 100%;
@@ -212,7 +200,7 @@ ul{
                   line-height: 1.5;
                   cursor: pointer;
                   width: 23%;
-              }    
+                }    
             }
             &__text{
               &--single-text1{
