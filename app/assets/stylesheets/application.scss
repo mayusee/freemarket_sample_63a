@@ -21,13 +21,14 @@
 @import "mixins/appbutton";
 @import "modules/sign-up-container";
 @import "modules/sign-up-content";
-@import "modules/sign-up-image";
 @import "modules/navigation";
 @import "modules/sign-up";
 @import "modules/log-in-container";
 @import "modules/log-in-content";
-@import "modules/log-in-image";
+@import "modules/header-image";
 @import "modules/log-in";
+@import "modules/recaptcha";
+
 *{
   box-sizing: border-box;
 }
