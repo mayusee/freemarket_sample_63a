@@ -1,9 +1,6 @@
 .sign-up
   %header.sign-up__header
-    .account-page-image
-      .account-page-image__inner--top
-        =link_to root_path do
-          = image_tag "logo.png" ,size:"171x50",class:"sign-up-image__inner--top"
+    = render "devise/header-image"
   %main.sign-up__main
     %section.sign-up-container
       .sign-up-container__head
