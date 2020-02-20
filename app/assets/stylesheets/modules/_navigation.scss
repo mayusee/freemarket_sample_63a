@@ -1,4 +1,4 @@
-.sign-up-navigation{
+.navigation{
   &__inner{
     width:720px;
     margin: 15px auto;
@@ -16,6 +16,13 @@
     margin:0 5px;
     &--link{
       color:darkgray;
+    }
+  }
+  &__logo{
+    width:75px;
+    margin:30px auto;
+    &--image{
+      
     }
   }
 }
