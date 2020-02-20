@@ -22,9 +22,12 @@
 @import "modules/sign-up-container";
 @import "modules/sign-up-content";
 @import "modules/sign-up-image";
-@import "modules/sign-up-navigation";
+@import "modules/navigation";
 @import "modules/sign-up";
-
+@import "modules/log-in-container";
+@import "modules/log-in-content";
+@import "modules/log-in-image";
+@import "modules/log-in";
 *{
   box-sizing: border-box;
 }
