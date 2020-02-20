@@ -1,10 +1,6 @@
 .log-in
   %header.log-in__header
-    .account-page-image
-      .account-page-image__inner--top
-        = link_to root_path do
-          = image_tag "logo.png" ,size:"171x50",class:"account-page-image__inner--top"
-
+    = render "devise/header-image"
   %main.log-in__main
     %section.log-in-container
       .log-in-container__head
@@ -24,11 +20,14 @@
               = icon('fab', 'google')
             %span.log-in-content__text--google
               googleで登録する
-          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-            = f.email_field :email,placeholder: "メールアドレス", autocomplete: "email",class:"log-in-content__field"
-            = f.password_field :password,placeholder: "パスワード", autocomplete: "current-password",class:"log-in-content__field"
-            = f.submit "ログイン",class:"log-in-content__btn--log-in"
-          .log-in__password-forgotten
+          .log-in-content__field
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              = f.email_field :email,placeholder: "メールアドレス", autocomplete: "email",class:"log-in-content__field--password"
+              = f.password_field :password,placeholder: "パスワード", autocomplete: "current-password",class:"log-in-content__field--password"
+              .recaptcha
+                %p.recaptcha__image 私はロボットではありません
+              = f.submit "ログイン",class:"log-in-content__btn--log-in"
+          .log-in-content__password-forgotten
             = render "devise/shared/links"
   %footer.log-in__footer
     = render "devise/navigation"
