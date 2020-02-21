@@ -1,12 +1,10 @@
 .sign-up
   %header.sign-up__header
-    .sign-up-image
-      .sign-up-image__inner--top
-        = image_tag "logo.png" ,size:"171x50",class:"sign-up-image__inner--top"
-
+    = render "devise/header-image"
   %main.sign-up__main
     %section.sign-up-container
-      %h2.sign-up-container__head 新規会員登録
+      .sign-up-container__head
+        %h2.sign-up-container__head--text 新規会員登録
       .sign-up-container__contents
         %content.sign-up-content
           %a.sign-up-content__btn--email{href:"#{new_user_registration_path}"}
@@ -25,17 +23,4 @@
             %span.sign-up-content__text--google
               googleで登録する
   %footer.sign-up__footer
-    %nav.sign-up-navigation
-      .sign-up-navigation__inner
-        %ul.sign-up-navigation__ul
-          %li.sign-up-navigation__li
-            = link_to "プライバシーポリシー","#",class:"sign-up-navigation__li--link"
-          %li.sign-up-navigation__li
-            = link_to "フリマ利用規約","#",class:"sign-up-navigation__li--link"
-          %li.sign-up-navigation__li
-            = link_to "特定商取引に関する表記","#",class:"sign-up-navigation__li--link"
-    .sign-up-image
-      .sign-up-image__inner--bottom
-        = image_tag "logo2.png",size:"66x75",class:"sign-up-image__inner--bottom"
-
-
+    = render "devise/navigation"
