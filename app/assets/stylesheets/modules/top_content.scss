@@ -1,0 +1,165 @@
+/* after疑似要素の共通定義 */
+%__top-pseudo-element{
+  content: "";
+  width: 70px;
+  height: 4px;
+  background-color: #3CCACE;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* subtitleの共通定義 */
+%__top-subtitle{
+  text-align: center;
+  font-size: 26px;
+  line-height: 1.4;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.top-content{
+
+  &__intoroduction{
+    padding: 60px 20px;
+
+  }
+
+  &__futures{
+    padding: 60px 100px;
+    background-color: #fff;
+  }  
+
+}
+
+.top-intoroduction-subtitle{
+  @extend %__top-subtitle;
+
+  &:after {
+    @extend %__top-pseudo-element;
+  }
+
+}
+
+.top-intoroduction-lists{
+  text-align: center;
+  display: flex;
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;    
+}
+
+/* top-intoroduction-listの共通定義 */
+%__top-intoroduction-list{
+  width: 30%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* top-intoroduction-listの1番と2番 */
+%__top-intoroduction-list-normal{
+  @extend %__top-intoroduction-list;
+  margin: 16px 5% 0 0;
+}
+
+/* top-intoroduction-listの3番 */
+%__top-intoroduction-list-last{
+  @extend %__top-intoroduction-list;
+  margin: 16px 0 0;      
+}
+
+.top-span{
+  color: #3CCACE;    
+}
+
+.top-intoroduction-list-last{
+  @extend %__top-intoroduction-list-last;
+}
+
+.top-intoroduction-list{
+  @extend %__top-intoroduction-list-normal;
+
+  &__pict{
+    position: relative;
+    margin-bottom: 20px;  
+  }
+
+  &__number{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 4%;
+    font-size: 30px;
+    text-align: center;
+    margin: 0 5px 0 0;
+    padding: 10px 20px;
+    background-color: #3CCACE;
+    color: #fff;
+  }
+
+  &__text{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+    margin: 0 0 0 2px;
+  }
+
+  &__description{
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 16px 0 0;
+  }
+
+}
+
+
+.top-futures-subtitle{
+  @extend %__top-subtitle;
+
+  &:after {
+    @extend %__top-pseudo-element;
+  }
+
+}
+
+.top-futuers-lists{
+  max-width: calc(1040px + 20px);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.top-futures-list{
+  display: flex;
+  flex-direction: column;
+  width: calc(1 / 3 * 100%);
+  text-align: center;
+  padding: 0 20px;
+
+  &__pict{
+    width: 70%;
+    margin: 0 auto;
+    line-height: 120px;
+  }
+
+  &__text{
+    margin: 38px 0 10px;
+    font-size: 19px;
+    font-weight: bold;
+  }
+
+  &__description{
+    margin: 0 0 40px;
+    font-size: 17px;
+    font-weight: 200;
+    text-align: left;
+  }
+
+}
