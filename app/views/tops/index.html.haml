@@ -57,3 +57,8 @@
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
   = render 'layouts/banner'
   = render 'layouts/footer'
+.purchase-btn
+  =link_to '#',class:"purchase-btn__inner" do
+    %span.purchase-btn__inner--text 出品する
+    %i.purchase-btn__inner--icon
+      = icon('fa', 'camera')
