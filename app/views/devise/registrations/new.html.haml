@@ -5,17 +5,17 @@
   .header
     .header__box
       = image_tag 'logo.png',class: "header__box--logo"
-      .sign-up-bar
-        %ul
-          %l1.ul__l1
+      .header__logo
+        %ul.header__ul
+          %l1.sign-up-bar__l1
             会員情報 
-            .ul__l1--progress-status1     
-          %l2.ul__l2
+            .sign-up-bar__l1--progress-status1     
+          %l2.sign-up-bar__l2
             電話番号認証
-            .ul__l2--progress-status2
-          %l3.ul__l3
+            .sign-up-bar__l2--progress-status2
+          %l3.sign-up-bar__l3
             完了
-            .ul__l3--progress-status3
+            .sign-up-bar__l3--progress-status3
   
   .main
     .member-registration
@@ -89,7 +89,7 @@
           %a{ href: '#URL' ,class: "input-class__field__text--single-text2--a"}利用規約
           に同意したものとみなします。
         .input-class__field__botton
-          = f.button "送信",onclick: "submit();",value: "次へ進む",class:"input-class__field__botton--text" 
+          = f.button "送信",onclick: "submit();",value: "次へ進む",root: /users/sign_up,class:"input-class__field__botton--text" 
         .input-class__field__bottom-text
           %a{ href: '#URL' ,class: "input-class__field__bottom-text--a"}本人情報の登録について＞
         .input-class__field__bottom-box
