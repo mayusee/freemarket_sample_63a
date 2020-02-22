@@ -23,10 +23,6 @@
 
 .top-content{
 
-  &__intoroduction{
-    padding: 60px 20px;
-
-  }
 
   &__futures{
     padding: 60px 100px;
@@ -35,16 +31,22 @@
 
 }
 
-.top-intoroduction-subtitle{
-  @extend %__top-subtitle;
 
-  &:after {
-    @extend %__top-pseudo-element;
+.top-index-content-intoroduction{
+  padding: 60px 20px;
+
+  &__subtitle{
+    @extend %__top-subtitle;
+  
+    &:after {
+      @extend %__top-pseudo-element;
+    }
+  
+    }
+
   }
 
-}
-
-.top-intoroduction-lists{
+.top-index-content-intoroduction-lists{
   text-align: center;
   display: flex;
   max-width: 1020px;
@@ -52,8 +54,8 @@
   margin: 0 auto;    
 }
 
-/* top-intoroduction-listの共通定義 */
-%__top-intoroduction-list{
+/* top-index-content-intoroduction-listの共通定義 */
+%__top-index-content-intoroduction-list{
   width: 30%;
   text-align: left;
   display: flex;
@@ -61,28 +63,28 @@
   align-items: center;
 }
 
-/* top-intoroduction-listの1番と2番 */
-%__top-intoroduction-list-normal{
-  @extend %__top-intoroduction-list;
+/* top-index-content-intoroduction-listの1番と2番 */
+%__top-index-content-intoroduction-list-normal{
+  @extend %__top-index-content-intoroduction-list;
   margin: 16px 5% 0 0;
 }
 
-/* top-intoroduction-listの3番 */
-%__top-intoroduction-list-last{
-  @extend %__top-intoroduction-list;
+/* top-index-content-intoroduction-listの3番 */
+%__top-index-content-intoroduction-list-last{
+  @extend %__top-index-content-intoroduction-list;
   margin: 16px 0 0;      
 }
 
-.top-span{
+.top-index-span{
   color: #3CCACE;    
 }
 
-.top-intoroduction-list-last{
-  @extend %__top-intoroduction-list-last;
+.top-index-content-intoroduction-list-last{
+  @extend %__top-index-content-intoroduction-list-last;
 }
 
-.top-intoroduction-list{
-  @extend %__top-intoroduction-list-normal;
+.top-index-content-intoroduction-list{
+  @extend %__top-index-content-intoroduction-list-normal;
 
   &__pict{
     position: relative;
