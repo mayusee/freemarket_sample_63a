@@ -1,37 +1,37 @@
 %head
+  %meta{charset: "utf-8"}/
   %link{href: "stylesheets/registration_new.scss", rel: "stylesheet"}/
 .registration-new
   .header
     .header__box
-      = image_tag 'merukarilogo.svg',class: "header__box--logo"
+      = image_tag 'logo.png',class: "header__box--logo"
       .sign-up-bar
-        %ul.sign-up-bar__ul
-          %l1.sign-up-bar__ul__l1
+        %ul
+          %l1.ul__l1
             会員情報 
-            .sign-up-bar__ul__l1--progress-status1     
-          %l2.sign-up-bar__ul__l2
+            .ul__l1--progress-status1     
+          %l2.ul__l2
             電話番号認証
-            .sign-up-bar__ul__l2--progress-status2
-          %l3.sign-up-bar__ul__l3
+            .ul__l2--progress-status2
+          %l3.ul__l3
             完了
-            .sign-up-bar__ul__l3--progress-status3
+            .ul__l3--progress-status3
   
   .main
     .member-registration
       %h2 会員情報登録
     .input-class
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = render "devise/shared/error_messages", resource: resource
+      = form_with(model: @user, locale: true, url: registration_path(resource_name)) do |f|
         .input-class__field
           = f.label :"ニックネーム"
           %span.input-class__field--subtitle 必須
           %br/
-          = f.text_field :nickname, class: "input-class__field--text-box",autofocus: true, autocomplete: "email",placeholder: "例）テックタロウ"
+          = f.text_field :nickname, class: "input-class__field--text-box",autofocus: true,placeholder: "例）テックタロウ"
         .input-class__field
           = f.label :"メールアドレス"
           %span.input-class__field--subtitle 必須
           %br/
-          = f.email_field :email, class: "input-class__field--text-box",autofocus: true, autocomplete: "email",placeholder: "例）XXX@gmail.com"
+          = f.email_field :email, class: "input-class__field--text-box",placeholder: "例）XXX@gmail.com"
         .input-class__field
           = f.label :password
           - if @minimum_password_length
@@ -45,34 +45,34 @@
           %span.input-class__field--subtitle 必須
           %br/
           = f.password_field :password_confirmation, class: "input-class__field--text-box",autocomplete: "new-password",placeholder: "password（確認用）"
-        .input-class__field__gray-text 
+        .input-class__field__gray-text
           %br
-          %p※ 英字と数字の両方を含めて設定してください
+          %p ※ 英字と数字の両方を含めて設定してください
           %br
-        .input-class__field__check-box
-          %input#password-checkbox{ type: 'checkbox' } 
+        .input-class__field-checkbox
+          %input{ type: 'checkbox' } 
           %label{ for: 'password-checkbox' } パスワードを表示する 
-        .input-class__field__subhead
+        .input-class__field
           %h2 本人確認
-          %P.input-class__subhead--single-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。     
+          %P.input-class__field--identification 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。     
         .input-class__field__box
-          .input-class__field__box__name
+          .input-class__field__box-name
             = f.label :"お名前(全角)"
             %span.input-class__field--subtitle 必須
             %br/
-            = f.text_field :first_name, class: "input-class__field__box--text-box",autofocus: true, autocomplete: "email",placeholder: "例）山田"
-          .input-class__field__box__lastname
+            = f.text_field :first_name, class: "input-class__field__box--text-box", placeholder: "例）山田"
+          .input-class__field__box-lastname
             %br/
-            = f.text_field :last_name, class: "input-class__field__box--text-box",autofocus: true, autocomplete: "email",placeholder: "例）太郎"
+            = f.text_field :last_name, class: "input-class__field__box--text-box",placeholder: "例）太郎"
         .input-class__field__box
-          .input-class__name__kana
+          .input-class__name-kana
             = f.label :"お名前カナ(全角)"
             %span.input-class__field--subtitle 必須
             %br/
-            = f.text_field :first_name, class: "input-class__field__box--text-box",autofocus: true, autocomplete: "email",placeholder: "例）ヤマダ"
-          .input-class__last-name__kana
+            = f.text_field :first_name, class: "input-class__field__box--text-box", placeholder: "例）ヤマダ",required:""
+          .input-class__last-name-kana
             %br/
-            = f.text_field :first_name, class: "input-class__field__box--text-box",autofocus: true, autocomplete: "email",placeholder: "例）タロウ"
+            = f.text_field :first_name, class: "input-class__field__box--text-box",autofocus: true,title:"error",placeholder: "例）タロウ"
         .input-class__field__birthday
           = f.label :"生年月日"
           %span.input-class__field--subtitle 必須
@@ -88,8 +88,8 @@
           「次へ進む」のボタンを押すことにより、
           %a{ href: '#URL' ,class: "input-class__field__text--single-text2--a"}利用規約
           に同意したものとみなします。
-        .input-class__field__actions
-          %a.button{href: "#",class: "input-class__field__actions--text"} 次へ進む
+        .input-class__field__botton
+          = f.button "送信",onclick: "submit();",value: "次へ進む",class:"input-class__field__botton--text" 
         .input-class__field__bottom-text
           %a{ href: '#URL' ,class: "input-class__field__bottom-text--a"}本人情報の登録について＞
         .input-class__field__bottom-box

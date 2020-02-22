@@ -21,7 +21,7 @@ ul{
       .sign-up-bar{
         width: 25%;
         padding: 10px 0 0 40px;
-        &__ul{
+        .ul{
           display: flex;
           &__l1{
             position: relative;
@@ -157,14 +157,15 @@ ul{
             line-height: 1.5;
             font-size: 16px;
           }
-        &__gray-text p{
+        &__gray-text{
           font-size: 14px;
           color: gray;
         }
-        &__check-box{
+        &--check-box{
+          margin-top: 10px;
 
         }
-        &__subhead{
+        &__identification{
           margin-top: 20px;
           line-height: 1.5;
           font-size: 14px;
@@ -216,22 +217,24 @@ ul{
             }
           }
         }
-        &__actions{
-          font-size: 1.375rem;
+        &__botton{
+          margin-top: 20px;
+          text-align: center; 
+          &--text{
+          width: 90%;
           background: red;
           border-radius: 5px;
-          padding: 18px 32px;
-          text-align: center;
-          margin-top: 20px;
-          &--text{
+          padding: 18px 32px;          
           color: #fff;            
           font-size: 20px;
-          text-decoration: none;             
+          border-style: none;
+          cursor: pointer;                     
           }     
         }
         &__bottom-text{
         margin-top: 30px;
         text-align: right;
+        
           &--a{
             text-decoration: none;                
           }
