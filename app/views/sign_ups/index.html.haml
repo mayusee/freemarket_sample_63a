@@ -7,20 +7,17 @@
         %h2.sign-ups-index-container__head--text 新規会員登録
       .sign-ups-index-container__contents
         %content.sign-ups-index-content
-          %a.sign-ups-index-content__btn--email{href:"#{new_user_registration_path}"}
+          .sign-ups-index-content__btn--email
+            =link_to 'メールアドレスで登録する',new_user_registration_path,class:'sign-ups-index-content__text'
             %i.sign-ups-index-content__icon
               = icon('far', 'envelope')
-            %span.sign-ups-index-content__text
-              メールアドレスで登録する
-          %a.sign-ups-index-content__btn--facebook{href:"#"}
+          .sign-ups-index-content__btn--facebook
+            =link_to 'Facebookで登録する','#',class:'sign-ups-index-content__text'
             %i.sign-ups-index-content__icon
               = icon('fab', 'facebook-square')
-            %span.sign-ups-index-content__text
-              Facebookで登録する
-          %a.sign-ups-index-content__btn--google{href:"#"}
+          .sign-ups-index-content__btn--google
+            =link_to 'googleで登録する','#',class:'sign-ups-index-content__text--google'
             %i.sign-ups-index-content__icon--google
               = icon('fab', 'google')
-            %span.sign-ups-index-content__text--google
-              googleで登録する
   %footer.sign-ups-index__footer
     = render "devise/navigation"
