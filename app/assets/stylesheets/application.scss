@@ -21,11 +21,8 @@
 @import "mixins/appbutton";
 @import "modules/navigation";
 @import "modules/sign-ups-index";
-@import "modules/log-in-container";
-@import "modules/log-in-content";
 @import "modules/header-image";
-@import "modules/log-in";
-@import "modules/recaptcha";
+@import "modules/sessions-new";
 
 *{
   box-sizing: border-box;
