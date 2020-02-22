@@ -19,15 +19,10 @@
 @import "header";
 @import "user_show";
 @import "mixins/appbutton";
-@import "modules/sign-up-container";
-@import "modules/sign-up-content";
 @import "modules/navigation";
-@import "modules/sign-up";
-@import "modules/log-in-container";
-@import "modules/log-in-content";
+@import "modules/sign-ups-index";
 @import "modules/header-image";
-@import "modules/log-in";
-@import "modules/recaptcha";
+@import "modules/sessions-new";
 
 *{
   box-sizing: border-box;

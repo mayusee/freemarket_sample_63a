@@ -1,0 +1,185 @@
+.sessions-new{
+  min-height:100vh;
+  width:100vw;
+  background-color: #f5f5f5;
+  &__header{
+    height:128px;
+    padding:35px;
+  }
+  &__main{
+    
+  }
+  &__footer{
+    height:220px;
+  }
+}
+.sessions-new-container{
+  width: 700px;
+  display:block;
+  margin:0 auto;
+  background-color: #fff;
+  &__head{
+    border-bottom:solid 1px #f5f5f5;
+    padding:40px 64px 20px;
+    &--text{
+      text-align: center;
+      font-size: 14px;
+      font-family:'Source Sans Pro'
+      , Helvetica 
+      , Arial
+      , '游ゴシック体'
+      , 'YuGothic'
+      , 'メイリオ'
+      , 'Meiryo'
+      , sans-serif;
+    }
+  }
+  &__btn{
+    height:48px;
+    max-width: 343px;
+    display:block;
+    font-size: 14px;
+    padding:0 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all ease-out .3s;
+    position:relative;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    border: 1px solid transparent;
+    border-radius:5px;
+    background-color:#0099e8;
+    margin:10px auto 0;
+    &--text{
+      text-decoration: none;
+      color:#fff;
+      font-size: 14px;
+      font-family:'Source Sans Pro'
+      , Helvetica 
+      , Arial
+      , '游ゴシック体'
+      , 'YuGothic'
+      , 'メイリオ'
+      , 'Meiryo'
+      , sans-serif;
+    }
+  }
+  &__contents{
+    padding:40px 40px 64px;
+  }
+}
+.sessions-new-content{
+  %__btn{
+    height:48px;
+    max-width: 343px;
+    width: 100%;
+    border-radius:5px;
+    font-size: 14px;
+    padding:0 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all ease-out .3s;
+    position:relative;
+    display: block;
+    line-height: 48px;
+    margin:15px auto;
+  }
+  %__field{
+    height:48px;
+    max-width: 343px;
+    width: 100%;
+    border-radius:5px;
+    font-size: 14px;
+    padding:0 20px;
+    transition: all ease-out .3s;
+    display: block;
+    line-height: 48px;
+    margin:15px auto;
+    border:solid 1px #979797;
+  }
+  %__icon{
+    font-size: 20px;
+    position: absolute;
+    left:20px;
+  }
+  %__text{
+    display:inline-block;
+    text-decoration: none;
+    padding-left:20px;
+    font-family:'Source Sans Pro'
+                , Helvetica 
+                , Arial
+                , '游ゴシック体'
+                , 'YuGothic'
+                , 'メイリオ'
+                , 'Meiryo'
+                , sans-serif;
+  }
+  &__btn{
+    &--facebook{
+      @extend %__btn;
+      border: 1px solid transparent;
+      background-color:#385185;
+      text-align: center;
+      color:#fff;
+    }
+    &--google{
+      @extend %__btn;
+      border:solid 1px #979797;
+      text-align: center; 
+    }
+    &--log-in{
+      @extend %__btn;
+      border: 1px solid transparent;
+      background-color:#ea352d;
+      text-align: center;
+      color:#fff;
+    }
+  }
+  &__icon{
+    @extend %__icon;
+    color:#fff;
+    &--google{
+      @extend %__icon;
+      color:#333;
+    }
+  }
+  &__text{
+    @extend %__text;
+    color:#fff;
+    &--google{
+      @extend %__text;
+      color:#333;
+    }
+  }
+  &__field{
+    margin:40px 0;
+    &--email{
+      @extend %__field;
+    }
+    &--password{
+      @extend %__field;
+    }
+  }
+  &__password-forgotten{
+    max-width: 343px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    margin:15px auto;
+    &--links{
+      color:#0099e8;
+      text-decoration: none;
+      &:hover{
+        text-decoration:underline;
+      }
+    }
+  }
+}
+.sessions-new-recaptcha{
+  &__image{
+    text-align: center;
+  }
+}
