@@ -69,10 +69,10 @@
             = f.label :"お名前カナ(全角)"
             %span.input-class__field--subtitle 必須
             %br/
-            = f.text_field :first_name, class: "input-class__field__box--text-box", placeholder: "例）ヤマダ",required:""
+            = f.text_field :first_name_kana, class: "input-class__field__box--text-box", placeholder: "例）ヤマダ",required:""
           .input-class__last-name-kana
             %br/
-            = f.text_field :first_name, class: "input-class__field__box--text-box",autofocus: true,title:"error",placeholder: "例）タロウ"
+            = f.text_field :last_name_kana, class: "input-class__field__box--text-box",autofocus: true,title:"error",placeholder: "例）タロウ"
         .input-class__field__birthday
           = f.label :"生年月日"
           %span.input-class__field--subtitle 必須
