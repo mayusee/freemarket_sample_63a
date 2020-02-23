@@ -1,5 +1,14 @@
-.user-index-container{
-  background-color: rgb(245, 245, 245);
+.user-show{
+  &__header{
+
+  }
+  &__main{
+    background-color: rgb(245, 245, 245);
+  }
+}
+
+.user-show-container{
+
   &-main{
     padding-top: 40px;
     margin: 0 auto;
