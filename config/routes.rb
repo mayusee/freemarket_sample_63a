@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users , only: :show do
     # 出品機能実装されるまでの仮置き
     resources :items do
-      resources :buys , only: [:new, :create]
+      resources :trades , only: [:new, :create]
     end
   end
   
