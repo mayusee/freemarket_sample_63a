@@ -21,7 +21,7 @@
   position: relative;
 }
 
-.top-index-content-intoroduction{
+.tops-index-content-intoroduction{
   padding: 60px 20px;
 
   &__subtitle{
@@ -36,7 +36,7 @@
 
 }
 
-.top-index-content-intoroduction-lists{
+.tops-index-content-intoroduction-lists{
   text-align: center;
   display: flex;
   max-width: 1020px;
@@ -44,8 +44,8 @@
   margin: 0 auto;    
 }
 
-/* top-index-content-intoroduction-listの共通定義 */
-%__top-index-content-intoroduction-list{
+/* tops-index-content-intoroduction-listの共通定義 */
+%__tops-index-content-intoroduction-list{
   width: 30%;
   text-align: left;
   display: flex;
@@ -53,28 +53,28 @@
   align-items: center;
 }
 
-/* top-index-content-intoroduction-listの1番と2番 */
-%__top-index-content-intoroduction-list-normal{
-  @extend %__top-index-content-intoroduction-list;
+/* tops-index-content-intoroduction-listの1番と2番 */
+%__tops-index-content-intoroduction-list-normal{
+  @extend %__tops-index-content-intoroduction-list;
   margin: 16px 5% 0 0;
 }
 
-/* top-index-content-intoroduction-listの3番 */
-%__top-index-content-intoroduction-list-last{
-  @extend %__top-index-content-intoroduction-list;
+/* tops-index-content-intoroduction-listの3番 */
+%__tops-index-content-intoroduction-list-last{
+  @extend %__tops-index-content-intoroduction-list;
   margin: 16px 0 0;      
 }
 
-.top-index-span{
+.tops-index-span{
   color: #3CCACE;    
 }
 
-.top-index-content-intoroduction-list-last{
-  @extend %__top-index-content-intoroduction-list-last;
+.tops-index-content-intoroduction-list-last{
+  @extend %__tops-index-content-intoroduction-list-last;
 }
 
-.top-index-content-intoroduction-list{
-  @extend %__top-index-content-intoroduction-list-normal;
+.tops-index-content-intoroduction-list{
+  @extend %__tops-index-content-intoroduction-list-normal;
 
   &__pict{
     position: relative;
@@ -110,12 +110,12 @@
 
 }
 
-.top-index-content-futures{
+.tops-index-content-futures{
   padding: 60px 100px;
   background-color: #fff;
 }
 
-.top-index-content-future{
+.tops-index-content-future{
 
   &__subtitle{
     @extend %__top-subtitle;
@@ -127,7 +127,7 @@
 
 }
 
-.top-index-content-future-lists{
+.tops-index-content-future-lists{
   max-width: calc(1040px + 20px);
   width: 100%;
   margin: 0 auto;
@@ -135,7 +135,7 @@
   flex-wrap: wrap;
 }
 
-.top-index-content-future-list{
+.tops-index-content-future-list{
   display: flex;
   flex-direction: column;
   width: calc(1 / 3 * 100%);
