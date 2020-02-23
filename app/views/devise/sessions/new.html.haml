@@ -1,17 +1,30 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.sessions-new
+  %header.sessions-new__header
+    = render "devise/header-image"
+  %main.sessions-new__main
+    %section.sessions-new-container
+      .sessions-new-container__head
+        %p.sessions-new-container__head--text アカウントをお持ちでない方はこちら
+        .sessions-new-container__btn
+          =link_to '新規会員登録',sign_ups_path,class:'sessions-new-container__btn--text'
+      .sessions-new-container__contents
+        %content.sessions-new-content
+          .sessions-new-content__btn--facebook
+            =link_to 'facebookで登録する','#',class:'sessions-new-content__text'
+            %i.sessions-new-content__icon
+              = icon('fab', 'facebook-square')
+          .sessions-new-content__btn--google
+            =link_to 'googleで登録する','#',class:'sessions-new-content__text--google'
+            %i.sessions-new-content__icon--google
+              = icon('fab', 'google')
+          .sessions-new-content__field
+            = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              = f.email_field :email,placeholder: "メールアドレス", autocomplete: "email",class:"sessions-new-content__field--password"
+              = f.password_field :password,placeholder: "パスワード", autocomplete: "current-password",class:"sessions-new-content__field--password"
+              .sessions-new-recaptcha
+                %p.sessions-new-recaptcha__image 私はロボットではありません
+              = f.submit "ログイン",class:"sessions-new-content__btn--log-in"
+          .sessions-new-content__password-forgotten
+            = render "devise/shared/links"
+  %footer.sessions-new__footer
+    = render "devise/navigation"

@@ -1,0 +1,150 @@
+%main.user-index-container
+  .user-index-container-main
+    .user-index-container__left
+      %nav.mypage-nav
+        %ul.mypage-nav-list
+          %li.mypage-nav-list--now
+            = link_to "#",class:"mypage-nav-list-item" do
+              マイページ
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              お知らせ
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              やることリスト
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              いいね!一覧
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              出品する
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              出品した商品-出品中
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              出品した商品-取引中
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              出品した商品-売却済
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              購入した商品-取引中
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              購入した商品-過去の取引
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              ニュース一覧
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              評価一覧
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              ガイド
+              %i.fas.fa-chevron-right
+          %li
+            = link_to  "#", class:"mypage-nav-list-item" do
+              お問い合わせ
+              %i.fas.fa-chevron-right
+        %h3.mypage-nav-head
+          メルペイ
+        %ul.mypage-nav-list-pay
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              売上・振り込み申請
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              ポイント
+              %i.fas.fa-chevron-right
+        %h3.mypage-nav-head
+          設定
+        %ul.mypage-nav-list-setting
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              プロフィール
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              発送元・お届け住所
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              支払い方法
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              メール/パスワード
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              本人情報
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              電話番号の確認
+              %i.fas.fa-chevron-right
+          %li
+            = link_to "#", class:"mypage-nav-list-item" do
+              ログアウト
+              %i.fas.fa-chevron-right
+    .user-index-container__right
+      %section.userpage-user-icon
+        = link_to "#" , class:".userpage-user-icon--minute" do
+          %figure
+            = image_tag('member_photo_noimage_thumb.png')
+          %h2
+            name
+          .userpage-user-icon--minute--number
+            %div
+              評価
+            %div.number-of-exibition
+              出品数
+      %section.userpage-container-notification
+        %ul.userpage-tabs
+          %li
+            %h3
+              = link_to "お知らせ" ,"#"
+          %li
+            %h3
+              = link_to "やることリスト" ,"#"
+        .userpage-tabs-content
+          %ul.userpage-tabs-content__notification
+            %li.userpage-tabs-content__notification--list
+              = link_to  "#", class:"userpage-tabs-content__notification--list--link" do
+                %figure
+                  = image_tag('mercari_profile.png')
+                .userpage-tabs-content__notification--list--link--body
+                  .userpage-tabs-content__notification--list--link--body--text
+                    [test]お知らせ内容
+                  %time
+                    = icon('far', 'clock')
+                    %span
+                      1日前
+                %i.fas.fa-chevron-right
+            %li.userpage-tabs-content__notification--index
+              = link_to "一覧を見る" , "#" 
+      %section.userpage-container-transaction
+        %h2.userpage-container-transaction--head
+          購入した商品
+        %ul.userpage-container-transaction--tabs
+          %li
+            %h3
+              = link_to "取引中" ,"#"
+          %li
+            %h3
+              = link_to "過去の取引" ,"#"
+        .userpage-container-transaction--contents

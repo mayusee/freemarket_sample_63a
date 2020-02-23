@@ -16,3 +16,14 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "reset";
+@import "header";
+@import "user_show";
+@import "mixins/appbutton";
+@import "modules/navigation";
+@import "modules/sign-ups-index";
+@import "modules/header-image";
+@import "modules/sessions-new";
+
+*{
+  box-sizing: border-box;
+}

@@ -1,1 +1,23 @@
-= link_to  "aaa", new_user_registration_path
+.sign-ups-index
+  %header.sign-ups-index__header
+    = render "devise/header-image"
+  %main.sign-ups-index__main
+    %section.sign-ups-index-container
+      .sign-ups-index-container__head
+        %h2.sign-ups-index-container__head--text 新規会員登録
+      .sign-ups-index-container__contents
+        %content.sign-ups-index-content
+          .sign-ups-index-content__btn--email
+            =link_to 'メールアドレスで登録する',new_user_registration_path,class:'sign-ups-index-content__text'
+            %i.sign-ups-index-content__icon
+              = icon('far', 'envelope')
+          .sign-ups-index-content__btn--facebook
+            =link_to 'Facebookで登録する','#',class:'sign-ups-index-content__text'
+            %i.sign-ups-index-content__icon
+              = icon('fab', 'facebook-square')
+          .sign-ups-index-content__btn--google
+            =link_to 'googleで登録する','#',class:'sign-ups-index-content__text--google'
+            %i.sign-ups-index-content__icon--google
+              = icon('fab', 'google')
+  %footer.sign-ups-index__footer
+    = render "devise/navigation"
