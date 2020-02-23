@@ -66,7 +66,9 @@ Things you may want to cover:
 |size_num|integer|null: false, limit: 1, unsigned: true, index: true|
 |sold_at|datetime||
 |title|string|null: false, index: true|
-|user_id|references|null: false, foreign_key: true|
+|seller_id|references|null: false, foreign_key: { to_table: 'users' }|
+|status_num|integer|null: false, limit: 1, unsigned: true|
+|buyer_id|reference|foreign_key: { to_table: 'users' }|
 
 ### Association
 - belongs_to    :user
@@ -76,7 +78,6 @@ Things you may want to cover:
 
 - has_many      :item_images
 
-- has_one       :trade
 - has_one       :shipping
 
 ## Areaテーブル
@@ -97,7 +98,6 @@ Things you may want to cover:
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-
 
 ## Item_imageテーブル
 |Column|Type|Options|
@@ -125,17 +125,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-
-## Tradeテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|reference|null: false, foreign_key: true|
-|status_num|integer|null: false, limit: 1, unsigned: true|
-|user_id|reference|null: false, foreign_key: true|
-
-### Association
-- belongs_to :user
-- belongs_to :item
 
 ## Shippingテーブル
 |Column|Type|Options|
