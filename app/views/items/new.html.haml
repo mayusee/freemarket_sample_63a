@@ -8,16 +8,25 @@
     .regstrations-new-main--form
       = form_with(model: [current_user, @item], locale: true ) do |f|
         .item-image-container
-          = f.label :"出典画像"
+          = f.label :"出品画像"
           %span.item-image-container__tag 必須
-          %br/
-          .item-image-container__preview
-            %ul
-          .item-image-container__guide
-            .have-image__0
-              = icon('fas','camera')
-              %h5 ドラッグ&ドロップ
-              %br でファイルをアップロード
+          %p.item-image-container__lead
+            最大10枚までアップロードできます
+          %ul.item-image-container__unit
+            %li.item-image-container__unit--preview
+              .item-image-container__unit--caption
+                = image_tag('logo2.png')
+              %ul.image-option
+                %li.image-option__list
+                  = link_to "編集", "#", class: ".image-option__list--tag"
+                %li.image-option__list
+                  = link_to "削除", "#", class: ".image-option__list--tag"
+
+            %li.item-image-container__unit--guide
+              .have-image
+                = icon('fas','camera')
+                %p ドラッグ&ドロップ
+                %p またはクリックしてファイルをアップロード
 
         .common-field
           = f.label :"商品名"
