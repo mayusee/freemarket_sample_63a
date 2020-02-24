@@ -5,65 +5,65 @@
         = image_tag 'logo.png'
 
   .registrations-new-main
-    .regstrations-new-main-input-class
+    .regstrations-new-main--form
       = form_with(model: @items, locale: true ) do |f|
-        .registrations-new-main-input-class-field
+        .common-field
           = f.label :"出典画像"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :image, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "画像部(要編集)"
-        .registrations-new-main-input-class-field
+          = f.text_field :image, class: "common-field.common-field__body",autofocus: true,placeholder: "画像部(要編集)"
+        .common-field
           = f.label :"商品名"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :name, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "40文字まで"          
-        .registrations-new-main-input-class-field
+          = f.text_field :name, class: "common-field.common-field__body",autofocus: true,placeholder: "40文字まで"          
+        .common-field
           = f.label :"商品の説明"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :text, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "商品の説明(必須1000文字以内"
-        .registrations-new-main-input-class-field__birthday
+          = f.text_field :text, class: "common-field.common-field__body",autofocus: true,placeholder: "商品の説明(必須1000文字以内"
+        .common-field__birthday
           = f.label :"カテゴリー"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
           = f.collection_select :category_id, Category.all, :id, :category_name
-        .registrations-new-main-input-class-field
+        .common-field
           = f.label :"ブランド"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "例）テックタロウ"
-        .registrations-new-main-input-class-field
+          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+        .common-field
           = f.label :"商品の状態"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "例）テックタロウ"
-        .registrations-new-main-input-class-field
+          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+        .common-field
           = f.label :"配送料の負担"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "例）テックタロウ"
-        .registrations-new-main-input-class-field
+          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+        .common-field
           = f.label :"発送元の地域"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "例）テックタロウ"
-        .registrations-new-main-input-class-field
+          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+        .common-field
           = f.label :"発送までの日数"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "例）テックタロウ"
-        .registrations-new-main-input-class-field
+          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+        .common-field
           = f.label :"販売価格"
-          %span.registrations-new-main-input-class-field__subtitle 必須
+          %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "registrations-new-main-input-class-field__text-box",autofocus: true,placeholder: "例）テックタロウ"
+          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
 
-        .registrations-new-main-input-class-field
-          .registrations-new-main-input-class-field__botton
-            = f.button "送信",onclick: "submit();",value: "次へ進む",class:"registrations-new-main-input-class-field__botton--text" 
+        .common-field
+          .common-field__botton
+            = f.button "送信",onclick: "submit();",value: "次へ進む",class:"common-field.common-field__botton" 
 
-        .registrations-new-main-input-class-field__consent
-          %P.registrations-new-main-input-class-field__consent--text
+        .common-field
+          %P.common-field__consent
             禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
   .items-new-footer
