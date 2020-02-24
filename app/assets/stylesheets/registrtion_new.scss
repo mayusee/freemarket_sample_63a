@@ -1,11 +1,3 @@
-/*---リストの標準装飾を消去---*/
-ul{
-  list-style: none;
-}
-/*---paddingとborderを幅と高さに含める---*/
-*{
-  box-sizing: border-box;
-}
 /*---aリンクマウスオンで文字大きさ1.2倍---*/
 a:hover {
   color: skyblue;
