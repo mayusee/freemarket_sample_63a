@@ -12,17 +12,10 @@
           %span.item-image-container__tag 必須
           %p.item-image-container__lead
             最大10枚までアップロードできます
-          %ul.item-image-container__unit
-            %li.item-image-container__unit--preview
-              .item-image-container__unit--caption
-                = image_tag('logo2.png')
-              %ul.image-option
-                %li.image-option__list
-                  = link_to "編集", "#", class: ".image-option__list--tag"
-                %li.image-option__list
-                  = link_to "削除", "#", class: ".image-option__list--tag"
-
-            %li.item-image-container__unit--guide
+          .item-image-container__unit
+            %ul
+            
+            .item-image-container__unit--guide
               .have-image
                 = icon('fas','camera')
                 %p ドラッグ&ドロップ
@@ -95,3 +88,4 @@
         = image_tag 'logo-white.png'
 
     %p ©️FURIMA
+%script{src: "/assets/item-image-container.js", type: "text/javascript"}
