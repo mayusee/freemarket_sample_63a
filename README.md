@@ -43,10 +43,8 @@ Things you may want to cover:
 |telephone_number|string||
 
 ### Association
-- belongs_to :area
 - has_many   :items
 - has_many   :creditcards
-- has_many   :trades
 - has_many   :shippings
 - has_many   :addresses
 
@@ -71,10 +69,10 @@ Things you may want to cover:
 |buyer_id|reference|foreign_key: { to_table: 'users' }|
 
 ### Association
-- belongs_to    :user
-- belongs_to    :shippingway
 - belongs_to    :brand
 - belongs_to    :category
+- belongs_to    :shippingway
+- belongs_to    :user
 
 - has_many      :item_images
 
@@ -86,7 +84,6 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- has_many :users
 - has_many :addresses
 
 
@@ -116,7 +113,6 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
-- has_many :shippings
 
 ## Brandテーブル
 |Column|Type|Options|
@@ -146,6 +142,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :items
+- has_ancestry
 
 ## Addressテーブル
 |Column|Type|Options|
@@ -159,6 +156,7 @@ Things you may want to cover:
 |telephone_number|string|null: false|
 |user_id|reference|null: false, foreign_key: true|
 ### Association
-- belongs_to  :user
 - belongs_to  :area
+- belongs_to  :user
+
 - has_many    :shippings
