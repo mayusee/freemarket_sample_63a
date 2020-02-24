@@ -40,4 +40,25 @@ $('.item-image-container__unit--guide').on('drop',function(event){
     
     fileReader.readAsDataURL(files[i]);
   }
+  
+  var elm = document.getElementById('d-d-delete');
+  elm.style.display = 'none';
+
+  var cl = document.getElementById('click-delete');
+  cl.style.display = 'none';
+
+  
+
 });
+
+// $(function(){
+//   if($('.item-image-container__unit--preview').length) {
+//     console.log(this.length)
+//     var elm = document.getElementsById('bb');
+//     elm.style.display = 'none';
+
+//     // 
+//     // elm.replace('ドラッグ&ドロップ', '');
+//     // elm.replace('またはクリックしてファイルをアップロード', '');
+//   }
+// });
