@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_034629) do
+ActiveRecord::Schema.define(version: 2020_02_24_082648) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -113,16 +113,6 @@ ActiveRecord::Schema.define(version: 2020_02_24_034629) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "user_id", null: false
-    t.integer "status_num", limit: 1, null: false, unsigned: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_trades_on_item_id"
-    t.index ["user_id"], name: "index_trades_on_user_id"
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
@@ -156,6 +146,4 @@ ActiveRecord::Schema.define(version: 2020_02_24_034629) do
   add_foreign_key "shippings", "addresses"
   add_foreign_key "shippings", "items"
   add_foreign_key "shippings", "users"
-  add_foreign_key "trades", "items"
-  add_foreign_key "trades", "users"
 end
