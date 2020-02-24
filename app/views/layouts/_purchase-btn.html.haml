@@ -1,5 +1,5 @@
 .purchase-btn
-  =link_to '#',class:"purchase-btn__inner" do
+  =link_to new_item_path do
     %span.purchase-btn__inner--text 出品する
     %i.purchase-btn__inner--icon
-      = icon('fa', 'camera')
+      = icon('fa', 'camera', class:"purchase-btn__inner" )
