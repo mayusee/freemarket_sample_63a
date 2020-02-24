@@ -8,6 +8,5 @@ class Item < ApplicationRecord
   has_many      :item_images
 
   has_one       :shipping
-  has_one       :trade
 
 end
