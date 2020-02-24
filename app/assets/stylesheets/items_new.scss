@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    &--icon {
+    &__icon {
       height: 50px;
       width: 200px;
     }
@@ -39,7 +39,7 @@
         }
       }
     }
-    &--icon {
+    &__icon {
       max-width: 160px;
       margin: 0 auto;
       img{
