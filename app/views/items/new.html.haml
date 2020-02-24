@@ -6,12 +6,19 @@
 
   .registrations-new-main
     .regstrations-new-main--form
-      = form_with(model: @items, locale: true ) do |f|
-        .common-field
+      = form_with(model: [current_user, @item], locale: true ) do |f|
+        .item-image-container
           = f.label :"出典画像"
-          %span.common-field__tag 必須
+          %span.item-image-container__tag 必須
           %br/
-          = f.text_field :image, class: "common-field.common-field__body",autofocus: true,placeholder: "画像部(要編集)"
+          .item-image-container__preview
+            %ul
+          .item-image-container__guide
+            .have-image__0
+              = icon('fas','camera')
+              %h5 ドラッグ&ドロップ
+              %br でファイルをアップロード
+
         .common-field
           = f.label :"商品名"
           %span.common-field__tag 必須

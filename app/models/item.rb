@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to    :shippingway
   belongs_to    :user
 
-  has_many      :itemimages
+  has_many      :item_images
 
   has_one       :shipping
   has_one       :trade
