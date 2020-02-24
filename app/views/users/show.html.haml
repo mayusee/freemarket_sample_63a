@@ -1,150 +1,235 @@
-%main.user-index-container
-  .user-index-container-main
-    .user-index-container__left
-      %nav.mypage-nav
-        %ul.mypage-nav-list
-          %li.mypage-nav-list--now
-            = link_to "#",class:"mypage-nav-list-item" do
-              マイページ
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              お知らせ
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              やることリスト
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              いいね!一覧
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              出品する
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              出品した商品-出品中
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              出品した商品-取引中
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              出品した商品-売却済
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              購入した商品-取引中
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              購入した商品-過去の取引
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              ニュース一覧
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              評価一覧
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              ガイド
-              %i.fas.fa-chevron-right
-          %li
-            = link_to  "#", class:"mypage-nav-list-item" do
-              お問い合わせ
-              %i.fas.fa-chevron-right
-        %h3.mypage-nav-head
-          メルペイ
-        %ul.mypage-nav-list-pay
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              売上・振り込み申請
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              ポイント
-              %i.fas.fa-chevron-right
-        %h3.mypage-nav-head
-          設定
-        %ul.mypage-nav-list-setting
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              プロフィール
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              発送元・お届け住所
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              支払い方法
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              メール/パスワード
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              本人情報
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              電話番号の確認
-              %i.fas.fa-chevron-right
-          %li
-            = link_to "#", class:"mypage-nav-list-item" do
-              ログアウト
-              %i.fas.fa-chevron-right
-    .user-index-container__right
-      %section.userpage-user-icon
-        = link_to "#" , class:".userpage-user-icon--minute" do
-          %figure
-            = image_tag('member_photo_noimage_thumb.png')
-          %h2
-            name
-          .userpage-user-icon--minute--number
-            %div
-              評価
-            %div.number-of-exibition
-              出品数
-      %section.userpage-container-notification
-        %ul.userpage-tabs
-          %li
-            %h3
-              = link_to "お知らせ" ,"#"
-          %li
-            %h3
-              = link_to "やることリスト" ,"#"
-        .userpage-tabs-content
-          %ul.userpage-tabs-content__notification
-            %li.userpage-tabs-content__notification--list
-              = link_to  "#", class:"userpage-tabs-content__notification--list--link" do
-                %figure
-                  = image_tag('mercari_profile.png')
-                .userpage-tabs-content__notification--list--link--body
-                  .userpage-tabs-content__notification--list--link--body--text
-                    [test]お知らせ内容
-                  %time
-                    = icon('far', 'clock')
-                    %span
-                      1日前
-                %i.fas.fa-chevron-right
-            %li.userpage-tabs-content__notification--index
-              = link_to "一覧を見る" , "#" 
-      %section.userpage-container-transaction
-        %h2.userpage-container-transaction--head
-          購入した商品
-        %ul.userpage-container-transaction--tabs
-          %li
-            %h3
-              = link_to "取引中" ,"#"
-          %li
-            %h3
-              = link_to "過去の取引" ,"#"
-        .userpage-container-transaction--contents
+.user-show
+  %header.user-show__header
+    = render 'layouts/header'
+  %main.user-show__main
+    .user-show-container
+      .user-show-container__left
+        %nav.user-show-nav
+          %ul.user-show-nav__now
+            %li.user-show-nav__btn
+              = link_to "#",class:"user-show-nav__btn--text" do
+                マイページ
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                お知らせ
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                やることリスト
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                いいね!一覧
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                出品する
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                出品した商品-出品中
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                出品した商品-取引中
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                出品した商品-売却済
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                購入した商品-取引中
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                購入した商品-過去の取引
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                ニュース一覧
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                評価一覧
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                ガイド
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to  "#", class:"user-show-nav__btn--text" do
+                お問い合わせ
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+          %h3.user-show-nav__title
+            メルペイ
+          %ul.user-show-nav__pay
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                売上・振り込み申請
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                ポイント
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+          %h3.user-show-nav__title
+            設定
+          %ul.user-show-nav__setting
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                プロフィール
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                発送元・お届け住所
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                支払い方法
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                メール/パスワード
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                本人情報
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                電話番号の確認
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+            %li.user-show-nav__btn
+              = link_to "#", class:"user-show-nav__btn--text" do
+                ログアウト
+                %i.user-show-nav__btn--icon
+                  = icon('fa', 'chevron-right')
+      .user-show-container__right
+        %section.user-show-info
+          = link_to "#" , class:"user-show-info__minute" do
+            %figure.user-show-info__image
+              = image_tag 'member_photo_noimage_thumb.png'
+            %h2.user-show-info__name
+              name
+            .user-show-info__exhibition
+              %div.user-show-info__exhibition--assessment
+                評価
+              %div.user-show-info__exhibition--counts
+                出品数
+        %section.user-show-tabs
+          .user-show-tabs__primary
+            %ul.user-show-tabs__tab
+              %li.user-show-tabs__notify
+                %h3
+                  = link_to "お知らせ" ,"#",class:"user-show-tabs__notify--text"
+              %li.user-show-tabs__todo
+                %h3
+                  = link_to "やることリスト" ,"#",class:"user-show-tabs__todo--text"
+            %ul.user-show-tabs__content
+              %li.user-show-tabs__btn
+                = link_to  "#", class:"user-show-tabs__btn--link" do
+                  %figure.user-show-tabs__btn--image
+                    = image_tag('mercari_profile.png')
+                  .user-show-tabs__text
+                    %p.user-show-tabs__text--notify
+                      [test]お知らせ内容
+                    %time.user-show-tabs__icon--clock
+                      = icon('far', 'clock')
+                      %span.user-show-tabs__text--limit
+                        1日前
+                  %i.user-show-tabs__icon
+                    = icon('fa', 'chevron-right')
+              %li.user-show-tabs__btn
+                = link_to  "#", class:"user-show-tabs__btn--link" do
+                  %figure.user-show-tabs__btn--image
+                    = image_tag('mercari_profile.png')
+                  .user-show-tabs__text
+                    %p.user-show-tabs__text--notify
+                      [test]お知らせ内容
+                    %time.user-show-tabs__icon--clock
+                      = icon('far', 'clock')
+                      %span.user-show-tabs__text--limit
+                        1日前
+                  %i.user-show-tabs__icon
+                    = icon('fa', 'chevron-right')
+              %li.user-show-tabs__btn
+                = link_to  "#", class:"user-show-tabs__btn--link" do
+                  %figure.user-show-tabs__btn--image
+                    = image_tag('mercari_profile.png')
+                  .user-show-tabs__text
+                    %p.user-show-tabs__text--notify
+                      [test]お知らせ内容
+                    %time.user-show-tabs__icon--clock
+                      = icon('far', 'clock')
+                      %span.user-show-tabs__text--limit
+                        1日前
+                  %i.user-show-tabs__icon
+                    = icon('fa', 'chevron-right')
+              %li.user-show-tabs__btn
+                = link_to  "#", class:"user-show-tabs__btn--link" do
+                  %figure.user-show-tabs__btn--image
+                    = image_tag('mercari_profile.png')
+                  .user-show-tabs__text
+                    %p.user-show-tabs__text--notify
+                      [test]お知らせ内容
+                    %time.user-show-tabs__icon--clock
+                      = icon('far', 'clock')
+                      %span.user-show-tabs__text--limit
+                        1日前
+                  %i.user-show-tabs__icon
+                    = icon('fa', 'chevron-right')
+              %li.user-show-tabs__btn
+                = link_to  "#", class:"user-show-tabs__btn--link" do
+                  %figure.user-show-tabs__btn--image
+                    = image_tag('mercari_profile.png')
+                  .user-show-tabs__text
+                    %p.user-show-tabs__text--notify
+                      [test]お知らせ内容
+                    %time.user-show-tabs__icon--clock
+                      = icon('far', 'clock')
+                      %span.user-show-tabs__text--limit
+                        1日前
+                  %i.user-show-tabs__icon
+                    = icon('fa', 'chevron-right')
+            %li.user-show-index
+              .user-show-index__inner
+                = link_to "#",class:'user-show-index__link' do
+                  一覧を見る
+          .user-show-tabs__secondary
+            .user-show-tabs__title
+              %h2.user-show-tabs__title--text
+                購入した商品
+            %ul.user-show-tabs__tab
+              %li.user-show-tabs__during
+                %h3
+                  = link_to "取引中" ,"#",class:"user-show-tabs__during--text"
+              %li.user-show-tabs__past
+                %h3
+                  = link_to "過去の取引" ,"#",class:"user-show-tabs__past--text"
+            %ul.user-show-tabs__content
+  %footer.user-show__footer
+    = render 'layouts/footer'
+  = render 'layouts/purchase-btn'
