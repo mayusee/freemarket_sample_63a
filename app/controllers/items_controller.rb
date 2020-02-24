@@ -25,5 +25,13 @@ class ItemsController < ApplicationController
 
   def show
   end
-  
+
+  private
+    def item_params
+      params.require(:item).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:shippingcharge_num,:daystoship_num,:title,:description,:price,:feerate,:profit_price)
+    end
+    
+    def image_params
+      params.require(:item_image).permit({:image => []})
+    end
 end
