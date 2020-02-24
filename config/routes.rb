@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :tops,only: :index 
   resources :sign_ups,only: :index
   resources :users , only: :show
+  resources :items, only: [:index, :new, :show]
 end
