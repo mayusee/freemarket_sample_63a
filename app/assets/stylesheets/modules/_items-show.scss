@@ -1,34 +1,8 @@
-.items-show{
-  &__header{
-
-  }
-  &__main{
-
-  }
-  &__footer{
-
-  }
-}
-
 .items-show-container{
   width:700px;
   margin:0 auto;
 }
-.items-show-contents{
-
-}
-.items-show-content{
-
-}
 .items-show-summary{
-  &__name{
-
-  }
-  &__body{
-
-
-
-  }
   &__main-image{
     height:346px;
   }
@@ -37,11 +11,6 @@
     margin:0 auto;
     &--image{
       height:87px;
-    }
-  }
-  &__price{
-    &--detail{
-
     }
   }
 }
@@ -100,9 +69,6 @@
       color: #3CCACE;
       border: 1px solid #ffb340;
     }
-    &--icon{
-
-    }
   }
   &__report{
     &--btn{
@@ -113,17 +79,10 @@
       border: 1px solid #333;
       text-decoration: none;
     }
-    &--icon{
-
-    }
   }
-}
-.items-show-comments{
-
 }
 .items-show-comment{
   &__submit{
-
     &--btn{
       margin:0 auto;
       font-size: 18px;
@@ -134,9 +93,6 @@
       width: 60%;
       font-size: 18px;
       border-radius: 100px;
-    }
-    &--icon{
-
     }
   }
 }
