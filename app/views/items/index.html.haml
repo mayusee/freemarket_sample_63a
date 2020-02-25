@@ -1,0 +1,104 @@
+.items-show
+  %header.items-show__header
+    = render 'layouts/header'
+  %main.items-show__main
+    .items-show-container
+      .items-show-contents
+        .items-show-content
+          .items-show-summary
+            %h2.items-show-summary__name product3
+            .items-show-summary__body
+              %ul
+                %li
+                  =image_tag '',class:'items-show-summary__main-image'
+                %ul.items-show-summary__sub-images
+                  %li
+                    =image_tag '',size:'75x75',class:'items-show-summary__sub-image--image'
+                  %li
+                    =image_tag '',size:'75x75',class:'items-show-summary__sub-image--image'
+                  %li
+                    =image_tag '',size:'75x75',class:'items-show-summary__sub-image--image'
+            .items-show-summary__price
+              %span
+                ¥30,000
+              .items-show-summary__price--detail
+                %span
+                  (税込)
+                %span
+                  送料込み
+          .items-show-detail product3
+          .items-show-detail__table
+            %table.items-show-detail__table--table
+              %tbody.items-show-detail__table--tbody
+                %tr.items-show-detail__table--tr
+                  %th.items-show-detail__table--th 出品者
+                  %td.items-show-detail__table--td hoge
+                %tr.items-show-detail__table--tr
+                  %th.items-show-detail__table--th カテゴリー
+                  %td.items-show-detail__table--td
+                    =link_to 'ベビー・キッズ','#'
+                    %br/
+                    =link_to 'ベビー服(男女兼用)  ~95cm','#'
+                    %br/
+                    =link_to 'アウター','#'
+                %tr.items-show-detail__table--tr
+                  %th.items-show-detail__table--th ブランド
+                  %td.items-show-detail__table--td
+                %tr.items-show-detail__table--tr
+                  %th.items-show-detail__table--th 商品のサイズ
+                  %td.items-show-detail__table--td
+                %tr.items-show-detail__table--tr
+                  %th.items-show-detail__table--th 商品の状態
+                  %td.items-show-detail__table--td 未使用に近い
+                %tr.items-show-detail__table--tr
+                  %th.items-show-detail__table--th 配送料の負担
+                  %td.items-show-detail__table--td 送料込み（出品者負担）
+                %tr.items-show-detail__table--tr
+                  %th.items-show-detail__table--th 発送元の地域
+                  %td.items-show-detail__table--td
+                    =link_to '岩手県','#'
+                %tr.items-show-detail__table--tr
+                  %th.items-show-detail__table--th 発送日の目安
+                  %td.items-show-detail__table--td 4-7日で発送
+          .items-show-other
+            %ul.items-show-other__favorite
+              %li.items-show-other__favorite--btn
+                %i.items-show-other--icon
+                  =icon('fa','star')
+                お気に入り 0
+            %ul.items-show-other__report
+              %li.items-show-other__report--btn
+                =link_to '#',class:'.items-show-other__report--link' do
+                  %i.items-show-other__report--icon
+                    =icon('fa','flag')
+                  不適切な商品の通報
+        .items-show-comments
+          %ul.items-show-comment
+            = form_with(model:@comment,local:true) do |f|
+              = f.text_area :comment
+              %p.items-show-comment__notify
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br/
+                不快な言葉遣いなどは利用制限や退会処分となることがあります。
+                %br/
+              .items-show-comment__submit
+                = f.button type: "submit", class:'items-show-comment__submit--btn' do
+                  %i.items-show-comment__submit--icon
+                    = icon('fa','comment')
+                    コメントする
+      %ul.items-show-links
+        %li
+          =link_to "#" do
+            %i.fa.fa-angle-left
+            %span
+            前の商品
+        %li
+          =link_to "#" do
+            %span 後ろの商品
+            %i.fa.fa-angle-right
+      .items-show-related
+        =link_to 'ベビー・キッズをもっと見る',"#" 
+        .productLists
+  %footer.items-show__footer
+    = render 'layouts/footer'
+  = render 'layouts/purchase-btn'
