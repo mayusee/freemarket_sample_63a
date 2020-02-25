@@ -9,6 +9,4 @@ Rails.application.routes.draw do
       resources :trades , only: [:new, :create]
     end
   end
-  
-
 end
