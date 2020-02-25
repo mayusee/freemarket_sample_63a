@@ -1,0 +1,146 @@
+.items-show{
+  &__header{
+
+  }
+  &__main{
+
+  }
+  &__footer{
+
+  }
+}
+
+.items-show-container{
+  width:700px;
+  margin:0 auto;
+}
+.items-show-contents{
+
+}
+.items-show-content{
+
+}
+.items-show-summary{
+  &__name{
+
+  }
+  &__body{
+
+
+
+  }
+  &__main-image{
+    height:346px;
+  }
+  &__sub-images{
+    display:flex;
+    margin:0 auto;
+    &--image{
+      height:87px;
+    }
+  }
+  &__price{
+    &--detail{
+
+    }
+  }
+}
+.items-show-detail{
+  width:700px;
+  &__table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    &--table{
+      width: 100%;
+      height: 375px;
+      border-collapse: collapse;
+      border: 1px solid #f8f8f8;
+    }
+    &--tbody{
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+    }
+    &--tr{
+      display: table-row;
+      vertical-align: inherit;
+      border-color: inherit;
+    }
+    &--th{
+      font-style: normal;
+      width: 20%;
+      background-color: #eee;
+      font-weight: 400;
+      padding: 8px;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      text-align: center;
+    }
+    &--td{
+      width: 61%;
+      padding: 15px 15px;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      display: table-cell;
+      vertical-align: inherit;
+    }
+  }
+}
+.items-show-other{
+  display:flex;
+  justify-content: space-between;
+  &__favorite{
+    &--btn{
+      margin-right: auto;
+      padding: 6px 10px;
+      border-radius: 40px;
+      color: #3CCACE;
+      border: 1px solid #ffb340;
+    }
+    &--icon{
+
+    }
+  }
+  &__report{
+    &--btn{
+      padding: 6px 10px;
+      display: inline-block;
+      border-radius: 4px;
+      color: #333;
+      border: 1px solid #333;
+      text-decoration: none;
+    }
+    &--icon{
+
+    }
+  }
+}
+.items-show-comments{
+
+}
+.items-show-comment{
+  &__submit{
+
+    &--btn{
+      margin:0 auto;
+      font-size: 18px;
+      line-height: 48px;
+      background: #3CCACE;
+      border: 1px solid #3CCACE;
+      color: #fff;
+      width: 60%;
+      font-size: 18px;
+      border-radius: 100px;
+    }
+    &--icon{
+
+    }
+  }
+}
+.items-show-links{
+  display:flex;
+  justify-content: space-between;
+}
