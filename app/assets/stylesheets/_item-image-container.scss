@@ -21,7 +21,8 @@
   }
   &__unit{
     display: flex;
-    // min-width: 100%;
+    min-width: 620px;
+    max-width: 620px;
 
     ul{
       display:flex;

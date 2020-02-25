@@ -27,18 +27,26 @@ $('.item-image-container__unit--guide').on('drop',function(event){
     
   files = event.originalEvent.dataTransfer.files;
     
-  for (var i=0; i<files.length; i++) {
-    files_array.push(files[i]);
-    var fileReader = new FileReader();
-    
-    fileReader.onload = function( event ) {
-    
-    var loadedImageUri = event.target.result;
-    
-    $(buildImage(loadedImageUri)).appendTo(".item-image-container__unit ul").trigger("create");
-    };
-    
-    fileReader.readAsDataURL(files[i]);
+  var count = files.length;
+
+  if(count<=5){
+    for (var i=0; i<count; i++) {
+      files_array.push(files[i]);
+      var fileReader = new FileReader();
+      
+      fileReader.onload = function( event ) {
+      
+      var loadedImageUri = event.target.result;
+      
+      $(buildImage(loadedImageUri,)).appendTo(".item-image-container__unit ul").trigger("create");
+      };
+
+      fileReader.readAsDataURL(files[i]);
+
+      var target1 = document.getElementsByClassName('item-image-container__unit--preview');
+      console.log(target1);
+      // target1.dataset.num = i;
+    }
   }
   
   var elm = document.getElementById('d-d-delete');
@@ -47,18 +55,7 @@ $('.item-image-container__unit--guide').on('drop',function(event){
   var cl = document.getElementById('click-delete');
   cl.style.display = 'none';
 
-  
-
+  console.log(count)
 });
 
-// $(function(){
-//   if($('.item-image-container__unit--preview').length) {
-//     console.log(this.length)
-//     var elm = document.getElementsById('bb');
-//     elm.style.display = 'none';
 
-//     // 
-//     // elm.replace('ドラッグ&ドロップ', '');
-//     // elm.replace('またはクリックしてファイルをアップロード', '');
-//   }
-// });
