@@ -11,5 +11,5 @@ class Item < ApplicationRecord
   has_one       :trade
 
 
-  
+  mount_uploader :image, ImageUploader
 end

@@ -6,7 +6,7 @@ function buildImage(loadedImageUri){
     </div>
     <div class="image-option">
       <div  class="image-option__list">
-        <div class="image-option__list--tag" href="#">編集</div>
+        <div class="image-option__list--tag">編集</div>
       </div>
       <div class="image-option__list">
         <a class="image-option__list--tag">削除</a>
@@ -38,15 +38,10 @@ $('.item-image-container__unit--guide').on('drop',function(event){
       
       var loadedImageUri = event.target.result;
       
-      $(buildImage(loadedImageUri,)).appendTo(".item-image-container__unit ul").trigger("create");
+      $(buildImage(loadedImageUri,)).appendTo(".item-image-container__unit ul").trigger("build");
       };
 
       fileReader.readAsDataURL(files[i]);
-
-      // var target1 = document.getElementsByClassName('.item-image-container__unit--preview');
-      // console.log(target1);
-      // target1.data("id",count[i]);
-      console.log(files_array[i])
     }
   }
   
