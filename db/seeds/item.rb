@@ -2,7 +2,8 @@ ary_descripcion = ["あああ","いいい","ううう","えええ","おおお","
 ary_categoryid = [3,4,5,7,8,9,10,3,4,5]
 
 10.times do |n|
-  brand_id = n
+  brand_id = n+1
+  buyer_id = nil
   category_id = ary_categoryid[n]
   condition_num =  0
   daystoship_num = 0
@@ -10,13 +11,14 @@ ary_categoryid = [3,4,5,7,8,9,10,3,4,5]
   feerate = 0.1
   price =  20000
   profit_price = 18000
-  seller_id = n
+  seller_id = n+1
   shippingcharge_num = 0
   shippingway_id = 0
   size_num = 0
   status_num = 0
-  title = "商品#{n}"
+  title = "商品#{n+1}"
   Item.create!(brand_id: brand_id,
+    buyer_id:            buyer_id,
     category_id:         category_id,
     condition_num:       condition_num,
     daystoship_num:      daystoship_num,
@@ -29,6 +31,6 @@ ary_categoryid = [3,4,5,7,8,9,10,3,4,5]
     shippingway_id:      shippingway_id,
     size_num:            size_num,
     status_num:          status_num,
-    title:               title,)
+    title:               title)
 end
 
