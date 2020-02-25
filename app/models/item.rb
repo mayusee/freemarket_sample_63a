@@ -3,13 +3,11 @@ class Item < ApplicationRecord
   belongs_to    :brand
   belongs_to    :category
   belongs_to    :shippingway
-  belongs_to    :buyer, class_name: "User"
-  belongs_to    :seller, class_name: "User"
+  belongs_to    :user
 
-  has_many      :item_images
+  has_many      :itemimages
 
   has_one       :shipping
+  has_one       :trade
 
-
-  
 end

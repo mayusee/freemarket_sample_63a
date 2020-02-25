@@ -1,11 +1,5 @@
 .purchase-btn
-  - if user_signed_in?
-    =link_to new_user_item_path(current_user.id) do
-      %span.purchase-btn__inner--text 出品する
-      %i.purchase-btn__inner--icon
-        = icon('fa', 'camera', class:"purchase-btn__inner" )
-  - else
-    =link_to new_user_session_path do
-      %span.purchase-btn__inner--text 出品する
-      %i.purchase-btn__inner--icon
-        = icon('fa', 'camera', class:"purchase-btn__inner" )
+  =link_to '#',class:"purchase-btn__inner" do
+    %span.purchase-btn__inner--text 出品する
+    %i.purchase-btn__inner--icon
+      = icon('fa', 'camera')
