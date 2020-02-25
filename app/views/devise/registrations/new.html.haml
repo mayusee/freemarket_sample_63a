@@ -1,6 +1,7 @@
 .registrations-new
-  .registrations-new-header
-    = image_tag 'logo.png',class: "registrations-new-header__logo"
+  %header.registrations-new__header
+    =link_to root_path do
+      = image_tag 'logo.png',class: "registrations-new__header--logo"
     .registrations-new-sign-up-bar
       %ul.registrations-new-sign-up-bar__ul
         %l1.registrations-new-sign-up-bar__l1
@@ -13,7 +14,7 @@
           完了
           .registrations-new-sign-up-bar__l3--progress-status3
 
-  .registrations-new-main
+  %main.registrations-new__main
     .registrations-new-main-title
       %h2 会員情報登録
     .registrations-new-main-input-class
@@ -86,9 +87,10 @@
             = f.button "送信",onclick: "submit();",value: "次へ進む",class:"registrations-new-main-input-class-field__botton--text" 
         .registrations-new-main-input-class-field
           %P.registrations-new-main-input-class-field__bottom-link
-            #{link_to "本人情報の登録について＞","#URL" }
+            #{link_to "本人情報の登録について＞","#URL",class:"registrations-new-main-input-class-field__bottom-link--link" }
         .registrations-new-main-input-class-field
           .registrations-new-main-input-class-field__bottom-box
-            %P.registrations-new-main-input-class-field__bottom-box--link
-              This site is protected by reCAPTCHA and the Google Privacy Policy#{link_to "Privacy Policy","#URL"}and#{link_to "Terms of Service","#URL"}
-    .footer
+            %P.registrations-new-main-input-class-field__bottom-box--text
+              This site is protected by reCAPTCHA and the Google Privacy Policy#{link_to "Privacy Policy","#URL",class:"registrations-new-main-input-class-field__bottom-box--link"}and#{link_to "Terms of Service","#URL",class:"registrations-new-main-input-class-field__bottom-box--link"}
+  %footer.registrations-new__footer
+    = render "devise/navigation"
