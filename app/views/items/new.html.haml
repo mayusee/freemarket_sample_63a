@@ -16,6 +16,8 @@
             %ul
             
             .item-image-container__unit--guide
+              = f.fields_for :item_images do |item_image|
+                = f.file_field :image, class: 'input-box__image__file'
               .have-image
                 = icon('fas','camera')
                 %p#d-d-delete ドラッグ&ドロップ

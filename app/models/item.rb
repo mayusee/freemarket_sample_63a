@@ -4,12 +4,10 @@ class Item < ApplicationRecord
   belongs_to    :category
   belongs_to    :shippingway
   belongs_to    :user
-
-  has_many      :item_images
+  has_many :item_images, dependent: :destroy
+  accepts_nested_attributes_for      :item_images
 
   has_one       :shipping
   has_one       :trade
 
-
-  mount_uploader :image, ImageUploader
 end

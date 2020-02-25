@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    5.times {@item.item_images.build}
   end
 
   def create
@@ -28,7 +29,7 @@ class ItemsController < ApplicationController
 
   private
     def item_params
-      params.require(:item).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:shippingcharge_num,:daystoship_num,:title,:description,:price,:feerate,:profit_price)
+      params.require(:item).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:shippingcharge_num,:daystoship_num,:title,:description,:price,:feerate,:profit_price, item_image_attributes: [:image])
     end
     
     def image_params
