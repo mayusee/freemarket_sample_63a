@@ -6,10 +6,10 @@ function buildImage(loadedImageUri){
     </div>
     <div class="image-option">
       <div  class="image-option__list">
-        <a class=".image-option__list--tag" href="#">編集</a>
+        <div class="image-option__list--tag" href="#">編集</div>
       </div>
       <div class="image-option__list">
-        <a class=".image-option__list--tag" href="#">削除</a>
+        <a class="image-option__list--tag">削除</a>
       </div>
     </div>
   </li>`
@@ -43,9 +43,10 @@ $('.item-image-container__unit--guide').on('drop',function(event){
 
       fileReader.readAsDataURL(files[i]);
 
-      var target1 = document.getElementsByClassName('item-image-container__unit--preview');
-      console.log(target1);
-      // target1.dataset.num = i;
+      // var target1 = document.getElementsByClassName('.item-image-container__unit--preview');
+      // console.log(target1);
+      // target1.data("id",count[i]);
+      console.log(files_array[i])
     }
   }
   
@@ -54,8 +55,14 @@ $('.item-image-container__unit--guide').on('drop',function(event){
 
   var cl = document.getElementById('click-delete');
   cl.style.display = 'none';
-
-  console.log(count)
+  
 });
 
+$(document).on('click','.item-image-container__unit--preview a',function(){
 
+  var index = $(".item-image-container__unit--preview a").index(this);
+
+  files_array.splice(index - 1, 1);
+
+  $(this).parent().parent().parent().remove();
+});
