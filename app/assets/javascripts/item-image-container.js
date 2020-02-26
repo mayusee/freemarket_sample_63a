@@ -1,6 +1,6 @@
 function buildImage(loadedImageUri){
   var html =
-  `<li class="item-image-container__unit--preview">
+  `<li class="item-image-container__unit--preview" id="visible">
     <div class="item-image-container__unit--caption">
       <img src="${loadedImageUri}">
     </div>
@@ -42,6 +42,13 @@ $('.item-image-container__unit--guide').on('drop',function(event){
       };
 
       fileReader.readAsDataURL(files[i]);
+
+      // document.addEventListener("DOMContentLoaded", function(){
+
+      // var visible = document.getElementById('visible');
+      // visible.setAttribute('data-num', i);
+
+      // }, false);
     }
   }
   
@@ -52,6 +59,7 @@ $('.item-image-container__unit--guide').on('drop',function(event){
   cl.style.display = 'none';
   
 });
+console.log(files_array);
 
 $(document).on('click','.item-image-container__unit--preview a',function(){
 
@@ -60,4 +68,32 @@ $(document).on('click','.item-image-container__unit--preview a',function(){
   files_array.splice(index - 1, 1);
 
   $(this).parent().parent().parent().remove();
+});
+
+var aj_url = window.location.pathname;
+var aj_url = '/users/1/items'
+
+$('#new_item').on('submit', function(e){
+  e.preventDefault();
+  
+  var formData = new FormData($(this).get(0));
+  
+  files_array.forEach(function(file){
+   formData.append("image[images][]" , file)
+  });
+  
+  $.ajax({
+    url:         aj_url,
+    type:        "POST",
+    data:        formData,
+    contentType: false,
+    processData: false,
+    dataType:   'json',
+  })
+  .done(function(){
+    alert('出品に成功しました！');
+  })
+  .fail(function(){
+    alert('出品に失敗しました！');
+  });
 });

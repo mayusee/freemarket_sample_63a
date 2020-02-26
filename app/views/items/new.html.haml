@@ -6,7 +6,7 @@
 
   .registrations-new-main
     .regstrations-new-main--form
-      = form_with(model: [current_user, @item], locale: true ) do |f|
+      = form_with(model: [current_user, @item], locale: true , id: 'new_item') do |f|
         .item-image-container
           = f.label :"出品画像"
           %span.item-image-container__tag 必須
@@ -14,10 +14,18 @@
             最大5枚までアップロードできます
           .item-image-container__unit
             %ul
-            
+              -# %li.item-image-container__unit--preview
+              -#   .item-image-container__unit--caption
+              -#     = image_tag(@item.item_images.image.url)
+              -#   .image-option
+              -#     .image-option__list
+              -#       .image-option__list--tag 編集
+              -#     .image-option__list
+              -#       %a.image-option__list--tag 削除
+              
             .item-image-container__unit--guide
-              = f.fields_for :item_images do |item_image|
-                = f.file_field :image, class: 'input-box__image__file'
+              -# = f.fields_for :item_images do |item_image|
+              -#   = f.file_field :image, class: 'item-image-container__unit--image-file', id: "file"
               .have-image
                 = icon('fas','camera')
                 %p#d-d-delete ドラッグ&ドロップ
@@ -70,8 +78,8 @@
           = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
 
         .common-field
-          .common-field__botton
-            = f.button "送信",onclick: "submit();",value: "次へ進む",class:"common-field.common-field__botton" 
+          .common-field__button
+            = f.button "送信",onclick: "submit();",value: "次へ進む",class:"common-field.common-field__button" 
 
         .common-field
           %P.common-field__consent

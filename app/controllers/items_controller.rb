@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
     @item = Item.new(item_params)
 
     if @item.save
@@ -33,6 +34,6 @@ class ItemsController < ApplicationController
     end
     
     def image_params
-      params.require(:item_images).permit({:image => []})
+      params.require(:item_image).permit({:image => []})
     end
 end
