@@ -26,7 +26,7 @@
           = f.label :"カテゴリー"
           %span.common-field__tag 必須
           %br/
-          = f.collection_select :category_id, Category.all, :id, :category_name
+          = f.collection_select :category_id, Category.all, :id, :name
         .common-field
           = f.label :"ブランド"
           %span.common-field__tag 必須
