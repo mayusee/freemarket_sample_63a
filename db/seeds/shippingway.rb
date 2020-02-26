@@ -1,0 +1,15 @@
+Shippingway.seed(:id,
+  { :id =>  0, :status_num => 1, :name => "未定"},
+  { :id =>  1, :status_num => 1, :name => "らくらくFRIMA便"},
+  { :id =>  2, :status_num => 1, :name => "ゆうメール"},
+  { :id =>  3, :status_num => 1, :name => "レターパック"},
+  { :id =>  4, :status_num => 1, :name => "普通郵便（定形、定形外）"},
+  { :id =>  5, :status_num => 1, :name => "クロネコヤマト"},
+  { :id =>  6, :status_num => 1, :name => "ゆうパック"},
+  { :id =>  7, :status_num => 1, :name => "クリックポスト"},
+  { :id =>  8, :status_num => 1, :name => "ゆうパケット"},
+  { :id =>  9, :status_num => 2, :name => "未定"},
+  { :id => 10, :status_num => 2, :name => "クロネコヤマト"},
+  { :id => 11, :status_num => 2, :name => "ゆうパック"},
+  { :id => 12, :status_num => 2, :name => "ゆうメール"}
+)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_103657) do
+ActiveRecord::Schema.define(version: 2020_02_24_094746) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2020_02_15_103657) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "brand_id", null: false
     t.bigint "category_id", null: false
     t.bigint "shippingway_id", null: false
@@ -83,15 +82,19 @@ ActiveRecord::Schema.define(version: 2020_02_15_103657) do
     t.datetime "sold_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "seller_id", null: false
+    t.bigint "buyer_id"
+    t.integer "status_num", limit: 1, null: false, unsigned: true
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["condition_num"], name: "index_items_on_condition_num"
     t.index ["daystoship_num"], name: "index_items_on_daystoship_num"
+    t.index ["seller_id"], name: "index_items_on_seller_id"
     t.index ["shippingcharge_num"], name: "index_items_on_shippingcharge_num"
     t.index ["shippingway_id"], name: "index_items_on_shippingway_id"
     t.index ["size_num"], name: "index_items_on_size_num"
     t.index ["title"], name: "index_items_on_title"
-    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,16 +113,6 @@ ActiveRecord::Schema.define(version: 2020_02_15_103657) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "user_id", null: false
-    t.integer "status_num", limit: 1, null: false, unsigned: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_trades_on_item_id"
-    t.index ["user_id"], name: "index_trades_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -151,10 +144,9 @@ ActiveRecord::Schema.define(version: 2020_02_15_103657) do
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
   add_foreign_key "items", "shippingways"
-  add_foreign_key "items", "users"
+  add_foreign_key "items", "users", column: "buyer_id"
+  add_foreign_key "items", "users", column: "seller_id"
   add_foreign_key "shippings", "addresses"
   add_foreign_key "shippings", "items"
   add_foreign_key "shippings", "users"
-  add_foreign_key "trades", "items"
-  add_foreign_key "trades", "users"
 end

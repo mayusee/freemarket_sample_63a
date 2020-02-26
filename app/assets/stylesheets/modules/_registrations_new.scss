@@ -1,0 +1,283 @@
+/*---ページ全体---*/
+.registrations-new{
+  width: 100vw;
+  padding: 20px 40px;
+  background-color: #f5f5f5;
+  position: sticky;
+  &__header{
+    margin:0 auto;
+    width:700px;
+    padding: 40px;    
+    display: flex;
+    justify-content: center;
+    &--logo{
+      width: 185px;
+      height: 49px;
+      line-height: 49px; 
+    }
+  }
+  &__main{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    padding-bottom: 10px;  
+  }
+}
+/*---進歩状況サイドバー---*/
+.registrations-new-sign-up-bar{
+  width: 40%;
+  padding: 10px 0 0 40px;
+  &__ul{
+    display: flex;
+  }
+  &__l1{
+    position: relative;
+    display: inline-block;
+    min-width: 40px;
+    margin: 0 5% 0 0;
+    font-size: 0.2rem;
+    white-space: nowrap;
+    color: red;
+    &--progress-status1{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: red;
+      margin: 0 auto;
+      margin-top: 5px;
+    &::after{
+      position: absolute;
+      bottom: 5px;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #ccc;
+      }
+    }  
+  }
+  &__l2{
+    position: relative;
+    display: inline-block;
+    min-width: 40px;
+    margin: 0 5% 0 0;
+    font-size: 0.2rem;
+    white-space: nowrap;
+    text-align: center;
+    color: #ccc;
+    &--progress-status2{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin: 0 auto;
+      margin-top: 5px;
+    &::before{
+      left: 50%;
+      position: absolute;
+      bottom: 5px;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #ccc;
+      }
+    &::after{
+      right: 30%;
+      position: absolute;
+      bottom: 5px;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #ccc;
+      }
+    }
+  }
+  &__l3{
+    position: relative;
+    display: inline-block;
+    min-width: 40px;
+    margin: 0 5% 0 0;
+    font-size: 0.2rem;
+    white-space: nowrap;
+    text-align: center;
+    color: #ccc;
+    &--progress-status3{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin: 0 auto;
+      margin-top: 5px;
+    &::after{
+      right: 50%;
+      position: absolute;
+      bottom: 5px;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #ccc;
+      }
+    }
+  } 
+}
+/*---Main全体---*/
+.registrations-new
+/*---Mainタイトル---*/
+.registrations-new-main-title{    
+  font-size: 32px;
+  padding: 20px 0 20px 0;
+  text-align: center;
+  border-bottom: 1px solid whitesmoke;
+} 
+/*---テキスト入力部分全体---*/
+.registrations-new-main-input-class{
+  max-width: 343px;
+  margin: 0 auto;
+}
+/*---テキスト部分の装飾---*/
+.registrations-new-main-input-class-field{
+  margin-top: 20px;          
+  &__subtitle{
+    background: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+  input[type=text]:required,
+  input[type=email]:required,
+  input[type=email]:invalid,
+  textarea:required {
+    color: #630015;
+    border-color: #c20c33;
+    background-color: #ffd9e1;
+  }
+  &__text-box,
+  &__text-box:required{
+    width: 90%;
+    margin: 8px 0 0;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  &__gray-text{
+    font-size: 14px;
+    color: gray;
+  }
+  &__checkbox-text{
+    color: gray;
+  }
+  &__identification{
+    margin-top: 20px;
+    line-height: 1.5;
+    font-size: 14px;
+  }                        
+  &__box{
+    margin-top: 20px;
+    display: flex;           
+      &--text-box{
+        width: 90%;
+        height: 48px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+    }
+  }
+  &__birthday{
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom:30px;
+      #birthday_birthday_1i,
+      #birthday_birthday_2i,
+      #birthday_birthday_3i{
+        position: relative;
+        height: 48px;
+        padding: 0 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+        width: 23%;
+    }    
+  }
+  &__text-Identity-information{
+    color: darkgray;
+    font-size: 14px;
+  }
+  &__consent{
+    text-align: center;
+    &--text{
+      color: black;
+      font-size: 14px;
+    }
+    &--link{
+      font-size: 14px;
+      text-decoration: none;
+      &:hover {
+        color: skyblue;
+        font-size: 1.2em;/*文字サイズ2倍*/
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__botton{
+    margin-top: 20px;
+    text-align: center; 
+    &--text{
+    width: 90%;
+    background: red;
+    border-radius: 5px;
+    padding: 18px 32px;          
+    color: #fff;            
+    font-size: 20px;
+    border-style: none;
+    cursor: pointer;                     
+    }     
+  }
+  &__bottom-link{
+    margin-top: 30px;
+    text-align: right;
+    &--link{
+      text-decoration: none;
+      &:hover {
+        color: skyblue;
+        font-size: 1.2em;/*文字サイズ2倍*/
+        font-weight: bold;
+      }
+    }
+  }
+  &__bottom-box{
+    margin: 20px 0 0px 0;
+    font-size: 10px;
+    line-height: 1.5;
+    color: gray;
+    background-color:whitesmoke;
+    &--link{
+      text-decoration: none;
+      &:hover {
+        color: skyblue;
+        font-size: 1.2em;/*文字サイズ2倍*/
+        font-weight: bold;
+      }
+    }
+  }
+}
