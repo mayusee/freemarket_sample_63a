@@ -43,12 +43,6 @@ $('.item-image-container__unit--guide').on('drop',function(event){
 
       fileReader.readAsDataURL(files[i]);
 
-      // document.addEventListener("DOMContentLoaded", function(){
-
-      // var visible = document.getElementById('visible');
-      // visible.setAttribute('data-num', i);
-
-      // }, false);
     }
   }
   

@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     @item = Item.new(item_params)
 
     if @item.save
@@ -20,8 +19,11 @@ class ItemsController < ApplicationController
       end
 
       respond_to do |format|
+        format.html { redirect_to root_path}
         format.json
       end
+
+      redirect_to root_path
     end
   end
 
