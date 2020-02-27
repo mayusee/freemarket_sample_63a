@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'creditcard/new'
   devise_for :users
   root "tops#index"
   resources :tops,only: :index 
@@ -12,7 +11,6 @@ Rails.application.routes.draw do
 
     resources :creditcards, only: [:new, :show] do
       collection do
-        post 'show', to: 'creditcards#show'
         post 'pay', to: 'creditcards#pay'
         post 'delete', to: 'creditcards#delete'
       end
