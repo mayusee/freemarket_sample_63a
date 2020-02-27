@@ -10,6 +10,4 @@ class Item < ApplicationRecord
 
   has_one       :shipping
 
-
-  
 end
