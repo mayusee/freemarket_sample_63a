@@ -9,10 +9,9 @@ Rails.application.routes.draw do
       resources :trades , only: [:new, :create]
     end
 
-    resources :creditcards, only: [:new, :show] do
+    resources :creditcards, only: [:new, :show, :destroy] do
       collection do
         post 'pay', to: 'creditcards#pay'
-        post 'delete', to: 'creditcards#delete'
       end
     end
   end
