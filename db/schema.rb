@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_101626) do
+ActiveRecord::Schema.define(version: 2020_02_28_102559) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 2020_02_27_101626) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "brand_id", null: false
     t.bigint "category_id", null: false
-    t.bigint "shippingway_id", null: false
     t.integer "condition_num", limit: 1, null: false, unsigned: true
     t.integer "daystoship_num", limit: 1, null: false, unsigned: true
     t.string "title", null: false
@@ -83,6 +82,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_101626) do
     t.bigint "seller_id", null: false
     t.bigint "buyer_id"
     t.integer "status_num", limit: 1, null: false, unsigned: true
+    t.bigint "shippingway_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
@@ -105,10 +105,11 @@ ActiveRecord::Schema.define(version: 2020_02_27_101626) do
   end
 
   create_table "shippingways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "ancestry", null: false
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_shippingways_on_ancestry"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
