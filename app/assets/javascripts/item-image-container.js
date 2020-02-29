@@ -53,7 +53,6 @@ $('.item-image-container__unit--guide').on('drop',function(event){
   cl.style.display = 'none';
   
 });
-console.log(files_array);
 
 $(document).on('click','.item-image-container__unit--preview a',function(){
 
