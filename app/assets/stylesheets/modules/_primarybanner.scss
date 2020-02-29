@@ -1,30 +1,3 @@
-/* 背景画像のトリミングしたい枠の高さ */
-%__primarybannerHeight{
-  height: 350px;
-}
-
-/* innerの親要素の位置(中央) */
-%__innerPearentCenter{
-  top: 50%;
-  left: 50%;
-}
-
-/* innerの子要素の位置(中央) */
-%__innerChildCenter{
-  transform: translate(-50%,-50%);
-}
-
-/* innerの親要素の位置(下部) */
-%__innerPearentBottom{
-  top: 70%;
-  left: 25%;
-}
-
-/* innerの子要素の位置(下部) */
-%__innerChildBottom{
-  transform: translate(-25%,-50%);
-}
-
 /* 文字に影をつける */
 %__txtshadow{
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -32,84 +5,66 @@
 
 .primarybanner {
   position: relative;
-
   &__image{
     width: 100%;
-    @extend %__primarybannerHeight;
+    height: 560px;
     object-fit: cover;
     overflow: hidden;
   }
-
   &__inner {
     position: absolute;
-    @extend %__innerPearentCenter;
+    padding:0 60px;
+    top: 60%;
   }
-
   &__content {
-    @extend %__innerChildCenter;
+    transform: translate(0,-50%);
     color: #fff;
-    text-align: center;
-  
     &--title {
       @extend %__txtshadow;
-      font-size: 24px;
+      font-size: 60px;
       font-weight: bold;
       line-height: 2.0;
     }
-    
     &--content {
+      margin-bottom:30px;
+    }
+    &--text{
       @extend %__txtshadow;
-      font-size: 35px;
+      font-size: 18px;
       line-height: 1.2;
     }
-  
     &--icon{
       width: 100%;
       margin: 20px auto 0;
     }
-  
   }
-
   &__main-image{
     width: 100%;
     height: 560px;
     object-fit: cover;
     overflow: hidden;
-  }	  
-  
+  }
   &__main-inner {
     position: absolute;
-    @extend %__innerPearentBottom;
   }
-  
   &__main-content {
-    @extend %__innerChildBottom;
     color: #fff;
     text-align: left;
-  
-  
     &--title {
       @extend %__txtshadow;
       font-size: 60px;
       line-height: 1.2;
     }
-  
     &--content {
       @extend %__txtshadow;
       font-size: 18px;
       line-height: 1.8;
       margin: 16px 0 0 0;
     }
-  
     &--icon{
       width: 100%;
       display: flex;
       margin: 24px 0 0 0;
     }
-  
-  }  
-  
+  }
 }
-
-
-
