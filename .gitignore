@@ -34,4 +34,4 @@ config/secrets.yml
 
 .DS_Store
 
-/.env
+.env
