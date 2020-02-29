@@ -1,5 +1,6 @@
 .tops-index
   = render 'layouts/header'
+  = render 'layouts/primarybanner'
   .tops-index-contents
     .tops-index-content
       .tops-index-content-intoroduction
@@ -32,6 +33,7 @@
               %span.tops-index-span 業界最安
             %p.tops-index-content-intoroduction-list__description
               最大3%でお得に出品&amp;購入！
+    = render 'layouts/secondrybanner'
     .tops-index-content-futures
       .tops-index-content-future
         %h2.tops-index-content-future__subtitle FURIMAの特徴
@@ -133,6 +135,6 @@
                     %ul
                       %li 10000円
                     %p (税込)
-  = render 'layouts/appbanner'
+  = render 'layouts/tertiarybanner'
   = render 'layouts/footer'
   = render 'layouts/purchase-btn'
