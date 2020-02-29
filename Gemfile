@@ -87,4 +87,6 @@ gem 'pry-rails'
 gem 'font-awesome-sass'	
 gem 'seed-fu'
 gem 'payjp'
+gem 'enum_help'
+
 

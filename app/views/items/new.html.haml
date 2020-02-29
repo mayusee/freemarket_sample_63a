@@ -47,12 +47,12 @@
           = f.label :"商品の状態"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :condition_num, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.select :condition_num, Item.condition_nums.keys.map {|k| [I18n.t("enums.item.condition_num.#{k}"), k]}
         .common-field
           = f.label :"配送料の負担"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :shippincharge_num,  class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.select :shippingcharge_num, Item.shippingcharge_nums.keys.map {|k| [I18n.t("enums.item.shippingcharge_num.#{k}"), k]}
         .common-field
           = f.label :"発送方法"
           %span.common-field__tag 必須
@@ -62,7 +62,7 @@
           = f.label :"発送までの日数"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :daytoship_num, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.select :daystoship_num, Item.daystoship_nums.keys.map {|k| [I18n.t("enums.item.daystoship_num.#{k}"), k]}
         .common-field
           = f.label :"販売価格"
           %span.common-field__tag 必須
