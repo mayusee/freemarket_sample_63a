@@ -65,7 +65,7 @@ $(document).on('click','.item-image-container__unit--preview a',function(){
 });
 
 var aj_url = window.location.pathname;
-var aj_url = '/users/1/items'；
+var aj_url = '/users/1/items';
 
 $('#new_item').on('submit', function(e){
   e.preventDefault();
