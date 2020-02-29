@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   # associations
   belongs_to    :brand
   belongs_to    :category
-  belongs_to    :shippingway
+  belongs_to    :shippingway, optional: true
   belongs_to    :buyer, class_name: "User", optional: true
   belongs_to    :seller, class_name: "User"
 
@@ -10,6 +10,4 @@ class Item < ApplicationRecord
 
   has_one       :shipping
 
-
-  
 end
