@@ -33,3 +33,5 @@ config/secrets.yml
 *.pdf
 
 .DS_Store
+
+/.env

@@ -4,6 +4,7 @@ class CreditcardsController < ApplicationController
 
   def new
     redirect_to action: "show" if @card.exists?
+    gon.payip_access_key = ENV['PAYJP_KEY']
   end
 
   def pay 
