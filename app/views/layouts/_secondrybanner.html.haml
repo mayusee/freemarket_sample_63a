@@ -1,0 +1,15 @@
+.secondrybanner
+  = image_tag 'bg-topMiddleDl-pict.jpg', class: "secondrybanner__image"
+  .secondrybanner__inner
+    .secondrybanner__content
+      .secondrybanner__content--title
+        %h2 会員数日本一位
+      .secondrybanner__content--content
+        %p.secondrybanner__content--text FURIMAは、フリマアプリで最も人気。
+        %p.secondrybanner__content--text 出品・購入回数も業界最多です！
+        %p.secondrybanner__content--text ほしかったあの商品に出会えるかもしれません。
+      .secondrybanner__content--icon
+        = link_to '#' do
+          = image_tag "app-store.svg", class: "appBtn"
+        = link_to '#' do
+          = image_tag "google-play.svg", class: "googleBtn"
