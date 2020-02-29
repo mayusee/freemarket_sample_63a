@@ -1,5 +1,5 @@
 /* 背景画像のトリミングしたい枠の高さ */
-%__appBannerHeight{
+%__tertiarybannerHeight{
   height: 350px;
 }
 
@@ -30,12 +30,12 @@
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
 }
 
-.appbanner {
+.tertiarybanner {
   position: relative;
 
   &__image{
     width: 100%;
-    @extend %__appBannerHeight;
+    @extend %__tertiarybannerHeight;
     object-fit: cover;
     overflow: hidden;
   }
