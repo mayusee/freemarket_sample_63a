@@ -5,8 +5,8 @@ class CreateCreditcards < ActiveRecord::Migration[5.2]
       t.references :user,              null: false, foreign_key: true
 
       # values
-      t.string     :pay_token,         null: false
-      t.string     :customer,          null: false
+      t.string     :card_id,         null: false
+      t.string     :customer_id,          null: false
 
       t.timestamps
     end
