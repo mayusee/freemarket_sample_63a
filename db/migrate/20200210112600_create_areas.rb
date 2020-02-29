@@ -2,7 +2,7 @@ class CreateAreas < ActiveRecord::Migration[5.2]
   def change
     create_table :areas do |t|
       # values
-      t.string     :name,                  null: false
+      t.string     :name,         null: false
 
       t.timestamps
     end
