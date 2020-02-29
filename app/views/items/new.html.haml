@@ -67,7 +67,7 @@
           = f.label :"販売価格"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :price, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.text_field :price, data: { autonumeric: { aSign: '¥ ', mDec: 0 } } ,class: "common-field.common-field__body",autofocus: true, placeholder: "金額を入力して下さい"
 
         .common-field
           .common-field__button
