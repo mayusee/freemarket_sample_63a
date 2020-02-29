@@ -56,6 +56,13 @@
       position: absolute;
       right:20px;
     }
+    &--logout{
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      padding: 16px;
+      display: block;
+    }
   }
 }
 .user-show-container{
