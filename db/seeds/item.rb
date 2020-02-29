@@ -12,10 +12,9 @@ ary_categoryid = [3,4,5,7,8,9,10,3,4,5]
   price =  20000
   profit_price = 18000
   seller_id = n+1
-  shippingcharge_num = 0
-  shippingway_id = 0
-  size_num = 0
+  shippingway_id = nil
   status_num = 0
+  sold_at = nil
   title = "商品#{n+1}"
   Item.create!(brand_id: brand_id,
     buyer_id:            buyer_id,
@@ -27,10 +26,9 @@ ary_categoryid = [3,4,5,7,8,9,10,3,4,5]
     price:               price,
     profit_price:        profit_price,
     seller_id:           seller_id,
-    shippingcharge_num:  shippingcharge_num,
     shippingway_id:      shippingway_id,
-    size_num:            size_num,
     status_num:          status_num,
+    sold_at:             sold_at,
     title:               title)
 end
 

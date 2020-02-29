@@ -1,0 +1,14 @@
+.primarybanner
+  = image_tag 'bg-mainVisual-pict_pc.jpg', class: "primarybanner__image"
+  .primarybanner__inner
+    .primarybanner__content
+      .primarybanner__content--title
+        %h2 人生を変えるフリマアプリ
+      .primarybanner__content--content
+        %p.primarybanner__content--text FURIMAはだれでもかんたんに出品・購入できる
+        %p.primarybanner__content--text フリマアプリです
+      .primarybanner__content--icon
+        = link_to '#' do
+          = image_tag "app-store.svg", class: "appBtn"
+        = link_to '#' do
+          = image_tag "google-play.svg", class: "googleBtn"

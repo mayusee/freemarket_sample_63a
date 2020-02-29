@@ -103,7 +103,7 @@
                 %i.user-show-nav__btn--icon
                   = icon('fa', 'chevron-right')
             %li.user-show-nav__btn
-              = link_to "#", class:"user-show-nav__btn--text" do
+              = link_to new_user_creditcard_path(current_user.id) , class:"user-show-nav__btn--text" do
                 支払い方法
                 %i.user-show-nav__btn--icon
                   = icon('fa', 'chevron-right')

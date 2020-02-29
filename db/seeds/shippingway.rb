@@ -1,15 +1,11 @@
-Shippingway.seed(:id,
-  { :id =>  0, :status_num => 1, :name => "未定"},
-  { :id =>  1, :status_num => 1, :name => "らくらくFRIMA便"},
-  { :id =>  2, :status_num => 1, :name => "ゆうメール"},
-  { :id =>  3, :status_num => 1, :name => "レターパック"},
-  { :id =>  4, :status_num => 1, :name => "普通郵便（定形、定形外）"},
-  { :id =>  5, :status_num => 1, :name => "クロネコヤマト"},
-  { :id =>  6, :status_num => 1, :name => "ゆうパック"},
-  { :id =>  7, :status_num => 1, :name => "クリックポスト"},
-  { :id =>  8, :status_num => 1, :name => "ゆうパケット"},
-  { :id =>  9, :status_num => 2, :name => "未定"},
-  { :id => 10, :status_num => 2, :name => "クロネコヤマト"},
-  { :id => 11, :status_num => 2, :name => "ゆうパック"},
-  { :id => 12, :status_num => 2, :name => "ゆうメール"}
-)
+# 親：配送料の負担
+advancepay = Shippingway.create(name: "送料込み（出品者負担）")
+
+# 子：配送の方法（送料込み（出品者負担））
+advancepay_way = advancepay.children.create([{ name: "未定"},{ name: "らくらくFRIMA便"},{ name: "ゆうメール"},{ name: "レターパック"},{ name: "普通郵便（定形、定形外）"},{ name: "クロネコヤマト"},{ name: "ゆうパック"},{ name: "クリックポスト"},{ name: "ゆうパケット"}])
+
+# 親：配送料の負担
+deliverypay = Shippingway.create(name: "着払い（購入者負担）")
+
+# 子：配送の方法（送料込み（出品者負担））
+deliverypay_way = deliverypay.children.create([{ name: "未定"},{ name: "クロネコヤマト"},{ name: "ゆうパック"},{ name: "ゆうメール"}])
