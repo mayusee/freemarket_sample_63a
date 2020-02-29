@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_02_29_044819) do
+
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -69,10 +71,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_044819) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "brand_id", null: false
     t.bigint "category_id", null: false
-    t.bigint "shippingway_id", null: false
-    t.integer "size_num", limit: 1, null: false, unsigned: true
     t.integer "condition_num", limit: 1, null: false, unsigned: true
-    t.integer "shippingcharge_num", limit: 1, null: false, unsigned: true
     t.integer "daystoship_num", limit: 1, null: false, unsigned: true
     t.string "title", null: false
     t.text "description", null: false
@@ -85,15 +84,14 @@ ActiveRecord::Schema.define(version: 2020_02_29_044819) do
     t.bigint "seller_id", null: false
     t.bigint "buyer_id"
     t.integer "status_num", limit: 1, null: false, unsigned: true
+    t.bigint "shippingway_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["condition_num"], name: "index_items_on_condition_num"
     t.index ["daystoship_num"], name: "index_items_on_daystoship_num"
     t.index ["seller_id"], name: "index_items_on_seller_id"
-    t.index ["shippingcharge_num"], name: "index_items_on_shippingcharge_num"
     t.index ["shippingway_id"], name: "index_items_on_shippingway_id"
-    t.index ["size_num"], name: "index_items_on_size_num"
     t.index ["title"], name: "index_items_on_title"
   end
 
@@ -109,10 +107,11 @@ ActiveRecord::Schema.define(version: 2020_02_29_044819) do
   end
 
   create_table "shippingways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "status_num", limit: 1, null: false, unsigned: true
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_shippingways_on_ancestry"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
