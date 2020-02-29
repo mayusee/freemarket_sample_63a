@@ -123,10 +123,7 @@
                 %i.user-show-nav__btn--icon
                   = icon('fa', 'chevron-right')
             %li.user-show-nav__btn
-              = link_to "#", class:"user-show-nav__btn--text" do
-                ログアウト
-                %i.user-show-nav__btn--icon
-                  = icon('fa', 'chevron-right')
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしてもよろしいですか？' },class:"user-show-nav__btn--logout"
       .user-show-container__right
         %section.user-show-info
           = link_to "#" , class:"user-show-info__minute" do
