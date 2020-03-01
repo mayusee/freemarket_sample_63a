@@ -1,0 +1,55 @@
+.user-nav{
+  &__list{
+    overflow:hidden;
+  }
+  &__now{
+    background-color: #fff;
+  }
+  &__pay{
+    background-color: #fff;
+  }
+  &__setting{
+    background-color: #fff;
+  }
+  &__title{
+    padding: 40px 0 10px 0;
+    background-color:#f5f5f5;
+    font-size: 15px;
+  }
+  &__btn{
+    height: 43px;
+    border-top:1px solid #eee;
+    position:relative;
+    &:first-of-type{
+      background:#eee;
+      font-weight: 600;
+    }
+    &:hover{
+      background-color:#fafafa;
+      opacity: 0.7;
+      filter: alpha(opacity=70);
+      -ms-filter: "alpha(opacity=70)";
+    }
+    &--text{
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      padding: 16px;
+      display: block;
+    }
+    &--icon{
+      transition: all 0.2s;
+      color: #333;
+      transform: translate(5px);
+      position: absolute;
+      right:20px;
+    }
+    &--logout{
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+      padding: 16px;
+      display: block;
+    }
+  }
+}
