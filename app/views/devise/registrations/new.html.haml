@@ -18,7 +18,7 @@
     .registrations-new-main-title
       %h2 会員情報登録
     .registrations-new-main-input-class
-      = form_with(model: @users, locale: true, url: registration_path(resource_name)) do |f|
+      = form_with(model: @user, locale: true, url: registration_path(resource_name)) do |f|
         .registrations-new-main-input-class-field
           = f.label :"ニックネーム"
           %span.form-require 必須
@@ -73,7 +73,9 @@
           = f.label :"生年月日"
           %span.form-require 必須
           %br/
-          != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'registrations-new-main-input-class-field__birthday__text-box', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'             
+          -# <!-- 77行目は後で利用する予定です。年月日を分けた入力が出来るフィールドです。 -->
+          -# != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'registrations-new-main-input-class-field__birthday__text-box', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+          = f.date_field :birthday             
         .registrations-new-main-input-class-field
           %br/
           %P.registrations-new-main-input-class-field__text-Identity-information ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
@@ -84,7 +86,7 @@
             「次へ進む」のボタンを押すことにより、#{link_to "利用規約","#URL",class:"registrations-new-main-input-class-field__consent--link" }に同意したものとみなします。
         .registrations-new-main-input-class-field
           .registrations-new-main-input-class-field__botton
-            = f.button "送信",onclick: "submit();",value: "次へ進む",class:"registrations-new-main-input-class-field__botton--text" 
+            = f.submit "送信",value: "次へ進む",class:"registrations-new-main-input-class-field__botton--text" 
         .registrations-new-main-input-class-field
           %P.registrations-new-main-input-class-field__bottom-link
             #{link_to "本人情報の登録について＞","#URL",class:"registrations-new-main-input-class-field__bottom-link--link" }
