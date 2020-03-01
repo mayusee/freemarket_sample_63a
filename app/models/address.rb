@@ -3,6 +3,6 @@ class Address < ApplicationRecord
     belongs_to    :area
     belongs_to    :user
 
-    has_many      :shippings
+    has_many      :items
   
 end

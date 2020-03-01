@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_044819) do
+ActiveRecord::Schema.define(version: 2020_02_29_103257) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2020_02_29_044819) do
     t.index ["name"], name: "index_categories_on_name"
   end
 
+  create_table "category_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "product_size_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_category_sizes_on_category_id"
+    t.index ["product_size_id"], name: "index_category_sizes_on_product_size_id"
+  end
+
   create_table "creditcards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "card_id", null: false
@@ -67,10 +76,13 @@ ActiveRecord::Schema.define(version: 2020_02_29_044819) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "brand_id", null: false
+    t.bigint "brand_id"
     t.bigint "category_id", null: false
-    t.integer "condition_num", limit: 1, null: false, unsigned: true
-    t.integer "daystoship_num", limit: 1, null: false, unsigned: true
+    t.bigint "product_size_id"
+    t.bigint "shippingway_id"
+    t.integer "condition_num", limit: 1, default: 0, null: false, unsigned: true
+    t.integer "daystoship_num", limit: 1, default: 0, null: false, unsigned: true
+    t.integer "status_num", limit: 1, default: 0, null: false, unsigned: true
     t.string "title", null: false
     t.text "description", null: false
     t.decimal "price", precision: 10, scale: 3, null: false
@@ -80,28 +92,30 @@ ActiveRecord::Schema.define(version: 2020_02_29_044819) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "seller_id", null: false
+    t.bigint "seller_address_id", null: false
     t.bigint "buyer_id"
-    t.integer "status_num", limit: 1, null: false, unsigned: true
-    t.bigint "shippingway_id"
+    t.bigint "buyer_address_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["buyer_address_id"], name: "index_items_on_buyer_address_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["condition_num"], name: "index_items_on_condition_num"
     t.index ["daystoship_num"], name: "index_items_on_daystoship_num"
+    t.index ["product_size_id"], name: "index_items_on_product_size_id"
+    t.index ["seller_address_id"], name: "index_items_on_seller_address_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
     t.index ["shippingway_id"], name: "index_items_on_shippingway_id"
+    t.index ["status_num"], name: "index_items_on_status_num"
     t.index ["title"], name: "index_items_on_title"
   end
 
-  create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "address_id", null: false
-    t.bigint "user_id", null: false
-    t.bigint "item_id", null: false
+  create_table "product_sizes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["address_id"], name: "index_shippings_on_address_id"
-    t.index ["item_id"], name: "index_shippings_on_item_id"
-    t.index ["user_id"], name: "index_shippings_on_user_id"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_product_sizes_on_ancestry"
+    t.index ["name"], name: "index_product_sizes_on_name"
   end
 
   create_table "shippingways", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,6 +124,7 @@ ActiveRecord::Schema.define(version: 2020_02_29_044819) do
     t.datetime "updated_at", null: false
     t.string "ancestry"
     t.index ["ancestry"], name: "index_shippingways_on_ancestry"
+    t.index ["name"], name: "index_shippingways_on_name"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -136,14 +151,16 @@ ActiveRecord::Schema.define(version: 2020_02_29_044819) do
 
   add_foreign_key "addresses", "areas"
   add_foreign_key "addresses", "users"
+  add_foreign_key "category_sizes", "categories"
+  add_foreign_key "category_sizes", "product_sizes"
   add_foreign_key "creditcards", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "items", "addresses", column: "buyer_address_id"
+  add_foreign_key "items", "addresses", column: "seller_address_id"
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "product_sizes"
   add_foreign_key "items", "shippingways"
   add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "seller_id"
-  add_foreign_key "shippings", "addresses"
-  add_foreign_key "shippings", "items"
-  add_foreign_key "shippings", "users"
 end
