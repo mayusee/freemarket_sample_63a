@@ -8,9 +8,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.references :shippingway,            null: true,  foreign_key: true
 
       # enum
-      t.integer    :condition_num,          default: 0, null: false, limit: 1, unsigned: true
-      t.integer    :daystoship_num,         default: 0, null: false, limit: 1, unsigned: true
-      t.integer    :status_num,             default: 0, null: false, limit: 1, unsigned: true
+      t.integer    :condition_num,          null: false, limit: 1, unsigned: true, default: 0
+      t.integer    :daystoship_num,         null: false, limit: 1, unsigned: true, default: 0
+      t.integer    :status_num,             null: false, limit: 1, unsigned: true, default: 0
 
       # values
       t.string     :title,                  null: false

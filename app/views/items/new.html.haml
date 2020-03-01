@@ -6,61 +6,70 @@
 
   .registrations-new-main
     .regstrations-new-main--form
-      = form_with(model: @items, locale: true ) do |f|
-        .common-field
-          = f.label :"出典画像"
-          %span.common-field__tag 必須
-          %br/
-          = f.text_field :image, class: "common-field.common-field__body",autofocus: true,placeholder: "画像部(要編集)"
+      = form_with(model: [current_user, @item], locale: true , id: 'new_item') do |f|
+        .item-image-container
+          = f.label :"出品画像"
+          %span.item-image-container__tag 必須
+          %p.item-image-container__lead
+            最大5枚までアップロードできます
+          .item-image-container__unit
+            %ul
+              
+            .item-image-container__unit--guide
+              .have-image
+                = icon('fas','camera')
+                %p#d-d-delete ドラッグ&ドロップ
+                %p#click-delete またはクリックしてファイルをアップロード
+
         .common-field
           = f.label :"商品名"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :name, class: "common-field.common-field__body",autofocus: true,placeholder: "40文字まで"          
+          = f.text_field :title, class: "common-field.common-field__body",autofocus: true,placeholder: "40文字まで"          
         .common-field
           = f.label :"商品の説明"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :text, class: "common-field.common-field__body",autofocus: true,placeholder: "商品の説明(必須1000文字以内"
+          = f.text_field :description, class: "common-field.common-field__body",autofocus: true,placeholder: "商品の説明(必須1000文字以内"
         .common-field__birthday
           = f.label :"カテゴリー"
           %span.common-field__tag 必須
           %br/
-          = f.collection_select :category_id, Category.all, :id, :name
+          = f.collection_select :category_id, Category.all, :id, :name, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
         .common-field
           = f.label :"ブランド"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.collection_select :brand_id, Brand.all, :id, :name, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
         .common-field
           = f.label :"商品の状態"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.select :condition_num, Item.condition_nums.keys.map {|k| [I18n.t("enums.item.condition_num.#{k}"), k]}
         .common-field
           = f.label :"配送料の負担"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.select :shippingcharge_num, Item.shippingcharge_nums.keys.map {|k| [I18n.t("enums.item.shippingcharge_num.#{k}"), k]}
         .common-field
-          = f.label :"発送元の地域"
+          = f.label :"発送方法"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.collection_select :shippingway_id, Shippingway.all, :id, :name, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
         .common-field
           = f.label :"発送までの日数"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.select :daystoship_num, Item.daystoship_nums.keys.map {|k| [I18n.t("enums.item.daystoship_num.#{k}"), k]}
         .common-field
           = f.label :"販売価格"
           %span.common-field__tag 必須
           %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+          = f.text_field :price, data: { autonumeric: { aSign: '¥ ', mDec: 0 } } ,class: "common-field.common-field__body",autofocus: true, placeholder: "金額を入力して下さい"
 
         .common-field
-          .common-field__botton
-            = f.button "送信",onclick: "submit();",value: "次へ進む",class:"common-field.common-field__botton" 
+          .common-field__button
+            = f.button "送信",value: "次へ進む",class:"common-field.common-field__button" 
 
         .common-field
           %P.common-field__consent
@@ -79,3 +88,4 @@
         = image_tag 'logo-white.png'
 
     %p ©️FURIMA
+%script{src: "/assets/item-image-container.js", type: "text/javascript"}
