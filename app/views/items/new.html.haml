@@ -26,12 +26,12 @@
             = f.label :"商品名"
             %span.common-field__tag 必須
             %br/
-            = f.text_field :title, class: "common-field.common-field__body",autofocus: true,placeholder: "40文字まで"          
+            = f.text_field :title ,autofocus: true ,placeholder: "40文字まで"          
           .items-new-first__foot
             = f.label :"商品の説明"
             %span.common-field__tag 必須
             %br/
-            = f.text_area :description, class: "common-field.common-field__body", autofocus: true,placeholder: text_placeholder 
+            = f.text_area :description, autofocus: true,placeholder: text_placeholder 
             %p
               #textlength
                 0
@@ -43,12 +43,12 @@
             = f.label :"カテゴリー"
             %span.common-field__tag 必須
             %br/
-            = f.collection_select :category_id, Category.all, :id, :name, class: "common-field.common-field__body",autofocus: true
+            = f.collection_select :category_id, Category.all, :id, :name, autofocus: true
           .items-new-second__center
             = f.label :"ブランド"
             %span.common-field__tag--any 任意
             %br/
-            = f.text_field :brand_id , class: "common-field.common-field__body",autofocus: true,placeholder: "例）シャネル"
+            = f.text_field :brand_id , autofocus: true,placeholder: "例）シャネル"
           .items-new-second__foot
             = f.label :"商品の状態"
             %span.common-field__tag 必須
@@ -67,7 +67,7 @@
             = f.label :"発送方法"
             %span.common-field__tag 必須
             %br/
-            = f.collection_select :shippingway_id, Shippingway.all, :id, :name, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
+            = f.collection_select :shippingway_id, Shippingway.all, :id, :name ,autofocus: true 
           .items-new-third__foot
             = f.label :"発送までの日数"
             %span.common-field__tag 必須
@@ -82,7 +82,7 @@
               = f.label :"販売価格"
               %span.common-field__tag 必須
             %br/
-            = f.text_field :price, data: { autonumeric: { aSign: '¥', mDec: 0 } } ,class: "common-field.common-field__body",autofocus: true, placeholder: "金額を入力して下さい"
+            = f.text_field :price, data: { autonumeric: { aSign: '¥', mDec: 0 } } , autofocus: true, placeholder: "金額を入力して下さい"
           .items-new-final__commission
             .items-new-final__commission--factor
               %div
