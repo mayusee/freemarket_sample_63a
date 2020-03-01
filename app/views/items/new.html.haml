@@ -9,52 +9,52 @@
       = form_with(model: @items, locale: true ) do |f|
         .common-field
           = f.label :"出典画像"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :image, class: "common-field.common-field__body",autofocus: true,placeholder: "画像部(要編集)"
         .common-field
           = f.label :"商品名"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :name, class: "common-field.common-field__body",autofocus: true,placeholder: "40文字まで"          
         .common-field
           = f.label :"商品の説明"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :text, class: "common-field.common-field__body",autofocus: true,placeholder: "商品の説明(必須1000文字以内"
         .common-field__birthday
           = f.label :"カテゴリー"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.collection_select :category_id, Category.all, :id, :name
         .common-field
           = f.label :"ブランド"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
         .common-field
           = f.label :"商品の状態"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
         .common-field
           = f.label :"配送料の負担"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
         .common-field
           = f.label :"発送元の地域"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
         .common-field
           = f.label :"発送までの日数"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
         .common-field
           = f.label :"販売価格"
-          %span.common-field__tag 必須
+          %span..form-require 必須
           %br/
           = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
 
