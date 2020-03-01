@@ -54,39 +54,40 @@ $('.item-image-container__unit--guide').on('drop',function(event){
   
 });
 
-$(document).on('click','.item-image-container__unit--preview a',function(){
+//今後必要になるためコメントアウトしています。
+// $(document).on('click','.item-image-container__unit--preview a',function(){
 
-  var index = $(".item-image-container__unit--preview a").index(this);
+//   var index = $(".item-image-container__unit--preview a").index(this);
 
-  files_array.splice(index - 1, 1);
+//   files_array.splice(index - 1, 1);
 
-  $(this).parent().parent().parent().remove();
-});
+//   $(this).parent().parent().parent().remove();
+// });
 
-var aj_url = window.location.pathname;
-var aj_url = '/users/1/items';
+// var aj_url = window.location.pathname;
+// var aj_url = '/users/1/items';
 
-$('#new_item').on('submit', function(e){
-  e.preventDefault();
+// $('#new_item').on('submit', function(e){
+//   e.preventDefault();
   
-  var formData = new FormData($(this).get(0));
+//   var formData = new FormData($(this).get(0));
   
-  files_array.forEach(function(file){
-   formData.append("image[images][]" , file)
-  });
+//   files_array.forEach(function(file){
+//    formData.append("image[images][]" , file)
+//   });
   
-  $.ajax({
-    url:         aj_url,
-    type:        "POST",
-    data:        formData,
-    contentType: false,
-    processData: false,
-    dataType:   'json',
-  })
-  .done(function(){
-    alert('出品に成功しました！');
-  })
-  .fail(function(){
-    alert('出品に失敗しました！');
-  });
-});
+//   $.ajax({
+//     url:         aj_url,
+//     type:        "POST",
+//     data:        formData,
+//     contentType: false,
+//     processData: false,
+//     dataType:   'json',
+//   })
+//   .done(function(){
+//     alert('出品に成功しました！');
+//   })
+//   .fail(function(){
+//     alert('出品に失敗しました！');
+//   });
+// });
