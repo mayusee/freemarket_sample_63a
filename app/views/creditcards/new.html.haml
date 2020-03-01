@@ -1,39 +1,74 @@
-= form_tag(pay_user_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %label カード番号
-  = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
-  %br
-  %label 有効期限
-  %select#exp_month{name: "exp_month", type: "text"}
-    %option{value: ""} --
-    %option{value: "1"}01
-    %option{value: "2"}02
-    %option{value: "3"}03
-    %option{value: "4"}04
-    %option{value: "5"}05
-    %option{value: "6"}06
-    %option{value: "7"}07
-    %option{value: "8"}08
-    %option{value: "9"}09
-    %option{value: "10"}10
-    %option{value: "11"}11
-    %option{value: "12"}12
-  %span 月/
-  %select#exp_year{name: "exp_year", type: "text"}
-    %option{value: ""} --
-    %option{value: "2019"}19
-    %option{value: "2020"}20
-    %option{value: "2021"}21
-    %option{value: "2022"}22
-    %option{value: "2023"}23
-    %option{value: "2024"}24
-    %option{value: "2025"}25
-    %option{value: "2026"}26
-    %option{value: "2027"}27
-    %option{value: "2028"}28
-    %option{value: "2029"}29
-  %span 年
-  %br
-  %label セキュリティコード
-  = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
-  #card_token
-  = submit_tag "追加する", id: "token_submit"
+.creditcards-new
+  %header.creditcards-new__header
+    = render 'layouts/header'
+  %main.creditcards-new__main
+    .creditcards-new-container
+      .creditcards-new-container__left
+        = render 'layouts/user-nav'
+      .creditcards-new-container__right
+        .creditcards-new-registration
+          .creditcards-new-registration__title
+            クレジットカード情報入力
+          = form_tag(pay_user_creditcards_path, method: :post, id: 'charge-form',  name: "inputForm",class:"creditcards-new-registration__form") do
+            .creditcards-new-registration__contents
+              .creditcards-new-registration__card-number
+                %label カード番号
+                %span.form-require 必須
+                = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number",class:"creditcards-new-registration__card-number--text-field"
+                .creditcards-new-registration__card-images
+                  =image_tag 'visa.svg',class:'creditcards-new-registration__card-images--visa'
+                  =image_tag 'master-card.svg',class:'creditcards-new-registration__card-images--master-card'
+                  =image_tag 'saison-card.svg',class:'creditcards-new-registration__card-images--saison-card'
+                  =image_tag 'jcb.svg',class:'creditcards-new-registration__card-images--other'
+                  =image_tag 'american_express.svg',class:'creditcards-new-registration__card-images--american_express'
+                  =image_tag 'dinersclub.svg',class:'creditcards-new-registration__card-images--other'
+                  =image_tag 'discover.svg',class:'creditcards-new-registration__card-images--other'
+              .creditcards-new-registration__expire
+                %label 有効期限
+                %span.form-require 必須
+                .creditcards-new-registration__select
+                  %select#exp_month.creditcards-new-registration__half{name: "exp_month", type: "text"}
+                    %option{value: ""} --
+                    %option{value: "1"}01
+                    %option{value: "2"}02
+                    %option{value: "3"}03
+                    %option{value: "4"}04
+                    %option{value: "5"}05
+                    %option{value: "6"}06
+                    %option{value: "7"}07
+                    %option{value: "8"}08
+                    %option{value: "9"}09
+                    %option{value: "10"}10
+                    %option{value: "11"}11
+                    %option{value: "12"}12
+                  %i.creditcards-new-registration__half--icon
+                    =icon('fa','chevron-down')
+                  %span 月
+                  %select#exp_year.creditcards-new-registration__half--year{name: "exp_year", type: "text"}
+                    %option{value: ""} --
+                    %option{value: "2019"}19
+                    %option{value: "2020"}20
+                    %option{value: "2021"}21
+                    %option{value: "2022"}22
+                    %option{value: "2023"}23
+                    %option{value: "2024"}24
+                    %option{value: "2025"}25
+                    %option{value: "2026"}26
+                    %option{value: "2027"}27
+                    %option{value: "2028"}28
+                    %option{value: "2029"}29
+                  %i.creditcards-new-registration__half--icon
+                    =icon('fa','chevron-down')
+                  %span 年
+              .creditcards-new-registration__secure
+                %label セキュリティコード
+                %span.form-require 必須
+                = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3桁、もしくは4桁の番号", maxlength: "4", id: "cvc",class:"creditcards-new-registration__secure--text-field"
+                .creditcards-new-registration__secure-code
+                  .creditcards-new-registration__secure-code--question{"data-js" => "show-tips-toggle"}
+                    =icon('fa','question-circle')
+                    カード裏面の番号とは？
+                  .creditcards-new-registration__secure-code--info{"data-js" => "show-tips-content"}
+                    カードの裏面をご参照ください。
+                #card_token
+                = submit_tag "追加する", id: "token_submit",class:"creditcards-new-registration__submit-btn"
