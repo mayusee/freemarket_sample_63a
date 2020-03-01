@@ -1,140 +1,48 @@
 .trades-new
-  %header.trades-new-header
-    = image_tag 'logo.png' class: "header_logo"
-  %main.trades-new-main
+  %header.trades-new__header
+    = render "devise/header-image"
+  -# %mains.trades-new-mains
     // 現在ログインしているユーザーIDの表示
-    - if user_signed_in?
-      現在、ユーザー#{current_user.id}でログイン中です
-      %section.trades-new-single-container
-        %h2.trades-new-single-head 購入内容の確認
-        %section.trades-new-buy-content
-          .trades-new-buy-content-inner
-
-    - else
-      未ログインです  
-  %footer.trades-new-footer
-
-1<div class="single-container">
-1  <main class="single-main">
-1    <section class="l-single-container buy-item-container">
-1      <h2 class="l-single-head buy-head">購入内容の確認</h2>
-1      <section class="buy-content buy-item">
-1        <div class="buy-content-inner">
-          <div class="buy-item-box">
-            <h3 class="buy-item-image">
-              <img data-src="https://static.mercdn.net/thumb/photos/m41193565658_1.jpg?1582716122" class=" lazyloaded" alt="" src="https://static.mercdn.net/thumb/photos/m41193565658_1.jpg?1582716122">
-            </h3>
-            <div class="buy-item-detail">
-              <p class="buy-item-name">iPhone11 iPhone11pro クリア オーロラホログラム ケース</p>
-              <p class="buy-price-ja bold">
-                <span>¥598</span>
-                <span class="item-shipping-fee">（税込）送料込み</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="buy-content buy-item">
-        <div class="buy-content-inner">
-          <form action="https://www.mercari.com/jp/transaction/buy/done/m41193565658/" method="POST" class="buy-form" novalidate="novalidate">
-            <ul class="buy-price-table">
-              <li class="buy-price-row buy-you-pay bold">
-                <div class="buy-price-cell buy-price-cell-label">支払い金額</div>
-                <div class="buy-price-cell">
-                  <span data-buy-pay="598">¥598</span>
-                </div>
-              </li>
-            </ul>
-            <ul class="buy-accordion buy-not-have-point">
-              <li class="accordion-parent">
-                <div class="checkbox-default buy-use-point">
-                  <input type="checkbox" disabled="">
-                  <i class="icon-check"></i>
-                  <label>ポイントを使用 (所持ポイント: P0)</label>
-                </div>
-              </li>
-            </ul>
-            <section class="buy-content buy-user-info" data-buy="pay-method">
-              <div class="buy-content-inner">
-                <h3>支払い方法</h3>
-                <a href="https://www.mercari.com/jp/transaction/card/m41193565658/">
-                  <p class="buy-user-info-text">
-                    <i class="icon-plus-circle"></i><span class="buy-register-text">登録してください</span>
-                  </p>
-                </a>
-              </div>
-            </section>
-            <section class="buy-content buy-user-info">
-              <div class="buy-content-inner">
-                <h3>配送先 </h3>
-                <a href="https://www.mercari.com/jp/transaction/address/m41193565658/">
-                  <p class="buy-user-info-text">
-                    <i class="icon-plus-circle"></i><span class="buy-register-text">登録してください</span>
-                  </p>
-                </a>
-              </div>
-            </section>
-
-            <input type="hidden" name="seller_id" value="172784631">
-            <input type="hidden" name="payment_fee" value="0">
-            <input type="hidden" name="payment_amount" value="598">
-            <input type="hidden" name="price" value="598">
-            <input type="hidden" name="category_id" value="1208">
-            <input type="hidden" name="item_condition" value="1">
-            <input type="hidden" name="shipping_payer" value="2">
-            <input type="hidden" name="shipping_method" value="9">
-            <input type="hidden" name="shipping_duration" value="2">
-            <input type="hidden" name="shipping_class" value="0">
-            <input type="hidden" name="zip_code1" value="">
-            <input type="hidden" name="zip_code2" value="">
-            <input type="hidden" name="paid_method" value="card">
-            <input type="hidden" name="checksum" value="1f02d5a8652c8ed280654d89611ca113">
-            <input type="hidden" name="payment_card_sequence_no" value="">
-            <input type="hidden" name="payment_use_last_card_base64" value="eWVz">
-            <input type="hidden" name="item_name_base64" value="aVBob25lMTEgaVBob25lMTFwcm8g44Kv44Oq44KiIOOCquODvOODreODqeODm+ODreOCsOODqeODoCDjgrHjg7zjgrk=">
-            <input type="hidden" name="description_base64" value="44CQaVBob25lMTEgaVBob25lMTFwcm/lsILnlKjjg5rjg7zjgrjjgJEKCuOCouOCpOODleOCqeODszExIOOCouOCpOODleOCqeODszEx44OX44OtIOOCouOCpOODleOCqeODs+OCpOODrOODluODsyDjgqLjgqTjg5Xjgqnjg7PjgqTjg6zjg5bjg7Pjg5fjg60KCgrimIbmlrDlk4HmnKrkvb/nlKjlk4HimIYKCuKYhumAgeaWmeeEoeaWmeKYhgoKCuOAh+OCteOCpOOCuuKGkmlQaG9uZTEx44O7aVBob25lMTFwcm8K4oC76LO85YWl5YmN44KC44GX44GP44Gv6LO85YWl5b6M44Gr44K144Kk44K644KS44GK55+l44KJ44Gb44GP44Gg44GV44GE44CCCgrjgIfjgqvjg6njg7zihpLjgq/jg6rjgqIKCgril4/ntKDmnZDihpJUUFUKCuOCr+ODquOCouOCseODvOOCueOBq+ODl+ODqeOCueOBl+OBpgrop5LluqbjgavjgojjgaPjgabjgqrjg7zjg63jg6nmqKHmp5jjgYzlpInljJbjgZnjgovpnZ7luLjjgavkurrmsJfjga7jgYrjgZfjgoPjgozjgappUGhvbmXjgrHjg7zjgrkhIQoK44Kq44O844Ot44Op44Gu6KaL44GI5pa544Gr44Gv5YWJ5Yqg5rib44Gq44Gp44Gn6Kqk5beu44GM55Sf44GY44G+44GZ44CCCumDqOWxi+OBruS4reOBp+OBr+OCr+ODquOCouOCq+ODkOODvOOBruOCiOOBhuOBq+OCquODvOODreODqeOBjOeiuuiqjeOBl+OBq+OBj+OBj+OBq+OBquOCi+WgtOWQiOOCguOBlOOBluOBhOOBvuOBme+8gQoK44OW44Op44OD44Kv44CB44Ob44Ov44Kk44OI44CB44K044O844Or44OJ44CB44Gp44GuaVBob25l44Kr44Op44O844Gr44KC5oqc576k44Gr55u45oCn44Gu6Imv44GE44Kx44O844K544Gn44Kr44OD44OX44Or44KE44GK5Y+L6YGU44Gn44GK5o+D44GE44Gn5L2/44KP44KM44KL5pa544GM5aSa44GE44Gn44GZ44CCCgrjgrfjg7Pjg5fjg6vjgaDjgZHjgakx44Gk44Ki44Os44Oz44K444GM5qyy44GX44GE44Go44GE44GG5pa544Gr44OU44OD44K/44Oq44Gu44Kx44O844K544Gn55S35aWz44Go44KC44Gr5aSn5Lq65rCX44Gu44Ki44Kk44OG44Og44Gn44GZ44CCCgoK4piF55m66YCB5pmC44Gr6IOM6Z2i44Gr6JaE44GE5L+d6K2344K344O844Or44GM6LK844Gj44Gm44GC44KL5aC05ZCI44GM44GU44GW44GE44G+44GZ44CCCuWCt+OBjOOBguOCi+OCiOOBhuOBq+imi+OBiOOBvuOBmeOBjOS/neitt+OCt+ODvOODq+OBp+OBmeOBruOBp+WJpeOBjOOBl+OBpuOBiuS9v+OBhOOBj+OBoOOBleOBhOOAggoK4oC75rW35aSW6KO95ZOB44Gu44Gf44KB44CB5aSa5bCR44Gu5YK344KE5rGa44KM44GM44GC44KL5aC05ZCI44GM44GU44GW44GE44G+44GZ44CCCuWujOeSp+OBquOCr+OCquODquODhuOCo+OCkuOBiuaxguOCgeOBruaWueOBr+OBiuaOp+OBiOOBj+OBoOOBleOBhOOAggoK4pmvaVBob25lMTEK4pmvaVBob25lMTFwcm8K4pmv44Ki44Kk44OV44Kp44Oz44Kk44Os44OW44OzCuKZr+OCr+ODquOCouOCseODvOOCuQrima/jg4/jg7zjg4njgrHjg7zjgrkK4pmvVFBVCuKZr+OCueODnuODm+OCq+ODkOODvArima/pn5Plm73jgafkurrmsJcK4pmv5rW35aSW">
-            <input type="hidden" name="shipping_from_area_base64" value="NQ==">
-            <input type="hidden" name="family_name_base64" value="">
-            <input type="hidden" name="first_name_base64" value="">
-            <input type="hidden" name="family_name_kana_base64" value="">
-            <input type="hidden" name="first_name_kana_base64" value="">
-            <input type="hidden" name="prefecture_base64" value="">
-            <input type="hidden" name="city_base64" value="">
-            <input type="hidden" name="address1_base64" value="">
-            <input type="hidden" name="address2_base64" value="">
-            <input type="hidden" name="telephone_base64" value="">
-            <input type="hidden" name="__csrf_value" value="fc3f9a94b71c005af029e3a4ed7245ca0bb31500c85f87c798b5d135e38825fbcdddebd84cc9d6890a4beeedcae19ba594e25b01b9885f987e68c84edf303be34">
-                    
-            <section class="buy-content buy-user-info">
-              <button type="submit" class="btn-default btn-red bold" disabled="">購入する</button>
-              <input type="hidden" id="user_info_is_not_complete">
-            </section>
-          </form>
-        </div>
-        <section></section>
-      </section>
-    </section>
-  </main>
-
-  <footer class="single-footer">
-    <nav>
-      <ul class="clearfix">
-        <li>
-          <a href="https://www.mercari.com/jp/privacy/">プライバシーポリシー</a>
-        </li>
-        <li>
-          <a href="https://www.mercari.com/jp/tos/">メルカリ利用規約</a>
-        </li>
-        <li>
-          <a href="https://www.mercari.com/jp/tokutei/">特定商取引に関する表記</a>
-        </li>
-      </ul>
-    </nav>
-    <a href="https://www.mercari.com/jp/" class="single-footer-logo">
-      <img src="//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?1940624752" alt="mercari" width="80" height="65">
-    </a>
-    <p>
-      <small>© Mercari, Inc.</small>
-    </p>
-  </footer>
-</div>
+    -# - if user_signed_in?
+    -#   現在、ユーザー#{current_user.id}でログイン中です
+    -#   %section.trades-new-single-container
+    -#     %h2.trades-new-single-head 購入内容の確認
+    -#     %section.trades-new-buy-content
+    -#       .trades-new-buy-content-inner
+    -# - else
+    -#   未ログインです
+  %main.trades-new__main
+    %h2.trades-new-head 購入内容の確認
+    .trades-new-item
+      .trades-new-item__box
+        .trades-new-item__box--image
+          =image_tag 'product3_001.png'
+          .trades-new-item__box--name macbookair
+          .trades-new-item__box--price　¥100,000
+    .trades-new-data
+      .trades-new-data__price
+        .trades-new-data__price--title 支払い金額
+        .trades-new-data__price--amount ¥100,000
+      .trades-new-payment
+        .trades-new-payment__inner
+          .trades-new-payment__inner--text 支払い方法
+          .trades-new-payment__inner--info
+            %i.fas.fa-plus-circle=link_to "登録してください","#"
+      .trades-new-shipping
+        .trades-new-shipping__inner
+          .trades-new-shipping__inner--text 配送先
+          .trades-new-shipping__inner--change=link_to "変更する","#"
+        .trades-new-shipping__address
+          %p.trades-new-shipping__address--postalnumber
+            〒100−0000
+          %p.trades-new-shipping__address--city
+            東京都渋谷区
+          %p.trades-new-shipping__address--building
+            アジアビルディング
+          %p.trades-new-shipping__address--name
+          　姓名前
+      .trade-new-submit
+        .trade-new-submit__btn
+          %button 購入する
+  %footer.trades-new__footer
+    = render "devise/navigation"
