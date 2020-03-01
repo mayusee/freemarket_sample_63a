@@ -62,15 +62,16 @@
   padding: 1px 3px;
   border-radius: 2px;
   font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-}
-.common-field__tag--any{
-  margin-left: 8px;
-  background-color: rgb(191, 191, 191);
-  color: white;
-  font-size: 13px;
-  padding: 1px 3px;
-  border-radius: 2px;
-  font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+
+  &--any{
+    margin-left: 8px;
+    background-color: rgb(191, 191, 191);
+    color: white;
+    font-size: 13px;
+    padding: 1px 3px;
+    border-radius: 2px;
+    font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+  }
 }
 // hr
 .items-new-hr{
