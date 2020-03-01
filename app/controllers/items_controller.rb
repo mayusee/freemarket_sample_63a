@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
       #   format.html { redirect_to root_path}
       #   format.json
       # end
-      redirect_to root_path
+      redirect_to user_item_path(@item.seller_id,@item.id)
     end
 
   end
