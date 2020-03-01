@@ -2,16 +2,15 @@ class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
       # references
-      t.references :user,                   null: false, foreign_key: true
-      t.references :brand,                  null: false, foreign_key: true
+      t.references :brand,                  null: true,  foreign_key: true
       t.references :category,               null: false, foreign_key: true
-      t.references :shippingway,            null: false, foreign_key: true
+      t.references :product_size,           null: true,  foreign_key: true
+      t.references :shippingway,            null: true,  foreign_key: true
 
       # enum
-      t.integer    :size_num,               null: false, limit: 1, unsigned: true, default: 0
       t.integer    :condition_num,          null: false, limit: 1, unsigned: true, default: 0
-      t.integer    :shippingcharge_num,     null: false, limit: 1, unsigned: true, default: 0
       t.integer    :daystoship_num,         null: false, limit: 1, unsigned: true, default: 0
+      t.integer    :status_num,             null: false, limit: 1, unsigned: true, default: 0
 
       # values
       t.string     :title,                  null: false
@@ -23,10 +22,9 @@ class CreateItems < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :items, :size_num
     add_index :items, :condition_num 
-    add_index :items, :shippingcharge_num 
     add_index :items, :daystoship_num
+    add_index :items, :status_num
     add_index :items, :title
 
   end
