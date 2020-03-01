@@ -4,6 +4,7 @@ ary_categoryid = [3,4,5,7,8,9,10,3,4,5]
 10.times do |n|
   brand_id = n+1
   buyer_id = nil
+  buyer_address_id = nil
   category_id = ary_categoryid[n]
   condition_num =  0
   daystoship_num = 0
@@ -12,6 +13,7 @@ ary_categoryid = [3,4,5,7,8,9,10,3,4,5]
   price =  20000
   profit_price = 18000
   seller_id = n+1
+  seller_address_id = 13
   shippingway_id = nil
   status_num = 0
   sold_at = nil
