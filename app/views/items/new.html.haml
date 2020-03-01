@@ -3,65 +3,104 @@
     .items-new-header__icon
       = link_to root_path do
         = image_tag 'logo.png'
+
   .registrations-new-main
     .regstrations-new-main--form
-      = form_with(model: @items, locale: true ) do |f|
-        .common-field
-          = f.label :"出典画像"
+      = form_with(model: [current_user, @item], locale: true , id: 'new_item') do |f|
+        .item-image-container
+          = f.label :"出品画像"
           %span.form-require 必須
-          %br/
-          = f.text_field :image, class: "common-field.common-field__body",autofocus: true,placeholder: "画像部(要編集)"
-        .common-field
-          = f.label :"商品名"
-          %span.form-require 必須
-          %br/
-          = f.text_field :name, class: "common-field.common-field__body",autofocus: true,placeholder: "40文字まで"          
-        .common-field
-          = f.label :"商品の説明"
-          %span.form-require 必須
-          %br/
-          = f.text_field :text, class: "common-field.common-field__body",autofocus: true,placeholder: "商品の説明(必須1000文字以内"
-        .common-field__birthday
-          = f.label :"カテゴリー"
-          %span.form-require 必須
-          %br/
-          = f.collection_select :category_id, Category.all, :id, :name
-        .common-field
-          = f.label :"ブランド"
-          %span.form-require 必須
-          %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
-        .common-field
-          = f.label :"商品の状態"
-          %span.form-require 必須
-          %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
-        .common-field
-          = f.label :"配送料の負担"
-          %span.form-require 必須
-          %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
-        .common-field
-          = f.label :"発送元の地域"
-          %span.form-require 必須
-          %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
-        .common-field
-          = f.label :"発送までの日数"
-          %span.form-require 必須
-          %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
-        .common-field
-          = f.label :"販売価格"
-          %span.form-require 必須
-          %br/
-          = f.text_field :nickname, class: "common-field.common-field__body",autofocus: true,placeholder: "例）テックタロウ"
-        .common-field
-          .common-field__botton
-            = f.button "送信",onclick: "submit();",value: "次へ進む",class:"common-field.common-field__botton" 
+          %p.item-image-container__lead
+            最大5枚までアップロードできます
+          .item-image-container__unit
+            %ul
+              
+            .item-image-container__unit--guide
+              .have-image
+                = icon('fas','camera')
+                %p#d-d-delete ドラッグ&ドロップ
+                %p#click-delete またはクリックしてファイルをアップロード
+        %hr.items-new-hr
+        .items-new-first
+          .items-new-first__head
+            = f.label :"商品名"
+            %span.form-require 必須
+            %br/
+            = f.text_field :title ,autofocus: true ,placeholder: "40文字まで"          
+          .items-new-first__foot
+            = f.label :"商品の説明"
+            %span.form-require 必須
+            %br/
+            = f.text_area :description, autofocus: true,placeholder: text_placeholder 
+            %p
+              #textlength
+                0
+        %hr.items-new-hr
+        .items-new-second
+          %p.items-new-second__detail
+            商品の詳細
+          .items-new-second__head
+            = f.label :"カテゴリー"
+            %span.form-require 必須
+            %br/
+            = f.collection_select :category_id, Category.all, :id, :name, autofocus: true
+          .items-new-second__center
+            = f.label :"ブランド"
+            %span.common-field__tag--any 任意
+            %br/
+            = f.text_field :brand_id , autofocus: true,placeholder: "例）シャネル"
+          .items-new-second__foot
+            = f.label :"商品の状態"
+            %span.form-require 必須
+            %br/
+            = f.select :condition_num, Item.condition_nums.keys.map {|k| [I18n.t("enums.item.condition_num.#{k}"), k]}
+        %hr.items-new-hr
+        .items-new-third
+          %p.items-new-third__detail
+            配送について
+          .items-new-third__head
+            = f.label :"配送料の負担"
+            %span.form-require 必須
+            %br/
+            = f.select :shippingcharge_num, Item.shippingcharge_nums.keys.map {|k| [I18n.t("enums.item.shippingcharge_num.#{k}"), k]}
+          .items-new-third__center
+            = f.label :"発送方法"
+            %span.form-require 必須
+            %br/
+            = f.collection_select :shippingway_id, Shippingway.all, :id, :name ,autofocus: true 
+          .items-new-third__foot
+            = f.label :"発送までの日数"
+            %span.form-require 必須
+            %br/
+            = f.select :daystoship_num, Item.daystoship_nums.keys.map {|k| [I18n.t("enums.item.daystoship_num.#{k}"), k]}
+        %hr.items-new-hr
+        .items-new-final
+          %p.items-new-final__detail
+            価格 (¥200~9,999,999)
+          .items-new-final__head
+            .items-new-final__head--inner
+              = f.label :"販売価格"
+              %span.form-require 必須
+            %br/
+            = f.text_field :price, data: { autonumeric: { aSign: '¥', mDec: 0 } } , autofocus: true, placeholder: "金額を入力して下さい"
+          .items-new-final__commission
+            .items-new-final__commission--factor
+              %div
+                販売手数料(10%)
+          %hr.items-new-hr
+          .items-new-final__profit
+            .items-new-final__profit--factor
+              %div
+                販売利益
+          .items-new-final__exibition
+            .exibition-n-back
+              = f.button "出品する",value: "次へ進む",class:"exibition-n-back__submit" 
+              = link_to "もどる" , root_path, class:"exibition-n-back__previous"
+
         .common-field
           %P.common-field__consent
             禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+
   .items-new-footer
     %ul.items-new-footer__contents
       %li.items-new-footer__contents--list
@@ -73,6 +112,7 @@
     .items-new-footer__icon
       = link_to root_path do
         = image_tag 'logo-white.png'
+
     %p ©️FURIMA
 %script{src: "/assets/text-count.js", type: "text/javascript"}
 %script{src: "/assets/item-image-container.js", type: "text/javascript"}
