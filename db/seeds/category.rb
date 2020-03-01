@@ -1,3 +1,7 @@
+ary_tops = [{name: "Tシャツ/カットソー(半袖/袖なし)"},{name: "Tシャツ/カットソー(七分/長袖)"},{name: "その他"}]
+ary_jacket = [{name: "テーラードジャケット"},{name: "ノーカラージャケット"},{name: "Gジャン/デニムジャケット"},{name: "その他"}]
+ary_shoes = [{name: "スニーカー"},{name: "サンダル"},{name: "その他"}]
+
 # 親：レディース
 lady = Category.create(name: "レディース")
 
@@ -5,23 +9,38 @@ lady = Category.create(name: "レディース")
 lady_tops = lady.children.create(name: "トップス")
 
 # 孫：レディース／トップス
-lady_tops_items = lady_tops.children.create([{name: "Tシャツ/カットソー(半袖/袖なし)"},{name: "Tシャツ/カットソー(七分/長袖)"},{name: "その他"}])
+lady_tops.children.create(ary_tops)
 
 # 子：レディース／アウター
 lady_jacket = lady.children.create(name: "ジャケット/アウター")
 
 # 孫：レディース／アウター
-lady_jacket_items = lady_jacket.children.create([{name: "テーラードジャケット"},{name: "ノーカラージャケット"},{name: "Gジャン/デニムジャケット"},{name: "その他"}])
+lady_jacket.children.create(ary_jacket)
 
-# サイズ
-ary_size = [{name: "XXS以下"},{name: "XS(SS)"},{name: "S"},{name: "M"},{name: "L"},{name: "XL(LL)"},{name: "2XL(3L)"},{name: "3XL(4L)"},{name: "4XL(5L)以上"},{name: "FREE SIZE"}]
+# 子：レディース／靴
+lady_tops = lady.children.create(name: "靴")
 
-# 曽孫：レディース／トップス／孫たち
-lady_tops.children.each do |size|
-  size.children.create(ary_size)
-end
+# 孫：レディース／靴
+lady_tops.children.create(ary_shoes)
 
-# 曽孫：レディース／アウター／孫たち
-lady_jacket.children.each do |size|
-  size.children.create(ary_size)
-end
+# 親：メンズ
+men = Category.create(name: "メンズ")
+
+# 子：メンズ／トップス
+men_tops = men.children.create(name: "トップス")
+
+# 孫：メンズ／トップス
+men_tops.children.create(ary_tops)
+
+# 子：メンズ／アウター
+men_jacket = men.children.create(name: "ジャケット/アウター")
+
+# 孫：メンズ／アウター
+men_jacket.children.create(ary_jacket)
+
+# 子：メンズ／靴
+men_tops = men.children.create(name: "靴")
+
+# 孫：メンズ／靴
+men_tops.children.create(ary_shoes)
+

@@ -1,17 +1,16 @@
 class Item < ApplicationRecord
   # associations
-  belongs_to    :brand
+  belongs_to    :brand,        optional: true
   belongs_to    :category
-  belongs_to    :product_size
-  belongs_to    :shippingway, optional: true
-  belongs_to    :user
-  has_many      :item_images, dependent: :destroy
+  belongs_to    :product_size, optional: true
+  belongs_to    :shippingway,  optional: true
+  has_many      :item_images,  dependent: :destroy
   accepts_nested_attributes_for      :item_images, allow_destroy: true
 
-  belongs_to    :buyer, class_name: "User", optional: true
-  belongs_to    :buyer_address, class_name: "Address", optional: true
-  belongs_to    :seller, class_name: "User"
+  belongs_to    :seller,         class_name: "User"
   belongs_to    :seller_address, class_name: "Address"
+  belongs_to    :buyer,          class_name: "User",    optional: true
+  belongs_to    :buyer_address,  class_name: "Address", optional: true
 
   # enum
   enum condition_num:{ brand_new: 0, near_new: 1, no_dirt: 2, near_dirt:3 ,dirty:4, bad_condition:5 }
