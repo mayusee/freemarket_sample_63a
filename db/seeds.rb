@@ -2,8 +2,11 @@ require './db/seeds/area.rb'
 require './db/seeds/category.rb'
 require './db/seeds/brand.rb'
 require './db/seeds/shippingway.rb'
+# ↓ まだ作成中のためコメントアウト。
+# require './db/seeds/product_size.rb'
+# require './db/seeds/category_size.rb'
 if Rails.env == "development"
   require './db/seeds/user.rb'
-  require './db/seeds/item.rb'
+  # ↓ product_size, category_sizeのシードができるまでコメントアウト。
+  # require './db/seeds/item.rb'
 end
-# itemとshippingwayの外部キーを(null: true)に変更してから実行すること。
