@@ -10,7 +10,7 @@ class TradesController < ApplicationController
   private
 
   def get_item
-    @item = Item.find(params[:group_id])
+    @item = Item.find(params[:item_id])
   end
 
 end
