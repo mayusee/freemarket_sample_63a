@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
     @item["profit_price"] = @item.price - (@item.price * @item.feerate)
     if @item.save
       
+      #この後の画像機能追加で、以下の記述を使用するためコメントアウトしています。
       # image_params[:images].each do |image|
       #   @item.images.build
       #   item_image = @item.images.new(image: image)
@@ -29,7 +30,6 @@ class ItemsController < ApplicationController
       # end
       redirect_to user_item_path(@item.seller_id,@item.id)
     end
-
   end
 
   def show
@@ -45,7 +45,6 @@ class ItemsController < ApplicationController
     end
 
     def set_user_address
-      #user_id:current_user.id
-      @address = Address.find_by(user_id: 1,status_num: 0)
+      @address = Address.find_by(user_id: current_user.id,status_num: 0)
     end
 end
