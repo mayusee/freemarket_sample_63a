@@ -22,4 +22,4 @@
                 = exp_month + " 月 / " + exp_year + " 年"
             = form_tag(user_creditcard_path, method: :delete, id: 'charge-form',  name: "inputForm") do
               %input{ type: "hidden", name: "card_id", value: "" }
-              %input{ type:"submit",value:"削除する", class:"creditcards-show-confirmation__submit-btn"}
+              %input{ type:"submit",value:"削除する",data:{confirm: 'カード情報を削除してもよろしいですか？'}, class:"creditcards-show-confirmation__submit-btn"}
