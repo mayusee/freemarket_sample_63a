@@ -15,7 +15,7 @@
                   %span.trades-new-item-shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
-          = form_with(model:@item,local:true) do |f|
+          = form_with(model: @item, url: user_item_trades_path() ,local: true) do |f|
             %ul.trades-new-buy-price-table
               %li.trades-new-buy-price-row
                 .trades-new-buy-price-cell-label 支払い金額
