@@ -95,7 +95,7 @@
                 販売利益
           .items-new-final__exibition
             .exibition-n-back
-              = f.submit "出品する",class:"exibition-n-back__submit" 
+              = f.submit "出品する",class:"exibition-n-back__submit" , data: { confirm: '入力した情報で出品します。よろしいですか？' } 
               = link_to "もどる" , root_path, class:"exibition-n-back__previous"
 
         .common-field
