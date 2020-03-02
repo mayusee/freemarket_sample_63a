@@ -1,10 +1,25 @@
-%label 登録クレジットカード情報
-%br
-= "**** **** **** " + @default_card_information.last4
-%br
-- exp_month = @default_card_information.exp_month.to_s
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + " / " + exp_year
-= form_tag(user_creditcard_path, method: :delete, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+.creditcards-show
+  %header.creditcards-show__header
+    = render 'layouts/header'
+  %main.creditcards-show__main
+    .creditcards-show-container
+      .creditcards-show-container__left
+        = render 'layouts/user-nav'
+      .creditcards-show-container__right
+        .creditcards-show-confirmation
+          .creditcards-show-confirmation__title
+            登録クレジットカード情報
+          .creditcards-show-confirmation__contents
+            .creditcards-show-confirmation__card-number
+              .creditcards-show-confirmation__card-number--text カード番号
+              .creditcards-show-confirmation__card-number--number
+                = "**** **** **** " + @default_card_information.last4
+            .creditcards-show-confirmation__expire
+              .creditcards-show-confirmation__expire--text 有効期限
+              .creditcards-show-confirmation__expire--date
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " 月 / " + exp_year + " 年"
+            = form_tag(user_creditcard_path, method: :delete, id: 'charge-form',  name: "inputForm") do
+              %input{ type: "hidden", name: "card_id", value: "" }
+              %input{ type:"submit",value:"削除する", class:"creditcards-show-confirmation__submit-btn"}
