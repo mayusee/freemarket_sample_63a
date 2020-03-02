@@ -54,7 +54,7 @@ $('.item-image-container__unit--guide').on('drop',function(event){
   
 });
 
-//今後必要になるためコメントアウトしています。
+//次の画像機能の実装で使用する予定のためコメントアウトしています。
 // $(document).on('click','.item-image-container__unit--preview a',function(){
 
 //   var index = $(".item-image-container__unit--preview a").index(this);
