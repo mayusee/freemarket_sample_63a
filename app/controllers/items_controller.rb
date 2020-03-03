@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new(feerate: 0.1)
-    5.times {@item.item_images.build}
+    @item_image = @item.item_images.build
   end
 
   def create
@@ -15,8 +15,11 @@ class ItemsController < ApplicationController
     @item["seller_address_id"] = @address.id
     @item["feerate"] = 0.1
     @item["profit_price"] = @item.price - (@item.price * @item.feerate)
+    
     if @item.save
-      
+      params[:item_images]['image'].each do |a|
+        @item_image = @item.item_images.create(:image => a, :item_id => @item.id)
+      end
       #この後の画像機能追加で、以下の記述を使用するためコメントアウトしています。
       # image_params[:images].each do |image|
       #   @item.images.build
@@ -37,12 +40,12 @@ class ItemsController < ApplicationController
 
   private
     def item_params
-      params.require(:item).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:daystoship_num,:title,:description,:price)
+      params.require(:item).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:daystoship_num,:title,:description,:price, item_images_attributes: [:id, :item_id, :image])
     end
     
-    def image_params
-      params.require(:item_image).permit({:image => []})
-    end
+    # def image_params
+    #   params.require(:item_image).permit({:image => []})
+    # end
 
     def set_user_address
       @address = Address.find_by(user_id: current_user.id,status_num: 0)
