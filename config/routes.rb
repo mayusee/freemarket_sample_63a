@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :tops,only: :index 
   resources :sign_ups,only: :index
   resources :items do
-    resources :trades , only: [:new]
+    resources :trades , only: [:index,:new,:create,:show,:update]
   end
   resources :users , only: :show do
     resources :creditcards, only: [:new, :show, :destroy] do
@@ -14,5 +14,4 @@ Rails.application.routes.draw do
       end
     end
   end
-
 end
