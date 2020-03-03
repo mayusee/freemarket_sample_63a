@@ -14,7 +14,8 @@
             最大5枚までアップロードできます
           .item-image-container__unit
             %ul
-              
+          = f.fields_for :item_images do |i|
+            = i.file_field :image, multiple: true, class: 'image-upload-dropfile hidden', type: 'file', name: "item_images[image][]"
             .item-image-container__unit--guide
               .have-image
                 = icon('fas','camera')
