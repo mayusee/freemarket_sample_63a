@@ -1,0 +1,14 @@
+.trades-new {
+  background-color: rgb(245, 245, 245);
+  align-items: center;
+  &-header {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__icon {
+      height: 50px;
+      width: 200px;
+    }
+  }
+}
