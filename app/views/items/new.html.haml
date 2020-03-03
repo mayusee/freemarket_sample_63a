@@ -14,8 +14,16 @@
             最大5枚までアップロードできます
           .item-image-container__unit
             %ul
-              
+
             .item-image-container__unit--guide
+              #image-box-1
+                .image-upload-dropfile
+                  = f.fields_for :item_images do |i|
+                    .image-upload-dropfile__area
+                      %label
+                        = i.file_field :image, class: 'image-upload-dropfile__area--hidden', type: 'file', name: "item[item_images_attributes][][image]", value:"", id:"img-file"
+                        .image-upload-dropfile__area--visible
+
               .have-image
                 = icon('fas','camera')
                 %p#d-d-delete ドラッグ&ドロップ
@@ -115,5 +123,6 @@
         = image_tag 'logo-white.png'
 
     %p ©️FURIMA
+%script{src: "/assets/click-upload.js", type: "text/javascript"}
 %script{src: "/assets/text-count.js", type: "text/javascript"}
 %script{src: "/assets/item-image-container.js", type: "text/javascript"}
