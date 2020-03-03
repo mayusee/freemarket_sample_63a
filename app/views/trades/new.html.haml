@@ -1,29 +1,30 @@
 .trades-new
   %header.trades-new-header
-    = link_to root_path do
-      = image_tag 'logo.png'
+    .trades-new-header__icon
+      = link_to root_path do
+        = image_tag 'logo.png'
   %main.trades-new-main
     .trades-new-buy-item-container
       %h2.trades-new-buy-head 購入内容の確認
       .trades-new-buy-content
         .trades-new-buy-content-inner
           .trades-new-buy-item-box
-            %h3.trades-new-buy-item-image
+            %h3.trades-new-buy-item__image
               = image_tag '',size:'75x75', class:'trades-new-item-image__photo'
-              .trades-new-buy-item-detail
-                %p.trades-new-item-name 
+              .trades-new-buy-item__detail
+                %p.trades-new-item__name 
                   = @item.title
-                %p.trades-new-item-buy-price-ja
+                %p.trades-new-item__price-ja
                   %span
                     = "¥#{sprintf("%.0f", @item.price)}"
-                  %span.trades-new-item-shipping-fee （税込）送料込み
+                  %span.trades-new-item__shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
           = form_with(model: @item, url: item_path(current_user),local: true) do |f|
             %ul.trades-new-buy-price-table
-              %li.trades-new-buy-price-row
-                .trades-new-buy-price-cell-label 支払い金額
-                .trades-new-buy-price-cell
+              %li.trades-new-buy-price-table__row
+                .trades-new-buy-price-table__cell--label 支払い金額
+                .trades-new-buy-price-table__cell
                   %span
                     = "¥#{sprintf("%.0f", @item.price)}"
             .trades-new-buy-content
@@ -31,14 +32,16 @@
                 %h3 支払い方法
                 = link_to "#", class: "trades-new-buy-user-info-fix" do
                   %p.trades-new-buy-user-info-text
-                    %i.trades-new-icon-plus-circle
+                    .trades-new-icon-plus-circle
+                      = icon('fas', 'plus-circle')
                       %span.trades-new-buy-register-text 登録してください
             .trades-new-buy-content
               .trades-new-buy-content-inner
                 %h3 配送先
                 = link_to "#", class: "trades-new-buy-user-info-fix" do
                   %p.trades-new-buy-user-info-text
-                    %i.trades-new-icon-plus-circle
+                    .trades-new-icon-plus-circle
+                      = icon('fas', 'plus-circle')
                       %span.trades-new-buy-register-text 登録してください
             -# ここに購入機能に必要なデータをhiddenで追加する。 
             .trades-new-buy-content
