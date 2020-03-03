@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:daystoship_num,:title,:description,:price, item_images_attributes: [:id, :item_id, :image])
     end
-    
+    # ドラッグ&ドロップのajax通信の際に必要な記述ですが、今はhtmlを通してデータを保存しているのでコメントアウト。
     # def image_params
     #   params.require(:item_image).permit({:image => []})
     # end
