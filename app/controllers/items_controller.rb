@@ -11,8 +11,8 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item["seller_id"] = current_user.id
-    @item["seller_address_id"] = @address.id
+    @item["user_id"] = current_user.id
+    @item["address_id"] = @address.id
     @item["feerate"] = 0.1
     @item["profit_price"] = @item.price - (@item.price * @item.feerate)
     if @item.save
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
       #   format.html { redirect_to root_path}
       #   format.json
       # end
-      redirect_to user_item_path(@item.seller_id,@item.id)
+      redirect_to item_path(@item.id)
     end
   end
 
