@@ -6,7 +6,7 @@
 
   .registrations-new-main
     .regstrations-new-main--form
-      = form_with(model: [current_user, @item], locale: true , id: 'new_item') do |f|
+      = form_with(model:@item, locale: true , id: 'new_item') do |f|
         .item-image-container
           = f.label :"出品画像"
           %span.form-require 必須
