@@ -1,5 +1,7 @@
 .trades-new
   %header.trades-new-header
+    = link_to root_path do
+      = image_tag 'logo.png'
   %main.trades-new-main
     .trades-new-buy-item-container
       %h2.trades-new-buy-head 購入内容の確認
@@ -9,18 +11,21 @@
             %h3.trades-new-buy-item-image
               = image_tag '',size:'75x75', class:'trades-new-item-image__photo'
               .trades-new-buy-item-detail
-                %p.trades-new-item-name iPhoneXR ガラスフィルム ブルーライトカット 1枚
+                %p.trades-new-item-name 
+                  = @item.title
                 %p.trades-new-item-buy-price-ja
-                  %span ¥300
+                  %span
+                    = "¥#{sprintf("%.0f", @item.price)}"
                   %span.trades-new-item-shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
-          = form_with(model: @item, url: user_item_trades_path() ,local: true) do |f|
+          = form_with(model: @item, url: item_path(current_user),local: true) do |f|
             %ul.trades-new-buy-price-table
               %li.trades-new-buy-price-row
                 .trades-new-buy-price-cell-label 支払い金額
                 .trades-new-buy-price-cell
-                  %span.trades-new-buy-pay ¥300
+                  %span
+                    = "¥#{sprintf("%.0f", @item.price)}"
             .trades-new-buy-content
               .trades-new-buy-content-inner
                 %h3 支払い方法
@@ -35,35 +40,7 @@
                   %p.trades-new-buy-user-info-text
                     %i.trades-new-icon-plus-circle
                       %span.trades-new-buy-register-text 登録してください
-            
-            -# = f.hidden_field :seller_id
-            -# = f.hidden_field :payment_fee
-            -# = f.hidden_field :payment_amount
-            -# = f.hidden_field :price
-            -# = f.hidden_field :category_id
-            -# = f.hidden_field :item_condition
-            -# = f.hidden_field :shipping_payer
-            -# = f.hidden_field :shipping_method
-            -# = f.hidden_field :shipping_duration
-            -# = f.hidden_field :shipping_class
-            -# = f.hidden_field :zip_code1
-            -# = f.hidden_field :zip_code2
-            -# = f.hidden_field :paid_method
-            -# = f.hidden_field :checksum
-            -# = f.hidden_field :payment_card_sequence_no
-            -# = f.hidden_field :payment_use_last_card_base64
-            -# = f.hidden_field :item_name_base64
-            -# = f.hidden_field :description_base64
-            -# = f.hidden_field :shipping_from_area_base64
-            -# = f.hidden_field :family_name_base64
-            -# = f.hidden_field :first_name_base64
-            -# = f.hidden_field :family_name_kana_base64
-            -# = f.hidden_field :first_name_kana_base64
-            -# = f.hidden_field :prefecture_base64
-            -# = f.hidden_field :city_base64
-            -# = f.hidden_field :address1_base64
-            -# = f.hidden_field :address2_base64
-            -# = f.hidden_field :telephone_base64
+            -# ここに購入機能に必要なデータをhiddenで追加する。 
             .trades-new-buy-content
               = f.button type: "submit", class:"trades-new-btn-submit", value: "購入する"
   %footer.trades-new-footer
