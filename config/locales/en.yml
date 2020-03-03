@@ -48,3 +48,12 @@ en:
         one_to_two: 1~2日で発送
         two_to_three: 2~3日で発送
         four_to_seven: 4~7日で発送
+      daystoship_num:
+        one_to_two: 1~2日で発送
+        two_to_three: 2~3日で発送
+        four_to_seven: 4~7日で発送
+    trade:
+      status_num:
+        sold_out: 売り切れ
+        under_delivery: 発送中
+        finished: 完了 
