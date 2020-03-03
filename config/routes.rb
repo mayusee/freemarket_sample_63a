@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "tops#index"
   resources :tops,only: :index 
   resources :sign_ups,only: :index
-  resources :items, only: [:index, :new, :create, :show] do
+  resources :items do
     resources :trades , only: [:index,:new,:create,:show,:update]
   end
   resources :users , only: :show do
