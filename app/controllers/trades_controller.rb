@@ -4,13 +4,13 @@ class TradesController < ApplicationController
   def new
   end
 
-  def create
-  end
-
   private
 
   def get_item
     @item = Item.find(params[:item_id])
+    @item_image = ItemImage.find_by(params[:item_id])
+    @address = Address.find_by(user_id: current_user.id)
+    @creditcad = Creditcard.find_by(user_id: current_user.id)
   end
 
 end
