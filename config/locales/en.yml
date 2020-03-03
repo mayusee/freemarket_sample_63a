@@ -54,6 +54,6 @@ en:
         four_to_seven: 4~7日で発送
     trade:
       status_num:
-        sold_out: 売り切れ
+        trading: 取引中
         under_delivery: 発送中
         finished: 完了 

@@ -5,5 +5,5 @@ class Trade < ApplicationRecord
   belongs_to    :address
 
   # enum
-  enum status_num:{sold_out:0, under_delivery:1, finished:2 }
+  enum status_num:{trading:0, under_delivery:1, finished:2 }
 end
