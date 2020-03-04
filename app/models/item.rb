@@ -4,11 +4,15 @@ class Item < ApplicationRecord
   belongs_to    :category
   belongs_to    :product_size, optional: true
   belongs_to    :shippingway,  optional: true
+
+
+  has_many      :item_images 
+  accepts_nested_attributes_for      :item_images
+
   belongs_to    :user
   belongs_to    :address
   has_many      :trades
-  has_many      :item_images,  dependent: :destroy
-  accepts_nested_attributes_for      :item_images, allow_destroy: true
+  
 
   # enum
   enum condition_num:{ brand_new: 0, near_new: 1, no_dirt: 2, near_dirt:3 ,dirty:4, bad_condition:5 }
