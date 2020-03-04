@@ -17,8 +17,8 @@ class ItemsController < ApplicationController
     @item["profit_price"] = @item.price - (@item.price * @item.feerate)
     
     if @item.save
-      params[:item_images]['image'].each do |a|
-        @item_image = @item.item_images.create(:image => a, :item_id => @item.id)
+      params[:item_images]['image'].each do |img|
+        @item_image = @item.item_images.create(:image => img, :item_id => @item.id)
       end
       #この後の画像機能追加で、以下の記述を使用するためコメントアウトしています。
       # image_params[:images].each do |image|
