@@ -1,0 +1,13 @@
+.tertiarybanner
+  = image_tag 'bg-appBanner-pict.jpg', class: "tertiarybanner__image"
+  .tertiarybanner__inner
+    .tertiarybanner__content
+      .tertiarybanner__content--title
+        %h2 だれでもかんたん、人生を変えるフリマアプリ
+      .tertiarybanner__content--content
+        %p.tertiarybanner__content--text 今すぐ無料ダウンロード！
+      .tertiarybanner__content--icon
+        = link_to '#' do
+          = image_tag "app-store.svg", class: "appBtn"
+        = link_to '#' do
+          = image_tag "google-play.svg", class: "googleBtn"

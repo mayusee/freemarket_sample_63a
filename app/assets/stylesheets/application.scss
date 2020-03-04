@@ -17,17 +17,18 @@
 @import "font-awesome";
 @import "reset";
 @import "header";
-@import "user_show";
+@import "footer";
+@import "item-image-container";
 @import "mixins/appbutton";
-@import "modules/sign-up-container";
-@import "modules/sign-up-content";
 @import "modules/navigation";
-@import "modules/sign-up";
-@import "modules/log-in-container";
-@import "modules/log-in-content";
+@import "modules/sign-ups-index";
 @import "modules/header-image";
-@import "modules/log-in";
-@import "modules/recaptcha";
+@import "modules/sessions-new";
+@import "modules/user-show";
+@import "modules/registrations_new";
+@import "modules/primarybanner";
+@import "modules/secondrybanner";
+@import "modules/tertiarybanner";
 
 *{
   box-sizing: border-box;

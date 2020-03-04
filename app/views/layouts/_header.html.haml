@@ -1,28 +1,28 @@
 %header.ecHeader
-  .top__head
-    .top__head--top
-      .top__head--icon
+  .tops-index-head
+    .tops-index-head-top
+      .tops-index-head-top__icon
         = link_to root_path do
           = image_tag 'logo.png'
-      .top__head--searchBox
+      .tops-index-head-top__searchBox
         = form_tag( "#" ,method: 'get', class: "head__form--tag") do
           = text_field_tag :search , '', class: "head__search--input", placeholder: "キーワードから探す"
           = button_tag type: "submit", class: "head__search--input--btn" do
             = image_tag 'icon-search 1.png'
-    .top__head--bottom
-      %ul.top__head__listsLeft
-        %li.top__head__listsLeft--first
+    .tops-index-head-bottom
+      %ul
+        %li.tops-index-head-bottom__Left
           = link_to "カテゴリー" , "#"
-        %li.top__head__listsLeft--second
+        %li.tops-index-head-bottom__Right
           = link_to "ブランド" , "#"
-      %ul.top__head__listsRight
+      %ul
         -if user_signed_in?
-          %li.top__head__listsRight--login
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
-          %li.top__head__listsRight--signup 
+          %li.tops-index-head-bottom__Left
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトしてもよろしいですか？' } 
+          %li.tops-index-head-bottom__Right 
             = link_to "マイページ" ,user_path(current_user.id)
         -else
-          %li.top__head__listsRight--login
+          %li.tops-index-head-bottom__Left
             = link_to "ログイン" , new_user_session_path
-          %li.top__head__listsRight--signup 
+          %li.tops-index-head-bottom__Right 
             = link_to "新規会員登録" , sign_ups_path

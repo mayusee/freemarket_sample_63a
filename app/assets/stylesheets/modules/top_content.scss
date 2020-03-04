@@ -1,9 +1,11 @@
+$frima_green: #3CCACE;
+
 /* after疑似要素の共通定義 */
-%__top-pseudo-element{
+%__tops-pseudo-element{
   content: "";
   width: 70px;
   height: 4px;
-  background-color: #3CCACE;
+  background-color: $frima_green;
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -11,7 +13,7 @@
 }
 
 /* subtitleの共通定義 */
-%__top-subtitle{
+%__tops-subtitle{
   text-align: center;
   font-size: 26px;
   line-height: 1.4;
@@ -21,30 +23,26 @@
   position: relative;
 }
 
-.top-content{
-
-  &__intoroduction{
-    padding: 60px 20px;
-
-  }
-
-  &__futures{
-    padding: 60px 100px;
-    background-color: #fff;
-  }  
-
+.tops-index-contents{
+  background: #f8f8f8;  
 }
 
-.top-intoroduction-subtitle{
-  @extend %__top-subtitle;
+.tops-index-content-intoroduction{
+  padding: 60px 20px;
 
-  &:after {
-    @extend %__top-pseudo-element;
+  &__subtitle{
+
+    @extend %__tops-subtitle;
+
+    &:after {
+      @extend %__tops-pseudo-element;
+    }
+    
   }
 
 }
 
-.top-intoroduction-lists{
+.tops-index-content-intoroduction-lists{
   text-align: center;
   display: flex;
   max-width: 1020px;
@@ -52,8 +50,8 @@
   margin: 0 auto;    
 }
 
-/* top-intoroduction-listの共通定義 */
-%__top-intoroduction-list{
+/* tops-index-content-intoroduction-listの共通定義 */
+%__tops-index-content-intoroduction-list{
   width: 30%;
   text-align: left;
   display: flex;
@@ -61,28 +59,29 @@
   align-items: center;
 }
 
-/* top-intoroduction-listの1番と2番 */
-%__top-intoroduction-list-normal{
-  @extend %__top-intoroduction-list;
+/* tops-index-content-intoroduction-listの1番と2番 */
+%__tops-index-content-intoroduction-list-normal{
+  @extend %__tops-index-content-intoroduction-list;
   margin: 16px 5% 0 0;
 }
 
-/* top-intoroduction-listの3番 */
-%__top-intoroduction-list-last{
-  @extend %__top-intoroduction-list;
+/* tops-index-content-intoroduction-listの3番 */
+%__tops-index-content-intoroduction-list-last{
+  @extend %__tops-index-content-intoroduction-list;
   margin: 16px 0 0;      
 }
 
-.top-span{
-  color: #3CCACE;    
+.tops-index-span{
+  color: $frima_green;    
 }
 
-.top-intoroduction-list-last{
-  @extend %__top-intoroduction-list-last;
+
+.tops-index-content-intoroduction-list-last{
+  @extend %__tops-index-content-intoroduction-list-last;
 }
 
-.top-intoroduction-list{
-  @extend %__top-intoroduction-list-normal;
+.tops-index-content-intoroduction-list{
+  @extend %__tops-index-content-intoroduction-list-normal;
 
   &__pict{
     position: relative;
@@ -99,7 +98,7 @@
     text-align: center;
     margin: 0 5px 0 0;
     padding: 10px 20px;
-    background-color: #3CCACE;
+    background-color: $frima_green;
     color: #fff;
   }
 
@@ -118,17 +117,24 @@
 
 }
 
+.tops-index-content-futures{
+  padding: 60px 100px;
+  background-color: #fff;
+}
 
-.top-futures-subtitle{
-  @extend %__top-subtitle;
+.tops-index-content-future{
 
-  &:after {
-    @extend %__top-pseudo-element;
+  &__subtitle{
+    @extend %__tops-subtitle;
+
+    &:after {
+      @extend %__tops-pseudo-element;
+    }
   }
 
 }
 
-.top-futuers-lists{
+.tops-index-content-future-lists{
   max-width: calc(1040px + 20px);
   width: 100%;
   margin: 0 auto;
@@ -136,7 +142,7 @@
   flex-wrap: wrap;
 }
 
-.top-futures-list{
+.tops-index-content-future-list{
   display: flex;
   flex-direction: column;
   width: calc(1 / 3 * 100%);
@@ -160,6 +166,80 @@
     font-size: 17px;
     font-weight: 200;
     text-align: left;
+  }
+
+}
+
+.tops-index-content-picups{
+  padding: 80px 0;
+  background-color: #f8f8f8;
+  height: 100%;
+}
+
+.tops-index-content-picup{
+
+  &__subtitle{
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+
+}
+
+.tops-index-content-picup-head{
+
+  &__text{
+    font-size: 24px;
+    text-align: center;
+  }
+
+}
+
+.tops-index-content-picup-lists{
+  width: 780px;
+  margin: 26px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.tops-index-content-picup-list{
+ 
+  width: 220px;
+  display: inline-block;
+  float: left;
+
+  &__img{
+    width: 220px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    z-index: auto;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+
+}
+
+.tops-index-content-picup-list-body{
+  background-color: white;
+  color: #333;
+  padding: 16px;
+
+  &__name{
+    overflow: hidden;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left;    
+  }
+
+  &__details{
+    font-size: 16px;
   }
 
 }

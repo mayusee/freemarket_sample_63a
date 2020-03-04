@@ -1,33 +1,30 @@
-.log-in
-  %header.log-in__header
+.sessions-new
+  %header.sessions-new__header
     = render "devise/header-image"
-  %main.log-in__main
-    %section.log-in-container
-      .log-in-container__head
-        %p.log-in-container__head--text アカウントをお持ちでない方はこちら
-        %a.log-in-container__head--btn{href:"#{sign_ups_path}"}
-          %span.log-in-content__text
-            新規会員登録
-      .log-in-container__contents
-        %content.log-in-content
-          %a.log-in-content__btn--facebook{href:"#"}
-            %i.log-in-content__icon
+  %main.sessions-new__main
+    %section.sessions-new-container
+      .sessions-new-container__head
+        %p.sessions-new-container__head--text アカウントをお持ちでない方はこちら
+        .sessions-new-container__btn
+          =link_to '新規会員登録',sign_ups_path,class:'sessions-new-container__btn--text'
+      .sessions-new-container__contents
+        %content.sessions-new-content
+          .sessions-new-content__btn--facebook
+            =link_to 'facebookで登録する','#',class:'sessions-new-content__text'
+            %i.sessions-new-content__icon
               = icon('fab', 'facebook-square')
-            %span.log-in-content__text
-              Facebookで登録する
-          %a.log-in-content__btn--google{href:"#"}
-            %i.log-in-content__icon--google
+          .sessions-new-content__btn--google
+            =link_to 'googleで登録する','#',class:'sessions-new-content__text--google'
+            %i.sessions-new-content__icon--google
               = icon('fab', 'google')
-            %span.log-in-content__text--google
-              googleで登録する
-          .log-in-content__field
+          .sessions-new-content__field
             = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-              = f.email_field :email,placeholder: "メールアドレス", autocomplete: "email",class:"log-in-content__field--password"
-              = f.password_field :password,placeholder: "パスワード", autocomplete: "current-password",class:"log-in-content__field--password"
-              .recaptcha
-                %p.recaptcha__image 私はロボットではありません
-              = f.submit "ログイン",class:"log-in-content__btn--log-in"
-          .log-in-content__password-forgotten
+              = f.email_field :email,placeholder: "メールアドレス", autocomplete: "email",class:"sessions-new-content__field--password"
+              = f.password_field :password,placeholder: "パスワード", autocomplete: "current-password",class:"sessions-new-content__field--password"
+              .sessions-new-recaptcha
+                %p.sessions-new-recaptcha__image 私はロボットではありません
+              = f.submit "ログイン",class:"sessions-new-content__btn--log-in"
+          .sessions-new-content__password-forgotten
             = render "devise/shared/links"
-  %footer.log-in__footer
+  %footer.sessions-new__footer
     = render "devise/navigation"

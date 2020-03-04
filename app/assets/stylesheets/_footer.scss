@@ -1,9 +1,10 @@
-.footer {
+.tops-index-foot {
   background-color: #272727;
   color: #ffffff;
   padding: 60px 0;
   text-align: center;
-  &__contents {
+}
+  .tops-index-foot-contents {
     max-width: 840px;
     margin: 0 auto;
     display: flex;
@@ -42,7 +43,7 @@
       font-weight: bold;
     }
   }
-  &__logo {
+  .tops-index-foot-logo {
     max-width: 160px;
     width: 100%;
     margin: 0 auto;
@@ -55,4 +56,4 @@
   p {
     font-size: 14px;
   }
-}
+

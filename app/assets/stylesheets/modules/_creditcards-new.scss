@@ -1,0 +1,154 @@
+.creditcards-new{
+  &__main{
+    padding-bottom:40px;
+    background-color: #f5f5f5;
+  }
+}
+.creditcards-new-container{
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 1020px;
+  display: flex;
+  justify-content: space-around;
+  &__left{
+    margin-bottom: 30px;
+    margin-right: 40px;
+    width: 25%;
+    background-color: #fff;
+  }
+  &__right{
+    height: 100%;
+    width: 60%;
+  }
+}
+.creditcards-new-registration{
+  width:700px;
+  background: #fff;
+  %__half{
+    display: inline-block;
+    width: calc(50% - 20px);
+    position: relative;
+    padding: 0 16px;
+    margin-right:5px;
+    border-radius: 4px;
+    background-color:#fff;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    line-height: 1.5;
+    cursor: pointer;
+    -webkit-appearance: none;
+    min-height: 1.5em;
+    touch-action: manipulation;
+  }
+  %--text-field{
+    display:block;
+    width:100%;
+    height: 48px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+  &__title{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 8px 24px;
+    text-align: center;
+    border-bottom:1px solid #f5f5f5;
+    line-height: 1.4;
+  }
+  &__form{
+    padding: 40px 40px 64px;
+  }
+  &__contents{
+    max-width: 343px;
+    margin:0 auto;
+  }
+  &__card-number{
+    &--text-field{
+      @extend %--text-field;
+    }
+  }
+  &__card-images{
+    margin-top:8px;
+    max-width:343px;
+    height:20px;
+    display:flex;
+    &--visa{
+      width:49px;
+    }
+    &--master-card{
+      width:34px;
+      margin-left:8px;
+    }
+    &--other{
+      width:32px;
+      margin-left:8px;
+    }
+    &--saison-card{
+      width:30px;
+      margin-left:8px;
+    }
+    &--american_express{
+      width:21px;
+      margin-left:8px;
+    }
+  }
+  &__expire{
+    margin-top:32px;
+  }
+  &__select{
+    display:flex;
+    margin-top:8px;
+    height:46px;
+    line-height: 46px;
+    justify-content: space-between;
+  }
+  &__half{
+    @extend %__half;
+    &--year{
+      @extend %__half;
+      margin-left:15px;
+    }
+    &--icon{
+      font-size: 14px;
+      margin: 0 6px 0 -15px;
+      position: relative;
+      right:14px;
+      color:#888;
+      pointer-events: none;
+    }
+  }
+  &__secure{
+    margin-top:40px;
+    &--text-field{
+      @extend %--text-field;
+    }
+  }
+  &__secure-code{
+    margin-top: 8px;
+    &--question{
+      color:#0099e8;
+      text-align: right;
+      font-size: 14px;
+    }
+    &--info{
+      display:none;
+    }
+  }
+  &__submit-btn{
+    margin-top:32px;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+  }
+}

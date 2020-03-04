@@ -31,3 +31,5 @@ public/uploads/*
 *.pdf
 
 .DS_Store
+
+.env

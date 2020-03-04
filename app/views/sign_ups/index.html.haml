@@ -1,26 +1,23 @@
-.sign-up
-  %header.sign-up__header
+.sign-ups-index
+  %header.sign-ups-index__header
     = render "devise/header-image"
-  %main.sign-up__main
-    %section.sign-up-container
-      .sign-up-container__head
-        %h2.sign-up-container__head--text 新規会員登録
-      .sign-up-container__contents
-        %content.sign-up-content
-          %a.sign-up-content__btn--email{href:"#{new_user_registration_path}"}
-            %i.sign-up-content__icon
+  %main.sign-ups-index__main
+    %section.sign-ups-index-container
+      .sign-ups-index-container__head
+        %h2.sign-ups-index-container__head--text 新規会員登録
+      .sign-ups-index-container__contents
+        %content.sign-ups-index-content
+          .sign-ups-index-content__btn--email
+            =link_to 'メールアドレスで登録する',new_user_registration_path,class:'sign-ups-index-content__text'
+            %i.sign-ups-index-content__icon
               = icon('far', 'envelope')
-            %span.sign-up-content__text
-              メールアドレスで登録する
-          %a.sign-up-content__btn--facebook{href:"#"}
-            %i.sign-up-content__icon
+          .sign-ups-index-content__btn--facebook
+            =link_to 'Facebookで登録する','#',class:'sign-ups-index-content__text'
+            %i.sign-ups-index-content__icon
               = icon('fab', 'facebook-square')
-            %span.sign-up-content__text
-              Facebookで登録する
-          %a.sign-up-content__btn--google{href:"#"}
-            %i.sign-up-content__icon--google
+          .sign-ups-index-content__btn--google
+            =link_to 'googleで登録する','#',class:'sign-ups-index-content__text--google'
+            %i.sign-ups-index-content__icon--google
               = icon('fab', 'google')
-            %span.sign-up-content__text--google
-              googleで登録する
-  %footer.sign-up__footer
+  %footer.sign-ups-index__footer
     = render "devise/navigation"

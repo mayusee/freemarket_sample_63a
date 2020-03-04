@@ -1,13 +1,13 @@
 .ecHeader{
   height: 100px;
   width: 100%;
-  .top__head{
+  .tops-index-head{
     padding-top: 15px;
     margin: 0 auto;
     width: 70%;
-    &--top{
+    &-top{
       display: flex;
-      .top__head--icon{ 
+      &__icon{ 
         padding-bottom: 10px;
         margin-right: 30px;
         border-radius: 4px;
@@ -20,7 +20,7 @@
           }
         }
       }
-      .top__head--searchBox{
+      &__searchBox{
         margin-left: auto;
         width: 100%;
         .head__form--tag{
@@ -48,12 +48,10 @@
         }
       }
     }
-    &--bottom{
+    &-bottom{
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
       font-size: 14px;
-      padding-top: 10px;
       li{
         list-style: none;
       }
@@ -61,26 +59,13 @@
         text-decoration: none;
         color: #333;
       }
-      .top__head__listsLeft{
+      ul{
         display: flex;
-
-        &--first{
-          
-        }
-        &--second{
-          margin-left: 43px;
-        }
       }
-      .top__head__listsRight{
-        display: flex;
-
-        &--login{
-
-        }
-        &--signup{
-          margin-left: 20px;
-        }
+      &__Right {
+        padding-left: 20px;
       }
+      
     } 
   }
 }
