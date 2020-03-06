@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   resources :tops,only: :index 
   resources :sign_ups,only: :index
   resources :items do
-    resources :trades , only: [:index,:new,:create,:show,:update]
+    resources :trades , only: [:index,:new,:create,:show,:update] do
+      collection do
+        get 'done', to: 'trades#done'
+      end
+    end
   end
   resources :users , only: :show do
     resources :creditcards, only: [:new, :show, :destroy] do
