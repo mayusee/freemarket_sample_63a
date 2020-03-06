@@ -1,12 +1,46 @@
 class TradesController < ApplicationController
-  before_action :get_item, :get_card, only: [:index, :new]
+  protect_from_forgery :except => [:create]
+  before_action :get_item, :get_card, only: [:index, :new, :create, :done]
 
   def index
     
   end
 
   def new
-    @trade = Item.new
+    @trade = Trade.new
+  end
+
+  def create
+    #支払い処理
+    card = Creditcard.where(user_id: current_user.id).first
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    pay = Payjp::Charge.create(
+      :amount => @item.price.to_i, #decimalをintegerに変換
+      :customer => card.customer_id, #顧客ID 
+      :currency => 'jpy', #日本円
+    )
+
+    if pay.paid
+
+      binding.pry
+      @trade["user_id"] = current_user.id
+      @trade["item_id"] = @item.id
+      @trade["address_id"] = @address.id
+      @trade["status_num"] = Trade.status_num.trading
+      binding.pry
+
+      if @trade.save
+        redirect_to action: 'done' #完了画面に移動    
+      end
+
+    else
+        #支払いに失敗した場合の処理を記述する。
+    end
+
+  end
+
+  def done
+    
   end
 
   private
