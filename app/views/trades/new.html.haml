@@ -20,7 +20,8 @@
                   %span.trades-new-item__shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
-          = form_with(model: [@item, @trade], url: new_item_trade_path(@item.id), local: true) do |f|
+          -# = form_with(model: [@item, @trade], local: true) do |f|
+          = form_tag(action: :create, method: :post) do
             %ul.trades-new-buy-price-table
               %li.trades-new-buy-price-table__row
                 .trades-new-buy-price-table__cell--label 支払い金額
@@ -75,6 +76,8 @@
                     %br/
                     = @address.building 
             -# ここに購入機能に必要なデータをhiddenで追加する。
+            = @default_card_information
             .trades-new-buy-content
-              = submit_tag "購入する", id: "token_submit",class:"trades-new-btn-submit"
+              -# = submit_tag "購入する", id: "token_submit",class:"trades-new-btn-submit"
+              = button_tag "購入する" 
   %footer.trades-new-footer
