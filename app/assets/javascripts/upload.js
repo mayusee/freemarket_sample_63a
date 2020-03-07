@@ -9,7 +9,6 @@ $(function(){
     //選択したfileのオブジェクトをpropで取得
     var files = $('input[type="file"]').prop('files')[0];
     
-
     $.each(this.files, function(i, file){
       //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
       var fileReader = new FileReader();
@@ -24,7 +23,7 @@ $(function(){
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result
-        var html =  `<li class="item-image-container__unit--preview" id="visible" data-num="${i + 1}">
+        var html =  `<li class="item-image-container__unit--preview"  id="visible" data-num="${i + 1}">
                       <div class="item-image-container__unit--caption">
                         <img src="${src}">
                       </div>
@@ -38,8 +37,7 @@ $(function(){
                       </div>
                     </li>`
         $(html).appendTo(".item-image-container__unit ul").trigger("build");
-        var result = $('.item-image-container__unit--preview').data('num');
-        console.log(result);
+        
       };
     });
   });
