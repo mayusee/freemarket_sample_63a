@@ -12,15 +12,19 @@
           %span.form-require 必須
           %p.item-image-container__lead
             最大5枚までアップロードできます
-          .item-image-container__unit
-            %ul
-          = f.fields_for :item_images do |i|
-            = i.file_field :image, multiple: true, class: 'image-upload-dropfile hidden', type: 'file', name: "item_images[image][]"
-            .item-image-container__unit--guide
-              .have-image
-                = icon('fas','camera')
-                %p#d-d-delete ドラッグ&ドロップ
-                %p#click-delete またはクリックしてファイルをアップロード
+          
+            .item-image-container__unit
+              = f.fields_for :item_images do |i|
+                %ul
+                  
+                .item-image-container__unit--guide
+                  %label(for="image-label")
+                    = i.file_field :image, multiple: true, class: 'image-upload-dropfile-hidden', id:"image-label",type: 'file', name: "item_images[image][]"
+                    %div.boxFileSelect
+                    .have-image
+                      = icon('fas','camera')
+                      %p#d-d-delete ドラッグ&ドロップ
+                      %p#click-delete またはクリックしてファイルをアップロード
         %hr.items-new-hr
         .items-new-first
           .items-new-first__head
@@ -100,7 +104,7 @@
               = link_to "もどる" , root_path, class:"exibition-n-back__previous"
 
         .common-field
-          %P.common-field__consent
+          %p.common-field__consent
             禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
 
   .items-new-footer
