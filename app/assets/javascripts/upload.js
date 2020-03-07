@@ -1,5 +1,6 @@
 $(function(){
   console.log('hi');
+  
   //DataTransferオブジェクトで、データを格納する箱を作る
   var dataBox = new DataTransfer();
   //querySelectorでfile_fieldを取得
@@ -20,10 +21,11 @@ $(function(){
       var num = $('.item-image-container__unit--preview').length + 1 + i
       fileReader.readAsDataURL(file);
       
+      
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result
-        var html =  `<li class="item-image-container__unit--preview"  id="visible" data-num="${i + 1}">
+        var html =  `<li class="item-image-container__unit--preview" data-num="${i + 1}">
                       <div class="item-image-container__unit--caption">
                         <img src="${src}">
                       </div>
@@ -37,8 +39,12 @@ $(function(){
                       </div>
                     </li>`
         $(html).appendTo(".item-image-container__unit ul").trigger("build");
-        
+        console.log(dataBox);
       };
+      if(dataBox.items.length > 4){
+        return false;
+      }
     });
+    
   });
 });
