@@ -55,14 +55,38 @@ $('.item-image-container__unit--guide').on('drop',function(event){
 });
 
 //次の画像機能の実装で使用する予定のためコメントアウトしています。
-// $(document).on('click','.item-image-container__unit--preview a',function(){
+$(document).on('click','.item-image-container__unit--preview a',function(){
 
-//   var index = $(".item-image-container__unit--preview a").index(this);
+  var index = $(".item-image-container__unit--preview a").index(this);
 
-//   files_array.splice(index - 1, 1);
+  files_array.splice(index - 1, 1);
 
-//   $(this).parent().parent().parent().remove();
-// });
+  $(this).parent().parent().parent().remove();
+});
+$(document).on('click','.item-image-container__unit--preview-second a',function(){
+
+  var index = $(".item-image-container__unit--preview-second a").index(this);
+
+  files_array.splice(index - 1, 1);
+
+  $(this).parent().parent().parent().remove();
+});
+$(document).on('click','.item-image-container__unit--preview-third a',function(){
+
+  var index = $(".item-image-container__unit--preview-third a").index(this);
+
+  files_array.splice(index - 1, 1);
+
+  $(this).parent().parent().parent().remove();
+});
+$(document).on('click','.item-image-container__unit--preview-fourth a',function(){
+
+  var index = $(".item-image-container__unit--preview-fourth a").index(this);
+
+  files_array.splice(index - 1, 1);
+
+  $(this).parent().parent().parent().remove();
+});
 
 // var aj_url = window.location.pathname;
 // var aj_url = '/users/1/items';
