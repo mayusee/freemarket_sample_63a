@@ -37,10 +37,7 @@ class SignUpsController < ApplicationController
    @user.save
         session[:id] = @user.id
         redirect_to done_sign_ups_path
-      # else
-      #   render ''
-      # end
-    end
+  end
 
     def done
       sign_in User.find(session[:id]) unless user_signed_in?

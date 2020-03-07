@@ -1,3 +1,5 @@
+#reCAPTCHAを導入する時にオーバーライド予定
+
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
