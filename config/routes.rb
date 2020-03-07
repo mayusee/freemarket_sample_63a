@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       get 'step2'
       get 'done'
     end
+  end
   resources :items do
     resources :trades , only: [:index,:new,:create,:show,:update]
   end
