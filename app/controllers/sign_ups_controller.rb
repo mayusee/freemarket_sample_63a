@@ -13,9 +13,10 @@ class SignUpsController < ApplicationController
     session[:last_name] = user_params[:last_name]
     session[:first_name_kana] = user_params[:first_name_kana]
     session[:last_name_kana] = user_params[:last_name_kana]
-    session[:birthday] = user_params[:birthday]
     session[:password] = user_params[:password]
     session[:password_confirmation] = user_params[:password_confirmation]
+    params[:birthday] = (birthday_join)
+    session[:birthday] = params[:birthday]
     @user = User.new
   end
 
@@ -41,6 +42,10 @@ class SignUpsController < ApplicationController
       # end
     end
 
+    def done
+      sign_in User.find(session[:id]) unless user_signed_in?
+    end
+
   private
   def user_params
     params.require(:user).permit(
@@ -57,10 +62,6 @@ class SignUpsController < ApplicationController
       :password_confirmation,
       :telephone_number,
     )
-  end
-
-  def done
-    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   def birthday_join
