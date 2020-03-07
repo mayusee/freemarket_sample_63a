@@ -1,5 +1,5 @@
 class TradesController < ApplicationController
-  protect_from_forgery :except => [:create]
+  protect_from_forgery except: [:create]
   before_action :get_item, :get_card, only: [:index, :new, :create, :done]
 
   def index
@@ -12,7 +12,7 @@ class TradesController < ApplicationController
 
   def create
     #支払い処理
-    card = Creditcard.where(user_id: current_user.id).first
+    card = Creditcard.find_by(user_id: current_user.id)
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     pay = Payjp::Charge.create(
       :amount => @item.price.to_i, #decimalをintegerに変換
@@ -32,7 +32,7 @@ class TradesController < ApplicationController
         redirect_to action: 'done' #完了画面に移動 
       end
     else
-        #支払処理に失敗した場合の処理を記述する。
+        #支払の失敗処理は今後実装する。
     end
   end
 

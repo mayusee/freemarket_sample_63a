@@ -12,9 +12,9 @@
             %h3.trades-new-buy-item__image
               = image_tag '',size:'75x75', class:'trades-new-item-image__photo'
               .trades-new-buy-item__detail
-                %p.trades-new-item__name 
+                .trades-new-item__name 
                   = @item.title
-                %p.trades-new-item__price-ja
+                .trades-new-item__price-ja
                   %span
                     = thousands_separator(@item.price)
                   %span.trades-new-item__shipping-fee （税込）送料込み
