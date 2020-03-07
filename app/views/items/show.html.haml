@@ -73,10 +73,10 @@
                   %td.items-show-detail__table--td
                     =@item.daystoship_num_i18n
           .items-show-button
-            - if @item.user_id == current_user.id
+            - if user_signed_in? && @item.user_id == current_user.id
               .items-show-button__edit
                 =link_to '編集する', edit_item_path(@item.id),class:"items-show-button__edit--link"
-            -else
+            - else
               .items-show-button__purchase
                 =link_to '購入する', new_item_trade_path(@item.id) ,class:"items-show-button__purchase--link"
           .items-show-other
