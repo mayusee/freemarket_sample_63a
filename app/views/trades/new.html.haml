@@ -1,6 +1,6 @@
 .trades-new
-  %header.trades-new-header
-    .trades-new-header__icon
+  %header.trades-header
+    .trades-header__icon
       = link_to root_path do
         = image_tag 'logo.png'
   %main.trades-new-main
@@ -12,21 +12,22 @@
             %h3.trades-new-buy-item__image
               = image_tag '',size:'75x75', class:'trades-new-item-image__photo'
               .trades-new-buy-item__detail
-                %p.trades-new-item__name 
+                .trades-new-item__name 
                   = @item.title
-                %p.trades-new-item__price-ja
+                .trades-new-item__price-ja
                   %span
-                    = "¥#{sprintf("%.0f", @item.price)}"
+                    = thousands_separator(@item.price)
                   %span.trades-new-item__shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
-          = form_with(model: [@item, @trade], url: new_item_trade_path(@item.id), local: true) do |f|
+          -# 購入機能を実装させるために、まずはform_tagでの実装する。 今後にform_withへ移行する。
+          = form_tag(action: :create, method: :post) do
             %ul.trades-new-buy-price-table
               %li.trades-new-buy-price-table__row
                 .trades-new-buy-price-table__cell--label 支払い金額
                 .trades-new-buy-price-table__cell
                   %span
-                    = "¥#{sprintf("%.0f", @item.price)}"
+                    = thousands_separator(@item.price)
             .trades-new-buy-content
               .trades-new-buy-content-inner
                 %h3 支払い方法
@@ -74,7 +75,6 @@
                     = @address.number 
                     %br/
                     = @address.building 
-            -# ここに購入機能に必要なデータをhiddenで追加する。
             .trades-new-buy-content
-              = submit_tag "購入する", id: "token_submit",class:"trades-new-btn-submit"
+              = button_tag "購入する"
   %footer.trades-new-footer
