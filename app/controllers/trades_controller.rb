@@ -3,11 +3,11 @@ class TradesController < ApplicationController
   before_action :get_item, :get_card, only: [:index, :new, :create, :done]
 
   def index
-    
+
   end
 
   def new
-    @trade = Trade.new
+
   end
 
   def create
@@ -21,22 +21,19 @@ class TradesController < ApplicationController
     )
 
     if pay.paid
+     #支払処理成功後のTradeレコード登録処理
+      @trade = Trade.new
 
-      binding.pry
       @trade["user_id"] = current_user.id
       @trade["item_id"] = @item.id
       @trade["address_id"] = @address.id
-      @trade["status_num"] = Trade.status_num.trading
-      binding.pry
 
       if @trade.save
-        redirect_to action: 'done' #完了画面に移動    
+        redirect_to action: 'done' #完了画面に移動 
       end
-
     else
-        #支払いに失敗した場合の処理を記述する。
+        #支払処理に失敗した場合の処理を記述する。
     end
-
   end
 
   def done
@@ -59,10 +56,10 @@ class TradesController < ApplicationController
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
-
   end
 
   def get_params
+    #from_withで「購入」ボタンが押された場合の処理(現在はform_tagなので未実装)
     params.require(:trade).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:daystoship_num,:title,:description,:price, item_images_attributes: [:id, :item_id, :image])
   end
 
