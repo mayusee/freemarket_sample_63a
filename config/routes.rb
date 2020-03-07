@@ -10,19 +10,16 @@ Rails.application.routes.draw do
       get 'step2'
       get 'done'
     end
+  resources :items do
+    resources :trades , only: [:index,:new,:create,:show,:update]
   end
   resources :users , only: :show do
-    # 出品機能実装されるまでの仮置き
-    resources :items, only: [:index, :new, :create, :show] do
-      resources :trades , only: [:new, :create]
-    end
-
     resources :creditcards, only: [:new, :show, :destroy] do
       collection do
         post 'pay', to: 'creditcards#pay'
         post 'show', to: 'creditcards#show'
       end
     end
+    resources :address, only: [:new, :edit, :update]
   end
-
 end

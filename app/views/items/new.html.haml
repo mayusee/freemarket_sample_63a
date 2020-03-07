@@ -6,7 +6,7 @@
 
   .registrations-new-main
     .regstrations-new-main--form
-      = form_with(model: [current_user, @item], locale: true , id: 'new_item') do |f|
+      = form_with(model:@item, locale: true , id: 'new_item') do |f|
         .item-image-container
           = f.label :"出品画像"
           %span.form-require 必須
@@ -14,7 +14,8 @@
             最大5枚までアップロードできます
           .item-image-container__unit
             %ul
-              
+          = f.fields_for :item_images do |i|
+            = i.file_field :image, multiple: true, class: 'image-upload-dropfile hidden', type: 'file', name: "item_images[image][]"
             .item-image-container__unit--guide
               .have-image
                 = icon('fas','camera')
@@ -62,12 +63,13 @@
             = f.label :"配送料の負担"
             %span.form-require 必須
             %br/
-            = f.select :shippingcharge_num, Item.shippingcharge_nums.keys.map {|k| [I18n.t("enums.item.shippingcharge_num.#{k}"), k]}
-          .items-new-third__center
-            = f.label :"発送方法"
-            %span.form-require 必須
-            %br/
-            = f.collection_select :shippingway_id, Shippingway.all, :id, :name ,autofocus: true 
+            = f.collection_select :shippingway_id, Shippingway.all, :id, :name ,autofocus: true
+          -# 後で必要なためコメントアウトしています。
+          -# .items-new-third__center
+          -#   = f.label :"発送方法"
+          -#   %span.form-require 必須
+          -#   %br/
+          -#   = f.collection_select :shippingway_id, Shippingway.all, :id, :name ,autofocus: true 
           .items-new-third__foot
             = f.label :"発送までの日数"
             %span.form-require 必須
@@ -94,7 +96,7 @@
                 販売利益
           .items-new-final__exibition
             .exibition-n-back
-              = f.button "出品する",value: "次へ進む",class:"exibition-n-back__submit" 
+              = f.submit "出品する",class:"exibition-n-back__submit" , data: { confirm: '入力した情報で出品します。よろしいですか？' } 
               = link_to "もどる" , root_path, class:"exibition-n-back__previous"
 
         .common-field
