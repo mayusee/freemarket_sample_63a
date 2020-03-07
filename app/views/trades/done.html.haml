@@ -12,9 +12,9 @@
             %h3.trades-done-buy-item__image
               = image_tag '',size:'75x75', class:'trades-done-item-image__photo'
               .trades-done-buy-item__detail
-                %p.trades-done-item__name 
+                .trades-done-item__name 
                   = @item.title
-                %p.trades-done-item__price-ja
+                .trades-done-item__price-ja
                   %span
                     = thousands_separator(@item.price)
                   %span.trades-done-item__shipping-fee （税込）送料込み
