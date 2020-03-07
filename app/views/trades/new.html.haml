@@ -20,7 +20,7 @@
                   %span.trades-new-item__shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
-          -# = form_with(model: [@item, @trade], local: true) do |f|
+          -# 購入機能を実装させるために、まずはform_tagでの実装する。 今後にform_withへ移行する。
           = form_tag(action: :create, method: :post) do
             %ul.trades-new-buy-price-table
               %li.trades-new-buy-price-table__row
@@ -76,8 +76,6 @@
                     %br/
                     = @address.building 
             -# ここに購入機能に必要なデータをhiddenで追加する。
-            = @default_card_information
             .trades-new-buy-content
-              -# = submit_tag "購入する", id: "token_submit",class:"trades-new-btn-submit"
-              = button_tag "購入する" 
+              = button_tag "購入する"
   %footer.trades-new-footer
