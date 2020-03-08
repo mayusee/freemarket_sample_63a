@@ -20,7 +20,7 @@
                   %span.trades-new-buy-item__shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
-          -# 購入機能を実装させるために、まずはform_tagでの実装する。 今後にform_withへ移行する。
+          -# 購入機能を実装させるために、まずはform_tagにて実装をする。 今後はform_withへ移行する。
           = form_tag(action: :create, method: :post) do
             %ul.trades-new-buy-price-table
               %li.trades-new-buy-price-table__row
@@ -32,7 +32,7 @@
               .trades-new-buy-content-inner
                 %h3 支払い方法
                 - if @default_card_information.nil?
-                  = link_to  pay_user_creditcards_path(current_user.id) , class: "trades-new-buy-user-info-fix" do
+                  = link_to  new_user_creditcard_path(current_user.id), class: "trades-new-buy-user-info-fix" do
                     %p.trades-new-buy-user-info-text__cardinfo
                       .trades-new-icon-plus-circle
                         = icon('fas', 'plus-circle')
