@@ -1,6 +1,6 @@
-#google,fecebookのオーバライドで使用予定
-
 # frozen_string_literal: true
+
+ #google,fecebookの認証で使用する予定なので残しています。
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # You should configure your model like this:

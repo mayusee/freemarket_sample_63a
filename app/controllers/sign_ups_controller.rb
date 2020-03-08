@@ -34,9 +34,12 @@ class SignUpsController < ApplicationController
     password_confirmation: session[:password_confirmation],
     telephone_number: session[:telephone_number],
     )
-   @user.save
+   if @user.save
         session[:id] = @user.id
         redirect_to done_sign_ups_path
+   else
+      render  '/sign_ups/step1'
+   end
   end
 
     def done

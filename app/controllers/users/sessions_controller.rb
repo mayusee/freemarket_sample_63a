@@ -1,6 +1,6 @@
-#reCAPTCHAを導入する時にオーバーライド予定
-
 # frozen_string_literal: true
+
+#reCAPTCHAを導入する時に使用する予定なので残しています
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
