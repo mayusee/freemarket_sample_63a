@@ -1,65 +1,72 @@
-.address-new
-  %header.address-new__header
+.addresses-new
+  %header.addresses-new__header
     = render 'layouts/header'
-  %main.address-new__main
-    .address-new-container
-      .address-new-container__left
+  %main.addresses-new__main
+    .addresses-new-container
+      .addresses-new-container__left
         = render 'layouts/user-nav'
-      .address-new-container__right
-        .address-new-info
-          .address-new-info__title
+      .addresses-new-container__right
+        .addresses-new-info
+          .addresses-new-info__title
             発送元・お届け先住所登録
-          .address-new-info__field
+          .addresses-new-info__field
             = form_with(model: @address, locale: true, id: 'edit_address') do |f|
-              .address-new-info__field--name
-                = f.label :"お名前(全角)"
-                %span.form-require 必須
-                %br/
-                = f.text_field :first_name, class: "address-new-info__field--textbox", placeholder: "例）山田"
-              .address-new-info__field--name
-                %br/
-                = f.text_field :last_name, class: "address-new-info__field--textbox",placeholder: "例）太郎"
-              .address-new-info__field--name-kana
-                = f.label :"お名前カナ(全角)"
-                %span.form-require 必須
-                %br/
-                = f.text_field :first_name_kana, class: "address-new-info__field--textbox", placeholder: "例）ヤマダ"
-              .address-new-info__field--lastname-kana
-                %br/
-                = f.text_field :last_name_kana, class: "address-new-info__field--textbox",autofocus: true,title:"error",placeholder: "例）タロウ"
-              .address-new-info__field--postalnumber
-                = f.label :"郵便番号"
-                %span.form-require 必須
-                %br/
-                = f.text_field :postal_number, class: "address-new-info__field--textbox",placeholder: "例）123-4567"
-              .address-new-info__field--area
-                = f.label :"都道府県"
-                %span.form-require 必須
-                %br/
-                = f.collection_select :area_id, Area.all, :id, :name, autofocus: true
-              .address-new-info__field--city
-                = f.label :"市区町村"
-                %span.form-require 必須
-                %br/
-                = f.text_field :city, class: "address-new-info__field--textbox", placeholder: "例）横浜市緑区"
-              .address-new-info__field--number
-                = f.label :"番地"
-                %span.form-require 必須
-                %br/
-                = f.text_field :number, class: "address-new-info__field--textbox", placeholder: "例）青山1−1−1"
-              .address-new-info__field--building
-                = f.label :"建物名"
-                %span.common-field__tag--any 任意
-                %br/
-                = f.text_field :building, class: "address-new-info__field--textbox", placeholder: "例）柳ビル101"
-              .address-new-info__field--telephonenumber
-                = f.label :"電話番号"
-                %span.common-field__tag--any 任意
-                %br/
-                = f.text_field :telephonenumber, class: "address-new-info__field--textbox", placeholder: "例）09012345678"
-              .address-new-info__field--submit
-                = f.submit "変更する",class:"address-new-info__filed--submit" 
+              .addresses-new-info__groups
+                .addresses-new-info__group
+                  .addresses-new-info__group--content
+                    = f.label :"お名前(全角)"
+                    %span.form-require 必須
+                    %br/
+                    = f.text_field :first_name, class: "addresses-new-info__textbox", placeholder: "例）山田"
+                  .addresses-new-info__group--content
+                    = f.text_field :last_name, class: "addresses-new-info__textbox",placeholder: "例）太郎"
+                .addresses-new-info__group
+                  .addresses-new-info__group--content
+                    = f.label :"お名前カナ(全角)"
+                    %span.form-require 必須
+                    %br/
+                    = f.text_field :first_name_kana, class: "addresses-new-info__textbox", placeholder: "例）ヤマダ"
+                  .addresses-new-info__group--content
+                    = f.text_field :last_name_kana, class: "addresses-new-info__textbox",autofocus: true,title:"error",placeholder: "例）タロウ"
+                .addresses-new-info__group
+                  .addresses-new-info__group--content
+                    = f.label :"郵便番号"
+                    %span.form-require 必須
+                    %br/
+                    = f.text_field :postal_number, class: "addresses-new-info__textbox",placeholder: "例）123-4567"
+                .addresses-new-info__group
+                  .addresses-new-info__group--content
+                    = f.label :"都道府県"
+                    %span.form-require 必須
+                    %br/
+                    = f.collection_select :area_id, Area.all, :id, :name, autofocus: true
+                .addresses-new-info__group
+                  .addresses-new-info__group--content
+                    = f.label :"市区町村"
+                    %span.form-require 必須
+                    %br/
+                    = f.text_field :city, class: "addresses-new-info__textbox", placeholder: "例）横浜市緑区"
+                .addresses-new-info__group
+                  .addresses-new-info__group--content
+                    = f.label :"番地"
+                    %span.form-require 必須
+                    %br/
+                    = f.text_field :number, class: "addresses-new-info__textbox", placeholder: "例）青山1−1−1"
+                .addresses-new-info__group
+                  .addresses-new-info__group--content
+                    = f.label :"建物名"
+                    %span.common-field__tag--any 任意
+                    %br/
+                    = f.text_field :building, class: "addresses-new-info__textbox", placeholder: "例）柳ビル101"
+                .addresses-new-info__group
+                  .addresses-new-info__group--content
+                    = f.label :"電話番号"
+                    %span.common-field__tag--any 任意
+                    %br/
+                    = f.text_field :telephonenumber, class: "addresses-new-info__textbox", placeholder: "例）09012345678"
+                .addresses-new-info__submit
+                  = f.submit "変更する",class:"addresses-new-info__submit-btn" 
 
-  %footer.adress-new__footer
+  %footer.adresses-new__footer
     = render 'layouts/footer'
     = render 'layouts/purchase-btn'
