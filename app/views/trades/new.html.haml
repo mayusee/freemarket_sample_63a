@@ -32,7 +32,7 @@
               .trades-new-buy-content-inner
                 %h3 支払い方法
                 - if @default_card_information.nil?
-                  = link_to  new_user_creditcard_path, class: "trades-new-buy-user-info-fix" do
+                  = link_to  new_user_creditcard_path(current_user.id), class: "trades-new-buy-user-info-fix" do
                     %p.trades-new-buy-user-info-text__cardinfo
                       .trades-new-icon-plus-circle
                         = icon('fas', 'plus-circle')
