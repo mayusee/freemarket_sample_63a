@@ -1,4 +1,4 @@
-.address-edit{
+.addresses-edit{
   &__header{
 
   }
@@ -10,7 +10,7 @@
 
   }
 }
-.address-edit-container{
+.addresses-edit-container{
   padding-top: 40px;
   margin: 0 auto;
   width: 1020px;
@@ -30,7 +30,7 @@
     }
   }
 
-  .address-edit-info {
+  .addresses-edit-info {
     background-color: #fff;
     &__title {
       padding: 12px 4%;
@@ -38,46 +38,45 @@
       text-align: center;
       font-size: 18px;
     }
-    .address-edit-info-field {
+    &__field {
       padding: 40px 40px 64px;
-      &__groups {
-        max-width: 343px;
-        margin: 0 auto;
-      }
-      &__group {
-        margin-bottom: 32px;
-        &--content {
+    }
+    &__groups {
+      max-width: 343px;
+      margin: 0 auto;
+    }
+    &__group {
+      margin-bottom: 32px;
+      &--content {
 
-        }
-      }
-      &__submit-btn {
-        transition: 0.2s;
-        margin: 0 auto;
-        display: block;
-        border-radius: 5px;
-        font-weight: 600;
-        background-color: #eb342b;
-        width: 100%;
-        color: #fff;
-        margin-bottom: 24px;
-        font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-        font-size: 17px;
-        min-height: 48px;
-        padding: 0 24px;
-      }
-      &__textbox {
-        width: 100%;
-        height: 48px;
-        margin: 8px 0px 0px;
-        font-size: 16px;
-        color: #222;
-        padding: 0 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
       }
     }
-
+    &__submit-btn {
+      transition: 0.2s;
+      margin: 0 auto;
+      display: block;
+      border-radius: 5px;
+      font-weight: 600;
+      background-color: #eb342b;
+      width: 100%;
+      color: #fff;
+      margin-bottom: 24px;
+      font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
+      font-size: 17px;
+      min-height: 48px;
+      padding: 0 24px;
+    }
+    &__textbox {
+      width: 100%;
+      height: 48px;
+      margin: 8px 0px 0px;
+      font-size: 16px;
+      color: #222;
+      padding: 0 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
   }
 
 #area_id {
