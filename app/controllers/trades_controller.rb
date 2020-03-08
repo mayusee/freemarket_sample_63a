@@ -28,11 +28,8 @@ class TradesController < ApplicationController
       @trade["item_id"] = @item.id
       @trade["address_id"] = @address.id
 
-      if @trade.save
-        redirect_to action: 'done' #完了画面に移動 
-      end
     else
-        #支払の失敗処理は今後実装する。
+      redirect_to action: 'fail' #購入失敗画面に移動 
     end
   end
 
@@ -45,7 +42,7 @@ class TradesController < ApplicationController
   def get_item
     @user = current_user
     @item = Item.find(params[:item_id])
-    @item_image = ItemImage.find_by(params[:item_id])
+    @item_image = @item.item_images.build
     @address = Address.find_by(user_id: current_user.id)
   end
 
