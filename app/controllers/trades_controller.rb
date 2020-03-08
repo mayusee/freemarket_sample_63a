@@ -1,6 +1,6 @@
 class TradesController < ApplicationController
   protect_from_forgery except: [:create]
-  before_action :get_item, :get_card, only: [:index, :new, :create, :done]
+  before_action :get_item, :get_card, only: [:index, :new, :create, :fail]
 
   def index
 
@@ -28,8 +28,11 @@ class TradesController < ApplicationController
       @trade["item_id"] = @item.id
       @trade["address_id"] = @address.id
 
+      unless @trade.save
+        trade_failed 
+      end
     else
-      redirect_to action: 'fail' #購入失敗画面に移動 
+      trade_failed 
     end
   end
 
@@ -54,6 +57,10 @@ class TradesController < ApplicationController
   def get_params
     #from_withで「購入」ボタンが押された場合の処理(現在はform_tagなので未実装)
     params.require(:trade).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:daystoship_num,:title,:description,:price, item_images_attributes: [:id, :item_id, :image])
+  end
+
+  def trade_failed
+    redirect_to action: 'fail' #購入失敗画面に移動 
   end
 
 end
