@@ -19,7 +19,7 @@
               .item-image-container__unit--guide
                 %label(for="image-label")
                   = i.file_field :image, multiple: true, class: 'image-upload-dropfile-hidden', id:"image-label",type: 'file', name: "item_images[image][]"
-                  %div.boxFileSelect
+                  %div.image-upload-dropfile-entire
                   .have-image
                     = icon('fas','camera')
                     %p#d-d-delete ドラッグ&ドロップ
