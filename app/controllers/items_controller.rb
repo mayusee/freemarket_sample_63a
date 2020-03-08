@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_user_address,only: :create
+  before_action :set_item,only: [:show,:destroy]
 
   def index
   end
@@ -18,7 +19,7 @@ class ItemsController < ApplicationController
     
     if @item.save
       params[:item_images]['image'].each do |img|
-        @item_image = @item.item_images.create(:image => img, :item_id => @item.id)
+        @item_image = @item.item_images.create(image: img, item_id: @item.id)
       end
       #この後の画像機能追加で、以下の記述を使用するためコメントアウトしています。
       # image_params[:images].each do |image|
@@ -36,7 +37,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+  end
+
+  def destroy
+    @item.destroy
   end
 
   private
@@ -50,5 +54,9 @@ class ItemsController < ApplicationController
 
     def set_user_address
       @address = Address.find_by(user_id: current_user.id,status_num: 0)
+    end
+
+    def set_item
+      @item = Item.find(params[:id])
     end
 end
