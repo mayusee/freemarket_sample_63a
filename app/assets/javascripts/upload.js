@@ -23,7 +23,7 @@ $(function(){
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result
-        var html =  `<li class="item-image-container__unit--preview" data-num="${i + 1}">
+        var html =  `<li class="item-image-container__unit--preview" >
                       <div class="item-image-container__unit--caption">
                         <img src="${src}">
                       </div>
