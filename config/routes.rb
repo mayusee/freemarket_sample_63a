@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root "tops#index"
   resources :tops,only: :index 
-  resources :sign_ups,only: :index
+  resources :sign_ups, only: :create do
+    collection do
+      get 'index'
+      get 'step1'
+      get 'step2'
+      get 'done'
+    end
+  end
   resources :items do
     resources :trades , only: [:index,:new,:create,:show,:update] do
       collection do
