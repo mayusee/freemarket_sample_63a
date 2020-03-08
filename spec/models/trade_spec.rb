@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Trade, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  # pending "add some examples to (or delete) #{__FILE__}"
 
   describe '#create' do
     it "is invalid without a item_id" do
@@ -26,7 +26,6 @@ RSpec.describe Trade, type: :model do
     end
     it "is valid with a item_id, user_id, address_id, status_num" do
       trade = build(:trade)
-      binding.pry
       expect(trade).to be_valid
     end
   end
