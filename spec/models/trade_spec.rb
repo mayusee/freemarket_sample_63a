@@ -5,24 +5,29 @@ RSpec.describe Trade, type: :model do
 
   describe '#create' do
     it "is invalid without a item_id" do
-      trade = Trade.new(item_id: nil, user_id: 2, address_id: 2, status_num: 1)
+      trade = build(:trade, item_id: nil)
       trade.valid?
-      expect(user.errors[:item_id]).to include("can't be blank")
+      expect(trade.errors[:item_id]).to include("can't be blank")
     end
     it "is invalid without a user_id" do
-      trade = Trade.new(item_id: 1, user_id: nil, address_id: 2, status_num: 1)
+      trade = build(:trade, user_id: nil)
       trade.valid?
-      expect(user.errors[:user_id]).to include("can't be blank")
+      expect(trade.errors[:user_id]).to include("can't be blank")
     end
     it "is invalid without a address_id" do
-      trade = Trade.new(item_id: 1, user_id: 2, address_id: nil, status_num: 1)
+      trade = build(:trade, address_id: nil)
       trade.valid?
-      expect(user.errors[:address_id]).to include("can't be blank")
+      expect(trade.errors[:address_id]).to include("can't be blank")
     end
     it "is invalid without a status_num" do
-      trade = Trade.new(item_id: 1, user_id: 2, address_id: 2, status_num: nil)
+      trade = build(:trade, status_num: nil)
       trade.valid?
-      expect(user.errors[:status_num]).to include("can't be blank")
+      expect(trade.errors[:status_num]).to include("can't be blank")
+    end
+    it "is valid with a item_id, user_id, address_id, status_num" do
+      trade = build(:trade)
+      binding.pry
+      expect(trade).to be_valid
     end
   end
 end
