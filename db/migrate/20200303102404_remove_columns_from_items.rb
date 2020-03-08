@@ -8,7 +8,6 @@ class RemoveColumnsFromItems < ActiveRecord::Migration[5.2]
     remove_column(:items,:status_num,null: false, limit: 1, unsigned: true, default: 0)
     add_reference(:items, :user,              null: false, foreign_key: true,after: :id)
     add_reference(:items, :address,           null: false, foreign_key: true,after: :user_id)
-
   end
 
   def down
