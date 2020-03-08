@@ -54,7 +54,7 @@ $('.item-image-container__unit--guide').on('drop',function(event){
   
 });
 
-//次の画像機能の実装で使用する予定のためコメントアウトしています。
+
 $(document).on('click','.item-image-container__unit--preview a',function(){
 
   var index = $(".item-image-container__unit--preview a").index(this);
@@ -63,31 +63,31 @@ $(document).on('click','.item-image-container__unit--preview a',function(){
 
   $(this).parent().parent().parent().remove();
 });
+//次の画像機能の実装で使用する予定のためコメントアウトしています。
+// var aj_url = window.location.pathname;
+// var aj_url = '/users/1/items';
 
-var aj_url = window.location.pathname;
-var aj_url = '/users/1/items';
-
-$('#new_item').on('submit', function(e){
-  e.preventDefault();
+// $('#new_item').on('submit', function(e){
+//   e.preventDefault();
   
-  var formData = new FormData($(this).get(0));
+//   var formData = new FormData($(this).get(0));
   
-  files_array.forEach(function(file){
-   formData.append("image[images][]" , file)
-  });
+//   files_array.forEach(function(file){
+//    formData.append("image[images][]" , file)
+//   });
   
-  $.ajax({
-    url:         aj_url,
-    type:        "POST",
-    data:        formData,
-    contentType: false,
-    processData: false,
-    dataType:   'json',
-  })
-  .done(function(){
-    alert('出品に成功しました！');
-  })
-  .fail(function(){
-    alert('出品に失敗しました！');
-  });
-});
+//   $.ajax({
+//     url:         aj_url,
+//     type:        "POST",
+//     data:        formData,
+//     contentType: false,
+//     processData: false,
+//     dataType:   'json',
+//   })
+//   .done(function(){
+//     alert('出品に成功しました！');
+//   })
+//   .fail(function(){
+//     alert('出品に失敗しました！');
+//   });
+// });
