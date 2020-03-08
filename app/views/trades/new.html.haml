@@ -3,21 +3,21 @@
     .trades-header__icon
       = link_to root_path do
         = image_tag 'logo.png'
-  %main.trades-new-main
+  %main.trades-new-buy-main
     .trades-new-buy-item-container
       %h2.trades-new-buy-head 購入内容の確認
       .trades-new-buy-content
         .trades-new-buy-content-inner
           .trades-new-buy-item-box
             %h3.trades-new-buy-item__image
-              = image_tag '',size:'75x75', class:'trades-new-item-image__photo'
+              = image_tag @item.item_images.first.image.url, class:'trades-image'
               .trades-new-buy-item__detail
-                .trades-new-item__name 
+                .trades-item__name 
                   = @item.title
-                .trades-new-item__price-ja
+                .trades-new-buy-item__price-ja
                   %span
                     = thousands_separator(@item.price)
-                  %span.trades-new-item__shipping-fee （税込）送料込み
+                  %span.trades-new-buy-item__shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
           -# 購入機能を実装させるために、まずはform_tagでの実装する。 今後にform_withへ移行する。
