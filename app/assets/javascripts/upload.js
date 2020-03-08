@@ -1,6 +1,4 @@
 $(function(){
-  console.log('hi');
-  
   //DataTransferオブジェクトで、データを格納する箱を作る
   var dataBox = new DataTransfer();
   //querySelectorでfile_fieldを取得
@@ -39,7 +37,7 @@ $(function(){
                       </div>
                     </li>`
         $(html).appendTo(".item-image-container__unit ul").trigger("build");
-        console.log(dataBox);
+        
       };
       if(dataBox.items.length > 4){
         return false;
