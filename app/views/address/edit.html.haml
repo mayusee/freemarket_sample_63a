@@ -19,7 +19,6 @@
                     %br/
                     = f.text_field :first_name, class: "address-edit-info-field__textbox", placeholder: "例）山田"
                   .address-edit-info-field__group--content
-                    %br/
                     = f.text_field :last_name, class: "address-edit-info-field__textbox",placeholder: "例）太郎"
                 .address-edit-info-field__group
                   .address-edit-info-field__group--content
@@ -28,7 +27,6 @@
                     %br/
                     = f.text_field :first_name_kana, class: "address-edit-info-field__textbox", placeholder: "例）ヤマダ"
                   .address-edit-info-field__group--content
-                    %br/
                     = f.text_field :last_name_kana, class: "address-edit-info-field__textbox",autofocus: true,title:"error",placeholder: "例）タロウ"
                 .address-edit-info-field__group
                   .address-edit-info-field__group--content
@@ -67,7 +65,7 @@
                     %br/
                     = f.text_field :telephonenumber, class: "address-edit-info-field__textbox", placeholder: "例）09012345678"
                 .address-edit-info-field__submit
-                  = f.submit "変更する",class:"address-edit-info-filed__submit" 
+                  = f.submit "変更する",class:"address-edit-info-field__submit-btn" 
 
   %footer.adress-edit__footer
     = render 'layouts/footer'
