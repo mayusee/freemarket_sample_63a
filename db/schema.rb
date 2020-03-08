@@ -80,19 +80,19 @@ ActiveRecord::Schema.define(version: 2020_03_08_124806) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "address_id"
+    t.bigint "user_id", null: false
+    t.bigint "address_id", null: false
     t.bigint "brand_id"
-    t.bigint "category_id"
+    t.bigint "category_id", null: false
     t.bigint "product_size_id"
     t.bigint "shippingway_id"
-    t.integer "condition_num", limit: 1, default: 0, unsigned: true
-    t.integer "daystoship_num", limit: 1, default: 0, unsigned: true
-    t.string "title", default: "", null: false
+    t.integer "condition_num", limit: 1, default: 0, null: false, unsigned: true
+    t.integer "daystoship_num", limit: 1, default: 0, null: false, unsigned: true
+    t.string "title", null: false
     t.text "description", null: false
     t.decimal "price", precision: 10, scale: 3, null: false
-    t.decimal "feerate", precision: 4, scale: 3
-    t.decimal "profit_price", precision: 10, scale: 3
+    t.decimal "feerate", precision: 4, scale: 3, null: false
+    t.decimal "profit_price", precision: 10, scale: 3, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_items_on_address_id"
