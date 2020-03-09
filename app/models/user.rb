@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable
 
   # associations
 
@@ -20,11 +20,11 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: 'は有効でありません。' }
   validates :password, presence: true, length: { in: 7..255 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
   validates :password_confirmation, presence: true, length: { in:7..255}, format: {with:VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
-  validates :birthday, presence: true
   validates :last_name, presence: true, length: { maximum: 15 }
   validates :first_name, presence: true, length: { maximum: 15 }
   validates :last_name_kana, presence: true, length: { maximum: 20 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
   validates :first_name_kana, presence: true, length: { maximum: 20 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
+  validates :birthday, presence: true
   validates :telephone_number, presence: true, format: { with: VALID_PHONE_REGEX, message: 'は有効でありません。'}
 
 end
