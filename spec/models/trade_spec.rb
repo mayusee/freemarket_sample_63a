@@ -1,9 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Trade, type: :model do
-  # ここはモデル作成時に自動作成されたコードで、改めて纏めて削除する。
-  # pending "add some examples to (or delete) #{__FILE__}"
-
   describe '#create' do
     it "is invalid without a item_id" do
       trade = build(:trade, item_id: nil)
