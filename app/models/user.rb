@@ -18,8 +18,8 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true, length: { maximum: 15 }
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: 'は有効でありません。' }
-  validates :password, presence: true, length: { in: 7..255 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
-  validates :password_confirmation, presence: true, length: { in:7..255}, format: {with:VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  validates :password,confirmation: true , presence: true, length: { in: 7..255 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  validates :password_confirmation, presence: true, format: {with:VALID_PASSWORD_REGEX, message: 'はパスワードと同じ値を入力してください'}
   validates :last_name, presence: true, length: { maximum: 15 }
   validates :first_name, presence: true, length: { maximum: 15 }
   validates :last_name_kana, presence: true, length: { maximum: 20 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい。'}
