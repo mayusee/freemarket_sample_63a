@@ -10,6 +10,6 @@ require 'rails_helper'
 #     end
 #   end
 # end
-RSpec.describe AddressHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe AddressesHelper, type: :helper do
+
 end
