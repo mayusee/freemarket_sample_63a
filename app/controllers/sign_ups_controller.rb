@@ -58,8 +58,6 @@ class SignUpsController < ApplicationController
       :last_name_kana,
       :first_name_kana,
       :birthday,
-      :password,
-      :password_confirmation,
       :telephone_number,
     )
   end
