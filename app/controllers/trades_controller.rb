@@ -1,6 +1,6 @@
 class TradesController < ApplicationController
   protect_from_forgery except: [:create]
-  before_action :get_item, :get_card, only: [:index, :new, :create, :done]
+  before_action :get_item, :get_card, only: [:index, :new, :create, :fail]
 
   def index
 
@@ -28,16 +28,12 @@ class TradesController < ApplicationController
       @trade["item_id"] = @item.id
       @trade["address_id"] = @address.id
 
-      if @trade.save
-        redirect_to action: 'done' #完了画面に移動 
+      unless @trade.save
+        trade_failed 
       end
     else
-        #支払の失敗処理は今後実装する。
+      trade_failed 
     end
-  end
-
-  def done
-    
   end
 
   private
@@ -45,7 +41,7 @@ class TradesController < ApplicationController
   def get_item
     @user = current_user
     @item = Item.find(params[:item_id])
-    @item_image = ItemImage.find_by(params[:item_id])
+    @item_image = @item.item_images.build
     @address = Address.find_by(user_id: current_user.id)
   end
 
@@ -61,6 +57,10 @@ class TradesController < ApplicationController
   def get_params
     #from_withで「購入」ボタンが押された場合の処理(現在はform_tagなので未実装)
     params.require(:trade).permit(:brand_id,:category_id,:shippingway_id,:size_num,:condition_num,:daystoship_num,:title,:description,:price, item_images_attributes: [:id, :item_id, :image])
+  end
+
+  def trade_failed
+    redirect_to action: 'fail' #購入失敗画面に移動 
   end
 
 end

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :trades , only: [:index,:new,:create,:show,:update] do
       collection do
-        get 'done', to: 'trades#done'
+        get 'fail', to: 'trades#fail'
       end
     end
   end

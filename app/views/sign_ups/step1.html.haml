@@ -18,6 +18,7 @@
     .registrations-new-main-title
       %h2 会員情報登録
     .registrations-new-main-input-class
+      = render 'error-messages'
       = form_with model: @user, local: true, url: step2_sign_ups_path,method: :get do |f|
         .registrations-new-main-input-class-field
           = f.label :"ニックネーム"
@@ -34,8 +35,8 @@
           - if @minimum_password_length
             %em
             (#{@minimum_password_length} characters minimum)
-            %span.form-require 必須
-            %br/
+          %span.form-require 必須
+          %br/
           = f.password_field :password, class: "registrations-new-main-input-class-field__text-box",autocomplete: "new-password",placeholder: "password"
         .registrations-new-main-input-class-field
           = f.label :password_confirmation

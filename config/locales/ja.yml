@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user:
+    attributes:
+      user:
+        nickname: ニックネーム
+        birthday: 生年月日
+        first_name: 全角名前
+        last_name: 全角名字
+        first_name_kana: 全角カナ名前
+        last_name_kana: 全角カナ名字
+        telephone_number: 電話番号
+
+

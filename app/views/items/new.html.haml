@@ -13,14 +13,17 @@
           %p.item-image-container__lead
             最大5枚までアップロードできます
           .item-image-container__unit
-            %ul
-          = f.fields_for :item_images do |i|
-            = i.file_field :image, multiple: true, class: 'image-upload-dropfile hidden', type: 'file', name: "item_images[image][]"
-            .item-image-container__unit--guide
-              .have-image
-                = icon('fas','camera')
-                %p#d-d-delete ドラッグ&ドロップ
-                %p#click-delete またはクリックしてファイルをアップロード
+            = f.fields_for :item_images do |i|
+              %ul
+                
+              .item-image-container__unit--guide
+                %label(for="image-label")
+                  = i.file_field :image, multiple: true, class: 'image-upload-dropfile-hidden', id:"image-label",type: 'file', name: "item_images[image][]"
+                  %div.image-upload-dropfile-entire
+                  .have-image
+                    = icon('fas','camera')
+                    %p#d-d-delete ドラッグ&ドロップ
+                    %p#click-delete またはクリックしてファイルをアップロード
         %hr.items-new-hr
         .items-new-first
           .items-new-first__head
