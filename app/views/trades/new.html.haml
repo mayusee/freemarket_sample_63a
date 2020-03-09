@@ -3,24 +3,24 @@
     .trades-header__icon
       = link_to root_path do
         = image_tag 'logo.png'
-  %main.trades-new-main
+  %main.trades-new-buy-main
     .trades-new-buy-item-container
       %h2.trades-new-buy-head 購入内容の確認
       .trades-new-buy-content
         .trades-new-buy-content-inner
           .trades-new-buy-item-box
             %h3.trades-new-buy-item__image
-              = image_tag '',size:'75x75', class:'trades-new-item-image__photo'
+              = image_tag @item.item_images.first.image.url, class:'trades-image'
               .trades-new-buy-item__detail
-                .trades-new-item__name 
+                .trades-item__name 
                   = @item.title
-                .trades-new-item__price-ja
+                .trades-new-buy-item__price-ja
                   %span
                     = thousands_separator(@item.price)
-                  %span.trades-new-item__shipping-fee （税込）送料込み
+                  %span.trades-new-buy-item__shipping-fee （税込）送料込み
       .trades-new-buy-content
         .trades-new-buy-content-inner
-          -# 購入機能を実装させるために、まずはform_tagでの実装する。 今後にform_withへ移行する。
+          -# 購入機能を実装させるために、まずはform_tagにて実装をする。 今後はform_withへ移行する。
           = form_tag(action: :create, method: :post) do
             %ul.trades-new-buy-price-table
               %li.trades-new-buy-price-table__row
@@ -32,7 +32,7 @@
               .trades-new-buy-content-inner
                 %h3 支払い方法
                 - if @default_card_information.nil?
-                  = link_to  pay_user_creditcards_path(current_user.id) , class: "trades-new-buy-user-info-fix" do
+                  = link_to  new_user_creditcard_path(current_user.id), class: "trades-new-buy-user-info-fix" do
                     %p.trades-new-buy-user-info-text__cardinfo
                       .trades-new-icon-plus-circle
                         = icon('fas', 'plus-circle')
@@ -58,13 +58,13 @@
               .trades-new-buy-content-inner
                 %h3 配送先
                 - if @address.nil?
-                  = link_to "#", class: "trades-new-buy-user-info-fix" do
+                  = link_to new_user_address_path(current_user.id), class: "trades-new-buy-user-info-fix" do
                     %p.trades-new-buy-user-info-text
                       .trades-new-icon-plus-circle
                         = icon('fas', 'plus-circle')
                         %span.trades-new-buy-register-text 登録してください
                 - else
-                  = link_to "#", class: "trades-new-buy-user-info-fix" do
+                  = link_to edit_user_address_path(current_user.id, @address.id), class: "trades-new-buy-user-info-fix" do
                     %span.trades-new-buy-register-text--edit
                       変更する
                   %p.trades-new-buy-user-info-text__addressinfo
