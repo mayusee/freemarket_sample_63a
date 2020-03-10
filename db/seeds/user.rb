@@ -14,16 +14,17 @@ ary_last_name_kana = ["イチ","ジ","サブ","シ","ゴ","ロク","ナナ","ハ
   email = "example-#{n+1}@railstutorial.org"
   password = "pass1234"
   telephone_number = '12345678901'
-  User.create!(nickname:  nickname,
-      first_name: first_name,
-      last_name: last_name,
-      first_name_kana: first_name_kana,
-      last_name_kana: last_name_kana,
-      birthday: birthday,
-      email: email,
-      password:              password,
-      password_confirmation: password,
-      telephone_number: telephone_number
+  User.create!(
+    nickname:  nickname,
+    first_name: first_name,
+    last_name: last_name,
+    first_name_kana: first_name_kana,
+    last_name_kana: last_name_kana,
+    birthday: birthday,
+    email: email,
+    password:              password,
+    password_confirmation: password,
+    telephone_number: telephone_number
   )
 end
 
