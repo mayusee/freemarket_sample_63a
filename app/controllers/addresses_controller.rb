@@ -10,7 +10,7 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = Address.create
+    Address.create(address_params)
     redirect_to user_addresses_path
   end
 
