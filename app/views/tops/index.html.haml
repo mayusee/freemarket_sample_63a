@@ -66,42 +66,42 @@
           .tops-index-content-picup-head
             = link_to "#" do
               %h3.tops-index-content-picup-head__text 新規投稿商品
--#          .tops-index-content-picup-lists
--#            - @items.each do |item|
--#              .tops-index-content-picup-list
--#                = link_to item_path(item.id) do
--#                  %figuer.tops-index-content-picup-list__img
--#                    = image_tag item.item_images.first.image.url 
--#                  .tops-index-content-picup-list-body
--#                    %h3.tops-index-content-picup-list-body__name 
--#                      = item.title
--#                    .tops-index-content-picup-list-body__details  
--#                      %ul
--#                        %li
--#                          = item.price
--#                      %p (税込)
--#    .tops-index-content-picups
--#      .tops-index-content-picup
--#        %h2.tops-index-content-picup__subtitle ピックアップブランド
--#        .tops-index-content-picup-box
--#          .tops-index-content-picup-head
--#            = link_to "#" do
--#              %h3.tops-index-content-picup-head__text
--#                = @brands[0][:name]
--#          .tops-index-content-picup-lists
--#            - @items_brands.each do |item|
--#              .tops-index-content-picup-list
--#                = link_to item_path(item.id) do
--#                  %figuer.tops-index-content-picup-list__img
--#                    = image_tag item.item_images.first.image.url 
--#                  .tops-index-content-picup-list-body
--#                    %h3.tops-index-content-picup-list-body__name 
--#                      = item.title
--#                    .tops-index-content-picup-list-body__details  
--#                      %ul
--#                        %li
--#                          = item.price
--#                      %p (税込)
+          .tops-index-content-picup-lists
+            - @items.each do |item|
+              .tops-index-content-picup-list
+                = link_to item_path(item.id) do
+                  %figuer.tops-index-content-picup-list__img
+                    = image_tag item.item_images.first.image.url 
+                  .tops-index-content-picup-list-body
+                    %h3.tops-index-content-picup-list-body__name 
+                      = item.title
+                    .tops-index-content-picup-list-body__details  
+                      %ul
+                        %li
+                          = item.price
+                      %p (税込)
+    .tops-index-content-picups
+      .tops-index-content-picup
+        %h2.tops-index-content-picup__subtitle ピックアップブランド
+        .tops-index-content-picup-box
+          .tops-index-content-picup-head
+            = link_to "#" do
+              %h3.tops-index-content-picup-head__text
+                = @brands[0][:name]
+          .tops-index-content-picup-lists
+            - @items_brands.each do |item|
+              .tops-index-content-picup-list
+                = link_to item_path(item.id) do
+                  %figuer.tops-index-content-picup-list__img
+                    = image_tag item.item_images.first.image.url 
+                  .tops-index-content-picup-list-body
+                    %h3.tops-index-content-picup-list-body__name 
+                      = item.title
+                    .tops-index-content-picup-list-body__details  
+                      %ul
+                        %li
+                          = item.price
+                      %p (税込)
 
   = render 'layouts/tertiarybanner'
   = render 'layouts/footer'

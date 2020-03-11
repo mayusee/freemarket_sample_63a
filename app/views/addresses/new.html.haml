@@ -39,7 +39,7 @@
                     = f.label :"都道府県"
                     %span.form-require 必須
                     %br/
-                    = f.collection_select :area_id, Area.all, :id, :name, autofocus: true
+                    = f.collection_select :area_id, Area.all, :id, :name
                 .addresses-new-info__group
                   .addresses-new-info__group--content
                     = f.label :"市区町村"
