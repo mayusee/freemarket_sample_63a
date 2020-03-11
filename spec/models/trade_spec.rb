@@ -24,7 +24,7 @@ RSpec.describe Trade, type: :model do
       trade.valid?
       expect(trade.errors[:status_num]).to include("を入力してください")
     end
-    it "is valid with a item_id, user_id, address_id, status_num" do
+    it "is valid trade" do
       trade = build(:trade)
       expect(trade).to be_valid
     end
