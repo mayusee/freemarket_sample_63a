@@ -75,6 +75,7 @@
                     = @address.number 
                     %br/
                     = @address.building 
-            .trades-new-buy-content
-              = button_tag "購入する"
+            - unless @default_card_information.nil? || @address.nil?
+              .trades-new-buy-content
+                = button_tag "購入する"
   %footer.trades-new-footer
