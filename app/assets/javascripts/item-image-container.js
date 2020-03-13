@@ -45,7 +45,7 @@ $('.item-image-container__unit--guide').on('drop',function(event){
 
     }
   }
-  
+
   var elm = document.getElementById('d-d-delete');
   elm.style.display = 'none';
 
@@ -53,7 +53,6 @@ $('.item-image-container__unit--guide').on('drop',function(event){
   cl.style.display = 'none';
   
 });
-
 
 $(document).on('click','.item-image-container__unit--preview a',function(){
 
@@ -63,7 +62,156 @@ $(document).on('click','.item-image-container__unit--preview a',function(){
 
   $(this).parent().parent().parent().remove();
 });
+
+//ここからカテゴリの段階的表示機能
+function buildHTML(result){
+  var html =
+    `<option value= ${result.id}>${result.name}</option>`
+  return html
+}
+
+$("#parent").on("change",function(){
+  var str = document.getElementById("parent").value
+  if(str == 1){
+    $('#child').remove();
+    $('#item_category_id').remove();
+    $('.items-new-second__head--fourth').css('display','none');
+    $("#item_product_size_id").remove();
+  }else{
+    $.ajax({
+      url: "/categories",
+      type: 'GET',
+      dataType: 'json',
+      data: {id: str}
+    })
+    .done(function(categories) {
+      var insertHTML = `<select name="child" id="child">
+                        <option value=0>---</option>`;
+      $.each(categories, function(i, category) {
+        insertHTML += buildHTML(category)
+      });
+      insertHTML += `</select>`
+      if($('#child').length == false){
+        $('.items-new-second__head--second').append(insertHTML);
+      } else {
+        $('#child').replaceWith(insertHTML);
+        $('#item_category_id').remove();
+        $('#item_product_size_id').remove();
+        $('.items-new-second__head--fourth').css('display','block');
+      };
+    })
+    .fail(function() {
+      console.log('failed')
+    });
+  };
+})
+
+$(document).on("change","#child",function(){
+  var strparent = document.getElementById("parent").value
+  var strchild = document.getElementById("child").value
+  var str = strparent + '/' + strchild
+  if(strchild == 0){
+    $('#item_category_id').remove();
+    $('.items-new-second__head--fourth').css('display','none');
+    $("#item_product_size_id").remove();
+  } else {
+    $.ajax({
+      url: "/categories",
+      type: 'GET',
+      dataType: 'json',
+      data: {id: str}
+    })
+    .done(function(categories) {
+      var insertHTML = `<select name="item[category_id]" id="item_category_id">
+                        <option value=0>---</option>`;
+      $.each(categories, function(i, category) {
+        insertHTML += buildHTML(category)
+      });
+      insertHTML += `</select>`
+      if($('#item_category_id').length == false){
+        $('.items-new-second__head--third').append(insertHTML);
+      } else {
+        $('#item_category_id').replaceWith(insertHTML);
+        $('#item_product_size_id').remove();
+        $('.items-new-second__head--fourth').css('display','none');
+      };
+    })
+    .fail(function() {
+      console.log('failed')
+    });
+  };
+})
+
+$(document).on("change","#item_category_id",function(){
+  var str = document.getElementById("item_category_id").value
+  if(str == 0){
+    $('.items-new-second__head--fourth').css('display','none');
+    $("#item_product_size_id").remove();
+  } else {
+    $.ajax({
+      url: "/product_sizes",
+      type: 'GET',
+      dataType: 'json',
+      data: {id: str}
+    })
+    .done(function(product_sizes) {
+      var insertHTML = `<select name="item[product_size_id]" id="item_product_size_id">`;
+      $.each(product_sizes, function(i, product_size) {
+        insertHTML += buildHTML(product_size)
+      });
+      insertHTML += `</select>`
+      if($('#item_product_size_id').length == false){
+        $('.items-new-second__head--fourth').css('display','block');
+        $('.items-new-second__head--fourth').append(insertHTML);
+      } else {
+        $('#item_product_size_id').replaceWith(insertHTML);
+      }
+    })
+    .fail(function() {
+      console.log('failed')
+    });
+  };
+})
+
+//ここから配送方法の段階的表示機能
+$("#shippingway").on("change",function(){
+  var str = document.getElementById("shippingway").value
+  if(str == 1){
+    $('#item_shippingway_id').remove();
+    $(".items-new-third__center").css('display','none');
+  }else{
+    $.ajax({
+      url: "/shippingways",
+      type: 'GET',
+      dataType: 'json',
+      data: {id: str}
+    })
+    .done(function(shippingways) {
+        var insertHTML = ` <select name="item[shippingway_id]" id="item_shippingway_id">`;
+      $.each(shippingways, function(i, shippingway) {
+        insertHTML += buildHTML(shippingway)
+      });
+      insertHTML += `</select>`
+      if($('#item_shippingway_id').length == false){
+        $(".items-new-third__center").css('display','block');
+        $('.items-new-third__center').append(insertHTML);
+      } else {
+        $('#item_shippingway_id').replaceWith(insertHTML);
+      };
+    })
+    .fail(function() {
+      console.log('failed')
+    });
+  }
+});
+
 //次の画像機能の実装で使用する予定のためコメントアウトしています。
+// function buildhtml(result){
+// <select name="child" id="child">
+//   <option value="1">レディース</option>
+//   <option value="15">メンズ</option>
+// </select>
+// }
 // var aj_url = window.location.pathname;
 // var aj_url = '/users/1/items';
 
