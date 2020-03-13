@@ -1,6 +1,8 @@
 ary_tops = [{name: "Tシャツ/カットソー(半袖/袖なし)"},{name: "Tシャツ/カットソー(七分/長袖)"},{name: "その他"}]
 ary_jacket = [{name: "テーラードジャケット"},{name: "ノーカラージャケット"},{name: "Gジャン/デニムジャケット"},{name: "その他"}]
 ary_shoes = [{name: "スニーカー"},{name: "サンダル"},{name: "その他"}]
+# 親：---
+default = Category.create(name: "---")
 
 # 親：レディース
 lady = Category.create(name: "レディース")
