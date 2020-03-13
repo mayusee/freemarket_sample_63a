@@ -69,11 +69,11 @@ RSpec.describe User, type: :model do
       expect(user.errors[:birthday]).to include("can't be blank")
     end
 
-    # 11. telephone_numbeが空では登録できないこと
-    it "is invalid without a telephone_numbe" do
-      user = build(:user, telephone_numbe: nil)
+    # 11. telephone_numberが空では登録できないこと
+    it "is invalid without a telephone_number" do
+      user = build(:user, telephone_number: nil)
       user.valid?
-      expect(user.errors[:telephone_numbe]).to include("can't be blank")
+      expect(user.errors[:telephone_number]).to include("can't be blank")
     end
 
 
