@@ -27,12 +27,55 @@ RSpec.describe User, type: :model do
       expect(user.errors[:password]).to include("can't be blank")
     end
 
-    # 6. passwordが存在してもpassword_confirmationが空では登録できないこと
+    # 5. passwordが存在してもpassword_confirmationが空では登録できないこと
     it "is invalid without a password_confirmation although with a password" do
       user = build(:user, password_confirmation: "")
       user.valid?
       expect(user.errors[:password_confirmation]).to include("doesn't match Password")
     end
+
+    # 6. last_nameが空では登録できないこと
+    it "is invalid without a last_name" do
+      user = build(:user, last_name: nil)
+      user.valid?
+      expect(user.errors[:last_name]).to include("can't be blank")
+    end
+
+    # 7. first_nameが空では登録できないこと
+    it "is invalid without a first_name" do
+      user = build(:user, first_name: nil)
+      user.valid?
+      expect(user.errors[:first_name]).to include("can't be blank")
+    end
+
+    # 8. last_name_kanaが空では登録できないこと
+    it "is invalid without a last_name_kana" do
+      user = build(:user, last_name_kana: nil)
+      user.valid?
+      expect(user.errors[:last_name_kana]).to include("can't be blank")
+    end
+
+    # 9. first_name_kanaが空では登録できないこと
+    it "is invalid without a first_name_kana" do
+      user = build(:user, first_name_kana: nil)
+      user.valid?
+      expect(user.errors[:first_name_kana]).to include("can't be blank")
+    end
+
+    # 10. birthdayが空では登録できないこと
+    it "is invalid without a birthday" do
+      user = build(:user, birthday: nil)
+      user.valid?
+      expect(user.errors[:birthday]).to include("can't be blank")
+    end
+
+    # 11. telephone_numbeが空では登録できないこと
+    it "is invalid without a telephone_numbe" do
+      user = build(:user, telephone_numbe: nil)
+      user.valid?
+      expect(user.errors[:telephone_numbe]).to include("can't be blank")
+    end
+
 
   end
 end
