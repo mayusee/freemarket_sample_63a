@@ -129,7 +129,7 @@ $(document).on('turbolinks:load', function() {
           insertHTML += buildHTML(category)
         });
         insertHTML += `</select>`
-        if($('#item_category_id').length == false){
+        if($('#item_category_id').length){
           $('#item_category_id').replaceWith(insertHTML);
           $('#item_product_size_id').remove();
           $('.items-new-second__head--fourth').css('display','none');
