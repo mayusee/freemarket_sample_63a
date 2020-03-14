@@ -1,67 +1,68 @@
-function buildImage(loadedImageUri){
-  var html =
-  `<li class="item-image-container__unit--preview" id="visible">
-    <div class="item-image-container__unit--caption">
-      <img src="${loadedImageUri}">
-    </div>
-    <div class="image-option">
-      <div  class="image-option__list">
-        <div class="image-option__list--tag">編集</div>
+$(document).on('turbolinks:load', function() {
+  function buildImage(loadedImageUri){
+    var html =
+    `<li class="item-image-container__unit--preview" id="visible">
+      <div class="item-image-container__unit--caption">
+        <img src="${loadedImageUri}">
       </div>
-      <div class="image-option__list">
-        <a class="image-option__list--tag">削除</a>
+      <div class="image-option">
+        <div  class="image-option__list">
+          <div class="image-option__list--tag">編集</div>
+        </div>
+        <div class="image-option__list">
+          <a class="image-option__list--tag">削除</a>
+        </div>
       </div>
-    </div>
-  </li>`
-  return html
-};
+    </li>`
+    return html
+  };
 
-var files_array = [];
+  var files_array = [];
 
-$('.item-image-container__unit--guide').on('dragover',function(e){
-    e.preventDefault();
-});
+  $('.item-image-container__unit--guide').on('dragover',function(e){
+      e.preventDefault();
+  });
 
-$('.item-image-container__unit--guide').on('drop',function(event){
-  event.preventDefault();
-    
-  files = event.originalEvent.dataTransfer.files;
-    
-  var count = files.length;
-
-  if(count<=5){
-    for (var i=0; i<count; i++) {
-      files_array.push(files[i]);
-      var fileReader = new FileReader();
+  $('.item-image-container__unit--guide').on('drop',function(event){
+    event.preventDefault();
       
-      fileReader.onload = function( event ) {
+    files = event.originalEvent.dataTransfer.files;
       
-      var loadedImageUri = event.target.result;
-      
-      $(buildImage(loadedImageUri,)).appendTo(".item-image-container__unit ul").trigger("build");
-      };
+    var count = files.length;
 
-      fileReader.readAsDataURL(files[i]);
+    if(count<=5){
+      for (var i=0; i<count; i++) {
+        files_array.push(files[i]);
+        var fileReader = new FileReader();
+        
+        fileReader.onload = function( event ) {
+        
+        var loadedImageUri = event.target.result;
+        
+        $(buildImage(loadedImageUri,)).appendTo(".item-image-container__unit ul").trigger("build");
+        };
 
+        fileReader.readAsDataURL(files[i]);
+
+      }
     }
-  }
 
-  var elm = document.getElementById('d-d-delete');
-  elm.style.display = 'none';
+    var elm = document.getElementById('d-d-delete');
+    elm.style.display = 'none';
 
-  var cl = document.getElementById('click-delete');
-  cl.style.display = 'none';
-  
-});
+    var cl = document.getElementById('click-delete');
+    cl.style.display = 'none';
+    
+  });
 
-$(document).on('click','.item-image-container__unit--preview a',function(){
+  $(document).on('click','.item-image-container__unit--preview a',function(){
 
-  var index = $(".item-image-container__unit--preview a").index(this);
+    var index = $(".item-image-container__unit--preview a").index(this);
 
-  files_array.splice(index - 1, 1);
+    files_array.splice(index - 1, 1);
 
-  $(this).parent().parent().parent().remove();
-});
+    $(this).parent().parent().parent().remove();
+  });
 
 //ここからカテゴリの段階的表示機能
 function buildHTML(result){
@@ -239,3 +240,4 @@ $("#shippingway").on("change",function(){
 //     alert('出品に失敗しました！');
 //   });
 // });
+})
