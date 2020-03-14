@@ -47,7 +47,7 @@
             %span.form-require 必須
             %br/
             .items-new-second__head--first
-              = select_tag 'parent', options_for_select(Category.where(ancestry: nil).pluck(:name,:id))
+              = select_tag 'parent', options_for_select(@categories.pluck(:name,:id))
             .items-new-second__head--second
             .items-new-second__head--third
             .items-new-second__head--fourth{style:"display:none;"}

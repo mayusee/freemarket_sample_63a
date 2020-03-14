@@ -73,7 +73,7 @@ $(document).on('turbolinks:load', function() {
 
   $("#parent").on("change",function(){
     var str = document.getElementById("parent").value
-    if(str == 1){
+    if(str == 0){
       $('#child').remove();
       $('#item_category_id').remove();
       $('.items-new-second__head--fourth').css('display','none');
