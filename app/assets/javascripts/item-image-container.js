@@ -92,17 +92,17 @@ $(document).on('turbolinks:load', function() {
           insertHTML += buildHTML(category)
         });
         insertHTML += `</select>`
-        if($('#child').length == false){
-          $('.items-new-second__head--second').append(insertHTML);
-        } else {
+        if($('#child').length){
           $('#child').replaceWith(insertHTML);
           $('#item_category_id').remove();
           $('#item_product_size_id').remove();
           $('.items-new-second__head--fourth').css('display','block');
+        } else {
+          $('.items-new-second__head--second').append(insertHTML);
         };
       })
       .fail(function() {
-        console.log('failed')
+        alert("サーバとの通信に失敗しました");
       });
     };
   })
@@ -130,15 +130,15 @@ $(document).on('turbolinks:load', function() {
         });
         insertHTML += `</select>`
         if($('#item_category_id').length == false){
-          $('.items-new-second__head--third').append(insertHTML);
-        } else {
           $('#item_category_id').replaceWith(insertHTML);
           $('#item_product_size_id').remove();
           $('.items-new-second__head--fourth').css('display','none');
+        } else {
+          $('.items-new-second__head--third').append(insertHTML);
         };
       })
       .fail(function() {
-        console.log('failed')
+        alert("サーバとの通信に失敗しました");
       });
     };
   })
@@ -161,15 +161,15 @@ $(document).on('turbolinks:load', function() {
           insertHTML += buildHTML(product_size)
         });
         insertHTML += `</select>`
-        if($('#item_product_size_id').length == false){
+        if($('#item_product_size_id').length){
+          $('#item_product_size_id').replaceWith(insertHTML);
+        } else {
           $('.items-new-second__head--fourth').css('display','block');
           $('.items-new-second__head--fourth').append(insertHTML);
-        } else {
-          $('#item_product_size_id').replaceWith(insertHTML);
         }
       })
       .fail(function() {
-        console.log('failed')
+        alert("サーバとの通信に失敗しました");
       });
     };
   })
@@ -193,15 +193,15 @@ $(document).on('turbolinks:load', function() {
           insertHTML += buildHTML(shippingway)
         });
         insertHTML += `</select>`
-        if($('#item_shippingway_id').length == false){
+        if($('#item_shippingway_id').length){
+          $('#item_shippingway_id').replaceWith(insertHTML);
+        } else {
           $(".items-new-third__center").css('display','block');
           $('.items-new-third__center').append(insertHTML);
-        } else {
-          $('#item_shippingway_id').replaceWith(insertHTML);
         };
       })
       .fail(function() {
-        console.log('failed')
+        alert("サーバとの通信に失敗しました");
       });
     }
   });
