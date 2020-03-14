@@ -7,7 +7,7 @@ $(document).on('turbolinks:load', function() {
    $('#image-label').change(function(){
     //選択したfileのオブジェクトをpropで取得
     var files = $('input[type="file"]').prop('files')[0];
-    
+
     $.each(this.files, function(i, file){
       //FileReaderのreadAsDataURLで指定したFileオブジェクトを読み込む
       var fileReader = new FileReader();
@@ -18,8 +18,7 @@ $(document).on('turbolinks:load', function() {
 
       var num = $('.item-image-container__unit--preview').length + 1 + i
       fileReader.readAsDataURL(file);
-      
-      
+
       //読み込みが完了すると、srcにfileのURLを格納
       fileReader.onloadend = function() {
         var src = fileReader.result
@@ -37,12 +36,10 @@ $(document).on('turbolinks:load', function() {
                       </div>
                     </li>`
         $(html).appendTo(".item-image-container__unit ul").trigger("build");
-        
       };
       if(dataBox.items.length > 4){
         return false;
       }
     });
-    
   });
 });
